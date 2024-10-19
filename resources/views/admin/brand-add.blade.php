@@ -4,7 +4,7 @@
 <div class="main-content-inner">
     <div class="main-content-wrap">
         <div class="flex items-center flex-wrap justify-between gap20 mb-27">
-            <h3>Brand infomation</h3>
+            <h3>Informações da marca</h3>
             <ul class="breadcrumbs flex items-center flex-wrap justify-start gap10">
                 <li>
                     <a href="{{ route('admin.index')}}">
@@ -16,14 +16,14 @@
                 </li>
                 <li>
                     <a href="{{ route('admin.brands')}}">
-                        <div class="text-tiny">Brands</div>
+                        <div class="text-tiny">Marcas</div>
                     </a>
                 </li>
                 <li>
                     <i class="icon-chevron-right"></i>
                 </li>
                 <li>
-                    <div class="text-tiny">New Brand</div>
+                    <div class="text-tiny">Nova Marca</div>
                 </li>
             </ul>
         </div>
@@ -33,7 +33,7 @@
                 enctype="multipart/form-data">
                 @csrf
                 <fieldset class="name">
-                    <div class="body-title">Brand Name <span class="tf-color-1">*</span></div>
+                    <div class="body-title">Nome da Marca <span class="tf-color-1">*</span></div>
                     <input class="flex-grow" type="text" placeholder="Brand name" name="name"
                         tabindex="0" value="{{ old('name') }}" aria-required="true" required="">
                 </fieldset>
@@ -58,8 +58,9 @@
                                 <span class="icon">
                                     <i class="icon-upload-cloud"></i>
                                 </span>
-                                <span class="body-text">Drop your images here or select <span
-                                        class="tf-color">click to browse</span></span>
+                                <span class="body-text">Solte suas imagens aqui ou selecione
+                                <span
+                                        class="tf-color">clique para navegar</span></span>
                                 <input type="file" id="myFile" name="image" accept="image/*">
                             </label>
                         </div>
