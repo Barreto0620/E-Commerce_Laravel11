@@ -7,7 +7,7 @@
       <ul class="nav nav-tabs mb-5" id="login_register" role="tablist">
         <li class="nav-item" role="presentation">
           <a class="nav-link nav-link_underscore active" id="register-tab" data-bs-toggle="tab"
-            href="#tab-item-register" role="tab" aria-controls="tab-item-register" aria-selected="true">Register</a>
+            href="#tab-item-register" role="tab" aria-controls="tab-item-register" aria-selected="true">Registrar</a>
         </li>
       </ul>
       <div class="tab-content pt-2" id="login_register_tab_content">
