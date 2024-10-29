@@ -6,14 +6,13 @@ use App\Http\Middleware\AuthAdmin;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Models\Produto;
-use App\Http\Controllers\Produtos\TodosProdutosController;
+use App\Http\Controllers\Produtos\Carrossel1Controller;
 
 Auth::routes();
 
 // Rota para listar todos os produtos
 
-Route::get('/', [TodosProdutosController::class, 'index'])->name('home.index');
-Route::get('/', [TodosProdutosController::class, 'index1'])->name('home.index');
+Route::get('/', [Carrossel1Controller::class, 'index'])->name('home.index');
 
 
 Route::middleware(['auth'])->group(function () {

@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Produto;
 use Illuminate\Http\Request;
 
-class TodosProdutosController extends Controller
+class Carrossel1Controller extends Controller
 {
     public function index()
     {
