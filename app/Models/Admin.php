@@ -20,6 +20,8 @@ class Admin extends Authenticatable
         'ADM_SENHA',
     ];
 
+    public $timestamps = false;
+
     public function getAuthPassword()
     {
         return $this->ADM_SENHA;

@@ -26,7 +26,7 @@
                             <label for="email">Email *</label>
                             @error('USUARIO_EMAIL')
                                 <span class="invalid-feedback" role="alert">
-                                    <strong>Email ou senha incorretos</strong>
+                                    <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
                         </div>
@@ -42,7 +42,7 @@
                             <label for="customerPasswodInput">Senha *</label>
                             @error('USUARIO_SENHA')
                                 <span class="invalid-feedback" role="alert">
-                                    <strong>Email ou senha incorretos</strong>
+                                    <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
                         </div>

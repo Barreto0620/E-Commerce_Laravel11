@@ -53,3 +53,6 @@ Route::middleware(['auth'])->group(function () {
         return view('admin.dashboard'); // Rota para dashboard de administradores
     })->middleware('auth:admin')->name('admin.dashboard');
 });
+
+
+Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');

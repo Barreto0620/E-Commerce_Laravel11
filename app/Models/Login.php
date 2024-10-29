@@ -12,15 +12,14 @@ class Login extends Authenticatable
     protected $table = 'USUARIO';
     protected $primaryKey = 'USUARIO_ID';
 
-    
-    
     protected $fillable = [
         'USUARIO_NOME', 'USUARIO_EMAIL', 'USUARIO_SENHA'
     ];
-    
+
     protected $hidden = [
         'USUARIO_SENHA',
     ];
+
     public $timestamps = false;
 
     public function getAuthPassword()
