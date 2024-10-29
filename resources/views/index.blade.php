@@ -623,15 +623,15 @@
         <div class="product-card product-card_style3 mb-3 mb-md-4 mb-xxl-5">
           <div class="pc__img-wrapper">
             <a href="details.html">
-              <img loading="lazy" src="{{ asset('assets/images/home/demo3/produto_09.png') }}" width="330" height="400"
+              <img loading="lazy" src="{{ $produto8->imagens->first()->IMAGEM_URL }}" width="330" height="400"
                 alt="Mesa Gamer Mancer Arcane" class="pc__img">
             </a>
           </div>
 
           <div class="pc__info position-relative">
-            <h6 class="pc__title"><a href="details.html">Mesa Gamer Mancer Arcane</a></h6>
+            <h6 class="pc__title"><a href="details.html">{{ $produto8->PRODUTO_NOME }}</a></h6>
             <div class="product-card__price d-flex align-items-center">
-              <span class="money price text-secondary">R$ 575,99</span>
+              <span class="money price text-secondary">R$:{{ $produto8->PRODUTO_PRECO }}</span>
             </div>
 
             <div
@@ -659,15 +659,15 @@
         <div class="product-card product-card_style3 mb-3 mb-md-4 mb-xxl-5">
           <div class="pc__img-wrapper">
             <a href="details.html">
-              <img loading="lazy" src="{{ asset('assets/images/home/demo3/produto_10.png') }}" width="330" height="400"
+              <img loading="lazy" src="{{ $produto9->imagens->first()->IMAGEM_URL }}" width="330" height="400"
                 alt="SSD Rover, 2TB, M.2 2280" class="pc__img">
             </a>
           </div>
 
           <div class="pc__info position-relative">
-            <h6 class="pc__title"><a href="details.html">SSD Rover, 2TB, M.2 2280</a></h6>
+            <h6 class="pc__title"><a href="details.html">{{ $produto9->PRODUTO_NOME }}</a></h6>
             <div class="product-card__price d-flex align-items-center">
-              <span class="money price text-secondary">R$ 924,99</span>
+              <span class="money price text-secondary">R$:{{ $produto9->PRODUTO_PRECO }}</span>
             </div>
 
             <div
@@ -695,16 +695,16 @@
         <div class="product-card product-card_style3 mb-3 mb-md-4 mb-xxl-5">
           <div class="pc__img-wrapper">
             <a href="details.html">
-              <img loading="lazy" src="{{ asset('assets/images/home/demo3/produto_11.png') }}" width="330" height="400"
+              <img loading="lazy" src="{{ $produto10->imagens->first()->IMAGEM_URL }}" width="330" height="400"
                 alt="Gabinete Gamer Cooler Master Sneaker X Red" class="pc__img">
             </a>
             <div class="product-label bg-red text-uppercase text-white top-0 left-0 mt-2 mx-2">Novo</div>
           </div>
 
           <div class="pc__info position-relative">
-            <h6 class="pc__title"><a href="details.html">Gabinete Gamer Cooler Master Sneaker X Red</a></h6>
+            <h6 class="pc__title"><a href="details.html">{{ $produto10->PRODUTO_NOME }}</a></h6>
             <div class="product-card__price d-flex align-items-center">
-              <span class="money price text-secondary">R$ 7.899,99</span>
+              <span class="money price text-secondary">R$:{{ $produto10->PRODUTO_PRECO }}</span>
             </div>
 
             <div
@@ -732,17 +732,17 @@
         <div class="product-card product-card_style3 mb-3 mb-md-4 mb-xxl-5">
           <div class="pc__img-wrapper">
             <a href="details.html">
-              <img loading="lazy" src="{{ asset('assets/images/home/demo3/produto_12.png') }}" width="330" height="400"
+              <img loading="lazy" src="{{ $produto11->imagens->first()->IMAGEM_URL }}" width="330" height="400"
                 alt="Console Sony Playstation 5 Slim" class="pc__img">
             </a>
             <div class="product-label bg-red text-white right-0 top-0 left-auto mt-2 mx-2">-67%</div>
           </div>
 
           <div class="pc__info position-relative">
-            <h6 class="pc__title">Console Sony Playstation 5 Slim</h6>
+            <h6 class="pc__title">{{ $produto11->PRODUTO_NOME }}</h6>
             <div class="product-card__price d-flex align-items-center">
-              <span class="money price-old">R$ 5.882,34</span>
-              <span class="money price text-secondary">R$ 3.999,99</span>
+              <span class="money price-old">R$:{{ $produto11->PRODUTO_PRECO }}</span>
+              <span class="money price text-secondary">R$:200</span>
             </div>
 
             <div
@@ -770,16 +770,16 @@
         <div class="product-card product-card_style3 mb-3 mb-md-4 mb-xxl-5">
           <div class="pc__img-wrapper">
             <a href="details.html">
-              <img loading="lazy" src="{{ asset('assets/images/home/demo3/produto_13.png') }}" width="330" height="400"
+              <img loading="lazy" src="{{ $produto12->imagens->first()->IMAGEM_URL }}" width="330" height="400"
                 alt="PC Gamer Completo Mancer Krampus II" class="pc__img">
             </a>
           </div>
           <div class="product-label bg-red text-white right-0 top-0 left-auto mt-2 mx-2">-42%</div>
           <div class="pc__info position-relative">
-            <h6 class="pc__title"><a href="details.html">PC Gamer Completo Mancer Krampus II</a></h6>
+            <h6 class="pc__title"><a href="details.html">{{ $produto12->PRODUTO_NOME }}</a></h6>
             <div class="product-card__price d-flex align-items-center">
-              <span class="money price-old">R$ 6.287,13</span>
-              <span class="money price text-secondary">R$ 4.499,99</span>
+              <span class="money price-old">R$:{{ $produto12->PRODUTO_PRECO }}</span>
+              <span class="money price text-secondary">R$:200</span>
             </div>
 
             <div
@@ -807,15 +807,15 @@
         <div class="product-card product-card_style3 mb-3 mb-md-4 mb-xxl-5">
           <div class="pc__img-wrapper">
             <a href="details.html">
-              <img loading="lazy" src="{{ asset('assets/images/home/demo3/produto_14.png') }}" width="330" height="400"
+              <img loading="lazy" src="{{ $produto13->imagens->first()->IMAGEM_URL }}" width="330" height="400"
                 alt="Notebook Gamer Lenovo IdeaPad Gaming" class="pc__img">
             </a>
           </div>
           <div class="product-label bg-red text-white right-0 top-0 left-auto mt-2 mx-2">TOP 3</div>
           <div class="pc__info position-relative">
-            <h6 class="pc__title"><a href="details.html">Notebook Gamer Lenovo IdeaPad Gaming</a></h6>
+            <h6 class="pc__title"><a href="details.html">{{ $produto13->PRODUTO_NOME }}</a></h6>
             <div class="product-card__price d-flex align-items-center">
-              <span class="money price text-secondary">R$ 4.199,99</span>
+              <span class="money price text-secondary">R$:{{ $produto13->PRODUTO_PRECO }}</span>
             </div>
 
             <div
@@ -843,15 +843,15 @@
         <div class="product-card product-card_style3 mb-3 mb-md-4 mb-xxl-5">
           <div class="pc__img-wrapper">
             <a href="details.html">
-              <img loading="lazy" src="{{ asset('assets/images/home/demo3/produto_15.png') }}" width="330" height="400"
+              <img loading="lazy" src="{{ $produto14->imagens->first()->IMAGEM_URL }}" width="330" height="400"
                 alt="Projetor Intelbras PFL6410" class="pc__img">
             </a>
           </div>
 
           <div class="pc__info position-relative">
-            <h6 class="pc__title"><a href="details.html">Projetor Intelbras PFL6410</a></h6>
+            <h6 class="pc__title"><a href="details.html">{{ $produto14->PRODUTO_NOME }}</a></h6>
             <div class="product-card__price d-flex align-items-center">
-              <span class="money price text-secondary">R$ 1.899,99</span>
+              <span class="money price text-secondary">R$:{{ $produto14->PRODUTO_PRECO }}</span>
             </div>
 
             <div
@@ -879,15 +879,15 @@
         <div class="product-card product-card_style3 mb-3 mb-md-4 mb-xxl-5">
           <div class="pc__img-wrapper">
             <a href="details.html">
-              <img loading="lazy" src="{{ asset('assets/images/home/demo3/produto_16.png') }}" width="330" height="400"
+              <img loading="lazy" src="{{ $produto15->imagens->first()->IMAGEM_URL }}" width="330" height="400"
                 alt="Tablet Samsung S6 Lite" class="pc__img">
             </a>
           </div>
 
           <div class="pc__info position-relative">
-            <h6 class="pc__title"> Tablet Samsung S6 Lite</h6>
+            <h6 class="pc__title">{{ $produto15->PRODUTO_NOME }}</h6>
             <div class="product-card__price d-flex align-items-center">
-              <span class="money price text-secondary">R$ 2.399,99</span>
+              <span class="money price text-secondary">R$:{{ $produto15->PRODUTO_PRECO }}</span>
             </div>
 
             <div
