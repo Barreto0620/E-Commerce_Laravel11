@@ -3,38 +3,44 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use App\Models\Login; // Importa o modelo Login
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash; // Importa a fachada Hash
 
 class LoginController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Login Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles authenticating users for the application and
-    | redirecting them to your home screen. The controller uses a trait
-    | to conveniently provide its functionality to your applications.
-    |
-    */
-
-    use AuthenticatesUsers;
-
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
-    protected $redirectTo = '/';
-
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    public function showLoginForm()
     {
-        $this->middleware('guest')->except('logout');
-        $this->middleware('auth')->only('logout');
+        return view('auth.login');
+    }
+
+    public function login(Request $request)
+    {
+        $request->validate([
+            'USUARIO_EMAIL' => 'required|email',
+            'USUARIO_SENHA' => 'required',
+        ]);
+
+        $credentials = $request->only('USUARIO_EMAIL', 'USUARIO_SENHA');
+
+        // Verifica se o usuário existe
+        $user = Login::where('USUARIO_EMAIL', $credentials['USUARIO_EMAIL'])->first();
+
+        if ($user && Hash::check($credentials['USUARIO_SENHA'], $user->USUARIO_SENHA)) {
+            // Autentica o usuário
+            Auth::login($user);
+            return redirect()->route('home.index');
+        }
+
+        return back()->withErrors([
+            'email' => 'Credenciais incorretas.',
+        ]);
+    }
+
+    public function logout()
+    {
+        Auth::guard('web')->logout();
+        return redirect()->route('login');
     }
 }
