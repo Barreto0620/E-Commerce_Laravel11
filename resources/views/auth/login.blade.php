@@ -24,11 +24,6 @@
                                    autocomplete="email" 
                                    autofocus="">
                             <label for="email">Email *</label>
-                            @error('USUARIO_EMAIL')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
                         </div>
 
                         <div class="pb-3"></div>
@@ -40,11 +35,6 @@
                                    required="" 
                                    autocomplete="current-password">
                             <label for="customerPasswodInput">Senha *</label>
-                            @error('USUARIO_SENHA')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
                         </div>
 
                         <button class="btn btn-primary w-100 text-uppercase" type="submit">LogIn</button>

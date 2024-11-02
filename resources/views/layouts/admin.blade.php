@@ -41,8 +41,8 @@
                 <div class="section-menu-left">
                     <div class="box-logo">
                         <a href="{{ asset('http://127.0.0.1:8000/') }}" id="site-logo-inner">
-                            <img class="" id="logo_header_1" alt="" src="{{ asset('images/logo/logo.png') }}"
-                                data-light="{{ asset('images/logo/logo.png') }}" data-dark="{{ asset('images/logo/logo.png') }}">
+                            <img class="" id="logo_header_1" alt="" src="{{ asset('images/logo/logo.svg') }}"
+                                data-light="{{ asset('images/logo/logo.svg') }}" data-dark="{{ asset('images/logo/logo.svg') }}">
                         </a>
                         <div class="button-show-hide">
                             <i class="icon-menu-left"></i>
@@ -180,9 +180,9 @@
                         <div class="wrap">
                             <div class="header-left">
                                 <a href="index-2.html">
-                                    <img class="" id="logo_header_mobile" alt="" src="{{ asset('images/logo/logo.png') }}"
-                                        data-light="{{ asset('images/logo/logo.png') }}" data-dark="{{ asset('images/logo/logo.png') }}"
-                                        data-width="154px" data-height="52px" data-retina="{{ asset('images/logo/logo.png') }}">
+                                    <img class="" id="logo_header_mobile" alt="" src="{{ asset('images/logo/logo.svg') }}"
+                                        data-light="{{ asset('images/logo/logo.svg') }}" data-dark="{{ asset('images/logo/logo.svg') }}"
+                                        data-width="154px" data-height="52px" data-retina="{{ asset('images/logo/logo.svg') }}">
                                 </a>
                                 <div class="button-show-hide">
                                     <i class="icon-menu-left"></i>
