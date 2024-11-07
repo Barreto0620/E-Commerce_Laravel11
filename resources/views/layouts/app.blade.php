@@ -313,7 +313,7 @@
               <a href="{{route('home.index')}}" class="navigation__link">Início</a>
             </li>
             <li class="navigation__item">
-              <a href="shop.html" class="navigation__link">Catálogo</a>
+              <a href="{{route('catalogo.index')}}" class="navigation__link">Catálogo</a>
             </li>
             <!-- <li class="navigation__item">
               <a href="cart.html" class="navigation__link">Cart</a>
@@ -334,7 +334,7 @@
             xmlns="http://www.w3.org/2000/svg">
             <use href="#icon_user" />
           </svg>
-          <span class="d-inline-block ms-2 text-uppercase align-middle fw-medium">My Account</span>
+          <span class="d-inline-block ms-2 text-uppercase align-middle fw-medium">Minha Conta</span>
         </div>
 
 
@@ -392,7 +392,7 @@
       <div class="header-desk header-desk_type_1">
         <div class="logo">
           <a href="{{route('home.index')}}">
-            <img src="assets/images/logo.svg" alt="Uomo" class="logo__image d-block" />
+            <img src="{{ asset('assets/images/logo.svg') }}" alt="Uomo" class="logo__image d-block" />
           </a>
         </div>
 
@@ -402,7 +402,7 @@
               <a href="{{route('home.index')}}" class="navigation__link">Início</a>
             </li>
             <li class="navigation__item">
-              <a href="shop.html" class="navigation__link">Catálogo</a>
+              <a href="{{route('catalogo.index')}}" class="navigation__link">Catálogo</a>
             </li>
             <!-- <li class="navigation__item">
               <a href="cart.html" class="navigation__link">Cart</a>
@@ -447,12 +447,12 @@
                   <div class="sub-menu search-suggestion">
                     <h6 class="sub-menu__title fs-base">Destaques</h6>
                     <ul class="sub-menu__list list-unstyled">
-                      <li class="sub-menu__item"><a href="shop2.html" class="menu-link menu-link_us-s">Oferta do Dia</a>
+                      <li class="sub-menu__item"><a href="{{route('catalogo.index')}}" class="menu-link menu-link_us-s">Oferta do Dia</a>
                       </li>
-                      <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">Lançamentos</a></li>
-                      <li class="sub-menu__item"><a href="shop3.html" class="menu-link menu-link_us-s">EcoSystem</a>
+                      <li class="sub-menu__item"><a href="{{route('catalogo.index')}}" class="menu-link menu-link_us-s">Lançamentos</a></li>
+                      <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">EcoSystem</a>
                       </li>
-                      <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">Somente Aqui</a></li>
+                      <li class="sub-menu__item"><a href="{{route('catalogo.index')}}" class="menu-link menu-link_us-s">Somente Aqui</a></li>
                       <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">ExPress</a></li>
                     </ul>
                   </div>
@@ -516,7 +516,7 @@
         <div class="footer-column footer-store-info col-12 mb-4 mb-lg-0">
           <div class="logo">
             <a href="{{route('home.index')}}">
-              <img src="assets/images/logo.svg" alt="SurfsideMedia" class="logo__image d-block" />
+              <img src="{{ asset('assets/images/logo.svg') }}" alt="Logo Alpha" class="logo__image d-block" />
             </a>
           </div>
           <p class="footer-address">Av. Eng. Eusébio Stevaux, 823 - Santo Amaro, São Paulo</p>
@@ -583,8 +583,8 @@
         <div class="footer-column footer-menu mb-4 mb-lg-0">
           <h6 class="sub-menu__title text-uppercase">Contato</h6>
           <ul class="sub-menu__list list-unstyled">
-            <li class="sub-menu__item"><a href="shop2.html" class="menu-link menu-link_us-s">Gabriel Barreto</a></li>
-            <li class="sub-menu__item"><a href="shop3.html" class="menu-link menu-link_us-s">Lucas Ryan</a></li>
+            <li class="sub-menu__item"><a href="https://github.com/Barreto0620" target="_blank" class="menu-link menu-link_us-s">Gabriel Barreto</a></li>
+            <li class="sub-menu__item"><a href="https://github.com/Lusxka" target="_blank" class="menu-link menu-link_us-s">Lucas Ryan</a></li>
             {{-- <li class="sub-menu__item"><a href="shop4.html" class="menu-link menu-link_us-s">Men</a></li>
             <li class="sub-menu__item"><a href="shop5.html" class="menu-link menu-link_us-s">Women</a></li>
             <li class="sub-menu__item"><a href="shop1.html" class="menu-link menu-link_us-s">Shop All</a></li> --}}
@@ -594,9 +594,9 @@
         <div class="footer-column footer-menu mb-4 mb-lg-0">
           <h6 class="sub-menu__title text-uppercase">Dúvidas</h6>
           <ul class="sub-menu__list list-unstyled">
-            <li class="sub-menu__item"><a href="account_dashboard.html" class="menu-link menu-link_us-s">Pagamento</a>
+            <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">Pagamento</a>
             </li>
-            <li class="sub-menu__item"><a href="store_location.html" class="menu-link menu-link_us-s">Entrega</a>
+            <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">Entrega</a>
             </li>
             <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">Garantia</a></li>
           </ul>
@@ -605,14 +605,14 @@
         <div class="footer-column footer-menu mb-4 mb-lg-0">
           <h6 class="sub-menu__title text-uppercase">Categoria</h6>
           <ul class="sub-menu__list list-unstyled">
-            <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">Hardware</a></li>
-            <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">Computadores</a></li>
-            <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">Games</a></li>
-            <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">Periféricos</a></li>
-            <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">Smartphones</a></li>
-            <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">TV</a></li>
-            <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">Projetores</a></li>
-            <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">Espaço Gamer</a></li>
+            <li class="sub-menu__item"><a href="{{route('catalogo.index')}}" class="menu-link menu-link_us-s">Hardware</a></li>
+            <li class="sub-menu__item"><a href="{{route('catalogo.index')}}" class="menu-link menu-link_us-s">Computadores</a></li>
+            <li class="sub-menu__item"><a href="{{route('catalogo.index')}}" class="menu-link menu-link_us-s">Games</a></li>
+            <li class="sub-menu__item"><a href="{{route('catalogo.index')}}" class="menu-link menu-link_us-s">Periféricos</a></li>
+            <li class="sub-menu__item"><a href="{{route('catalogo.index')}}" class="menu-link menu-link_us-s">Smartphones</a></li>
+            <li class="sub-menu__item"><a href="{{route('catalogo.index')}}" class="menu-link menu-link_us-s">TV</a></li>
+            <li class="sub-menu__item"><a href="{{route('catalogo.index')}}" class="menu-link menu-link_us-s">Projetores</a></li>
+            <li class="sub-menu__item"><a href="{{route('catalogo.index')}}" class="menu-link menu-link_us-s">Espaço Gamer</a></li>
           </ul>
         </div>
       </div>
@@ -622,7 +622,7 @@
       <div class="container d-md-flex align-items-center">
         <span class="footer-copyright me-auto">©2024 Hexatech</span>
         <div class="footer-settings d-md-flex align-items-center">
-          <a href="privacy-policy.html">Política de Privacidade</a> &nbsp;|&nbsp; <a href="terms-conditions.html">Termos &amp;
+          <a href="#">Política de Privacidade</a> &nbsp;|&nbsp; <a href="#">Termos &amp;
             Condições</a>
         </div>
       </div>
@@ -638,7 +638,7 @@
             xmlns="http://www.w3.org/2000/svg">
             <use href="#icon_home" />
           </svg>
-          <span>Home</span>
+          <span>Início</span>
         </a>
       </div>
 
@@ -648,7 +648,7 @@
             xmlns="http://www.w3.org/2000/svg">
             <use href="#icon_hanger" />
           </svg>
-          <span>Shop</span>
+          <span>Catálogo</span>
         </a>
       </div>
 
@@ -661,7 +661,7 @@
             </svg>
             <span class="wishlist-amount d-block position-absolute js-wishlist-count">3</span>
           </div>
-          <span>Wishlist</span>
+          <span>Favoritos</span>
         </a>
       </div>
     </div>

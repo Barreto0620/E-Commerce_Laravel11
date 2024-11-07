@@ -28,7 +28,7 @@
           Oferta do Dia</h6>
           <h2 class="h1 fw-bold animate animate_fade animate_btt animate_delay-5">Monitor Cepheus Fuse</h2>
           <h2 class="h2 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5"><br>"Visão de outro mundo!"<br><br><br></h2>
-          <a href="#"
+          <a href="{{route('catalogo.index')}}"
             class="text-uppercase btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Aproveitar</a>
         </div>
       </div>
@@ -50,7 +50,7 @@
             Oferta Halloween</h6>
           <h2 class="h1 fw-bold animate animate_fade animate_btt animate_delay-5">Notebook Vaio FE15</h2>
           <h2 class="h2 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5"><br>"Ofertas de arrepiar!"<br><br><br></h2>
-          <a href="#"
+          <a href="{{route('catalogo.index')}}"
             class="text-uppercase btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Aproveitar</a>
         </div>
       </div>
@@ -73,7 +73,7 @@
             Somente Aqui</h6>
           <h2 class="h1 fw-bold animate animate_fade animate_btt animate_delay-5">Cadeira Gamer TGT Heron</h2>
           <h2 class="h2 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5"><br>"Eleve o conforto para outro nível!"<br><br><br></h2>
-          <a href="#"
+          <a href="{{route('catalogo.index')}}"
             class="text-uppercase btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Aproveitar</a>
         </div>
       </div>
@@ -134,56 +134,56 @@
             <img loading="lazy" class="w-100 h-auto mb-3" src="{{ asset('assets/images/home/demo3/categoria_01.png') }}" width="124"
               height="124" alt="Categoria Hardware" />
             <div class="text-center">
-              <a href="#" class="menu-link fw-medium">Hardware</a>
+              <a href="{{route('catalogo.index')}}" class="menu-link fw-medium">Hardware</a>
             </div>
           </div>
           <div class="swiper-slide">
             <img loading="lazy" class="w-100 h-auto mb-3" src="{{ asset('assets/images/home/demo3/categoria_02.png') }}" width="124"
               height="124" alt="Categoria Periféricos" />
             <div class="text-center">
-              <a href="#" class="menu-link fw-medium">Periféricos</a>
+              <a href="{{route('catalogo.index')}}" class="menu-link fw-medium">Periféricos</a>
             </div>
           </div>
           <div class="swiper-slide">
             <img loading="lazy" class="w-100 h-auto mb-3" src="{{ asset('assets/images/home/demo3/categoria_03.png') }}" width="124"
               height="124" alt="Categoria Computadores" />
             <div class="text-center">
-              <a href="#" class="menu-link fw-medium">Computadores</a>
+              <a href="{{route('catalogo.index')}}" class="menu-link fw-medium">Computadores</a>
             </div>
           </div>
           <div class="swiper-slide">
             <img loading="lazy" class="w-100 h-auto mb-3" src="{{ asset('assets/images/home/demo3/categoria_04.png') }}" width="124"
               height="124" alt="Categoria Games" />
             <div class="text-center">
-              <a href="#" class="menu-link fw-medium">Games</a>
+              <a href="{{route('catalogo.index')}}" class="menu-link fw-medium">Games</a>
             </div>
           </div>
           <div class="swiper-slide">
             <img loading="lazy" class="w-100 h-auto mb-3" src="{{ asset('assets/images/home/demo3/categoria_05.png') }}" width="124"
               height="124" alt="Categoria Smartphones" />
             <div class="text-center">
-              <a href="#" class="menu-link fw-medium">Smartphones</a>
+              <a href="{{route('catalogo.index')}}" class="menu-link fw-medium">Smartphones</a>
             </div>
           </div>
           <div class="swiper-slide">
             <img loading="lazy" class="w-100 h-auto mb-3" src="{{ asset('assets/images/home/demo3/categoria_06.png') }}" width="124"
               height="124" alt="Categoria TV" />
             <div class="text-center">
-              <a href="#" class="menu-link fw-medium">TV</a>
+              <a href="{{route('catalogo.index')}}" class="menu-link fw-medium">TV</a>
             </div>
           </div>
           <div class="swiper-slide">
             <img loading="lazy" class="w-100 h-auto mb-3" src="{{ asset('assets/images/home/demo3/categoria_07.png') }}" width="124"
               height="124" alt="Categoria Projetores" />
             <div class="text-center">
-              <a href="#" class="menu-link fw-medium">Projetores</a>
+              <a href="{{route('catalogo.index')}}" class="menu-link fw-medium">Projetores</a>
             </div>
           </div>
           <div class="swiper-slide">
             <img loading="lazy" class="w-100 h-auto mb-3" src="{{ asset('assets/images/home/demo3/categoria_08.png') }}" width="124"
               height="124" alt="Categoria Espaço Gamer" />
             <div class="text-center">
-              <a href="#" class="menu-link fw-medium">Espaço Gamer</a>
+              <a href="{{route('catalogo.index')}}" class="menu-link fw-medium">Espaço Gamer</a>
             </div>
           </div>
         </div><!-- /.swiper-wrapper -->
@@ -237,7 +237,7 @@
           </div>
         </div>
 
-        <a href="#" class="btn-link default-underline text-uppercase fw-medium mt-3">Ver Mais</a>
+        <a href="{{route('catalogo.index')}}" class="btn-link default-underline text-uppercase fw-medium mt-3">Ver Mais</a>
       </div>
       <div class="col-md-6 col-lg-8 col-xl-80per">
         <div class="position-relative">
@@ -914,7 +914,7 @@
     </div><!-- /.row -->
 
     <div class="text-center mt-2">
-      <a class="btn-link btn-link_lg default-underline text-uppercase fw-medium" href="#">Ver Todos</a>
+      <a class="btn-link btn-link_lg default-underline text-uppercase fw-medium" href="{{route('catalogo.index')}}">Ver Todos</a>
     </div>
   </section>
 </div>

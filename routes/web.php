@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Models\Produto;
 use App\Http\Controllers\Produtos\Carrossel1Controller;
+use App\Http\Controllers\CatalogoController;
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\AdminLoginController;
@@ -17,6 +18,8 @@ Auth::routes();
 // Rota para listar todos os produtos
 
 Route::get('/', [Carrossel1Controller::class, 'index'])->name('home.index');
+
+Route::get('/catalogo', [CatalogoController::class, 'index'])->name('catalogo.index');
 
 
 Route::middleware(['auth'])->group(function () {
