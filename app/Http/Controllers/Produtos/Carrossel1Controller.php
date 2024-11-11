@@ -11,24 +11,24 @@ class Carrossel1Controller extends Controller
     public function index()
     {
         // Primeiro Carrossel
-        $produto_id = 201; // 1° Item do carrossel
-        $produto_id1 = 201; // 2° Item do carrossel
-        $produto_id2 = 201; // 3° Item do carrossel
-        $produto_id3 = 201; // 4° Item do carrossel
-        $produto_id4 = 201; // 5° Item do carrossel
-        $produto_id5 = 201; // 6° Item do carrossel
-        $produto_id6 = 201; // 7° Item do carrossel
-        $produto_id7 = 201; // 8° Item do carrossel
+        $produto_id = 209; // 1° Item do carrossel
+        $produto_id1 = 209; // 2° Item do carrossel
+        $produto_id2 = 209; // 3° Item do carrossel
+        $produto_id3 = 209; // 4° Item do carrossel
+        $produto_id4 = 209; // 5° Item do carrossel
+        $produto_id5 = 209; // 6° Item do carrossel
+        $produto_id6 = 209; // 7° Item do carrossel
+        $produto_id7 = 209; // 8° Item do carrossel
         
         // Vitrine Debaixo
-        $produto_id8 = 189; // 1° Item da vitrine
-        $produto_id9 = 189; // 2° da vitrine
-        $produto_id10 = 189; // 3° da vitrine
-        $produto_id11 = 189; // 4° da vitrine
-        $produto_id12 = 189; // 5° da vitrine
-        $produto_id13 = 189; // 6° da vitrine
-        $produto_id14 = 189; // 7° da vitrine
-        $produto_id15 = 189; // 8° da vitrine
+        $produto_id8 = 209; // 1° Item da vitrine
+        $produto_id9 = 209; // 2° da vitrine
+        $produto_id10 = 209; // 3° da vitrine
+        $produto_id11 = 209; // 4° da vitrine
+        $produto_id12 = 209; // 5° da vitrine
+        $produto_id13 = 209; // 6° da vitrine
+        $produto_id14 = 209; // 7° da vitrine
+        $produto_id15 = 209; // 8° da vitrine
         
 
         // Puxa os produtos e a imagem do banco de dados pelo id
