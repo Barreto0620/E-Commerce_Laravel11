@@ -54,4 +54,11 @@ class CatalogoController extends Controller
          'produto8', 'produto9', 'produto10', 'produto11', 'produto12', 'produto13',
          'produto14', 'produto15'));
     }
+
+    public function product_details($product_slug)
+    {
+        $product = Produto::where('slug', $product_slug)->first();
+        return view('product_details', compact('product'));
+    }
+
 }

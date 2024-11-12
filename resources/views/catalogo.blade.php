@@ -361,11 +361,11 @@
                 <div class="swiper-container background-img js-swiper-slider" data-settings='{"resizeObserver": true}'>
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                      <a href="details.html"><img loading="lazy" src="{{ $produto->imagens->first()->IMAGEM_URL }}" width="330"
+                      <a href="{{route ('catalogo.product.details', ['product_slug'=>$product->slug])}}"><img loading="lazy" src="{{ $produto->imagens->first()->IMAGEM_URL }}" width="330"
                           height="400" alt=" COLOCAR DESCRIÇÃO " class="pc__img"></a>
                     </div>
                     <div class="swiper-slide">
-                      <a href="details.html"><img loading="lazy" src="{{ $produto->imagens->skip(1)->first()->IMAGEM_URL }}"
+                      <a href="{{route ('catalogo.product.details', ['product_slug'=>$product->slug])}}"><img loading="lazy" src="{{ $produto->imagens->skip(1)->first()->IMAGEM_URL }}"
                           width="330" height="400" alt=" COLOCAR DESCRIÇÃO " class="pc__img"></a>
                     </div>
                   </div>
@@ -385,7 +385,7 @@
 
               <div class="pc__info position-relative">
                 <p class="pc__category">{{ $produto->categoria->CATEGORIA_NOME }}</p>
-                <h6 class="pc__title"><a href="details.html">{{ $produto->PRODUTO_NOME }}</a></h6>
+                <h6 class="pc__title"><a href="{{route ('catalogo.product.details', ['product_slug'=>$product->slug])}}">{{ $produto->PRODUTO_NOME }}</a></h6>
                 <div class="product-card__price d-flex">
                   <span class="money price">R$: {{ $produto->PRODUTO_PRECO }}</span>
                 </div>            
@@ -426,11 +426,11 @@
                 <div class="swiper-container background-img js-swiper-slider" data-settings='{"resizeObserver": true}'>
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                      <a href="details.html"><img loading="lazy" src="{{ $produto1->imagens->first()->IMAGEM_URL }}" width="330"
+                      <a href="{{route ('catalogo.product.details', ['product_slug'=>$product->slug])}}"><img loading="lazy" src="{{ $produto1->imagens->first()->IMAGEM_URL }}" width="330"
                           height="400" alt=" COLOCAR DESCRIÇÃO " class="pc__img"></a>
                     </div>
                     <div class="swiper-slide">
-                      <a href="details.html"><img loading="lazy" src="{{ $produto1->imagens->skip(1)->first()->IMAGEM_URL }}"
+                      <a href="{{route ('catalogo.product.details', ['product_slug'=>$product->slug])}}"><img loading="lazy" src="{{ $produto1->imagens->skip(1)->first()->IMAGEM_URL }}"
                           width="330" height="400" alt=" COLOCAR DESCRIÇÃO " class="pc__img"></a>
                     </div>
                   </div>
@@ -450,7 +450,7 @@
 
               <div class="pc__info position-relative">
                 <p class="pc__category">{{ $produto1->categoria->CATEGORIA_NOME }}</p>
-                <h6 class="pc__title"><a href="details.html">{{$produto1->PRODUTO_NOME}}</a></h6>
+                <h6 class="pc__title"><a href="{{route ('catalogo.product.details', ['product_slug'=>$product->slug])}}">{{$produto1->PRODUTO_NOME}}</a></h6>
                 <div class="product-card__price d-flex">
                   <span class="money price">R$: {{$produto1->PRODUTO_PRECO}}</span>
                 </div>
@@ -499,11 +499,11 @@
                 <div class="swiper-container background-img js-swiper-slider" data-settings='{"resizeObserver": true}'>
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                      <a href="details.html"><img loading="lazy" src="{{ $produto2->imagens->first()->IMAGEM_URL }}" width="330"
+                      <a href="{{route ('catalogo.product.details', ['product_slug'=>$product->slug])}}"><img loading="lazy" src="{{ $produto2->imagens->first()->IMAGEM_URL }}" width="330"
                           height="400" alt=" COLOCAR DESCRIÇÃO " class="pc__img"></a>
                     </div>
                     <div class="swiper-slide">
-                      <a href="details.html"><img loading="lazy" src="{{ $produto2->imagens->skip(1)->first()->IMAGEM_URL }}"
+                      <a href="{{route ('catalogo.product.details', ['product_slug'=>$product->slug])}}"><img loading="lazy" src="{{ $produto2->imagens->skip(1)->first()->IMAGEM_URL }}"
                           width="330" height="400" alt=" COLOCAR DESCRIÇÃO " class="pc__img"></a>
                     </div>
                   </div>
@@ -523,7 +523,7 @@
 
               <div class="pc__info position-relative">
                 <p class="pc__category">{{ $produto2->categoria->CATEGORIA_NOME }}</p>
-                <h6 class="pc__title"><a href="details.html">{{$produto2->PRODUTO_NOME}}</a></h6>
+                <h6 class="pc__title"><a href="{{route ('catalogo.product.details', ['product_slug'=>$product->slug])}}">{{$produto2->PRODUTO_NOME}}</a></h6>
                 <div class="product-card__price d-flex">
                   <span class="money price">R$: {{$produto2->PRODUTO_PRECO}}</span>
                 </div>
@@ -565,11 +565,11 @@
                 <div class="swiper-container background-img js-swiper-slider" data-settings='{"resizeObserver": true}'>
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                      <a href="details.html"><img loading="lazy" src="{{ $produto3->imagens->first()->IMAGEM_URL }}" width="330"
+                      <a href="{{route ('catalogo.product.details', ['product_slug'=>$product->slug])}}"><img loading="lazy" src="{{ $produto3->imagens->first()->IMAGEM_URL }}" width="330"
                           height="400" alt=" COLOCAR DESCRIÇÃO " class="pc__img"></a>
                     </div>
                     <div class="swiper-slide">
-                      <a href="details.html"><img loading="lazy" src="{{ $produto3->imagens->skip(1)->first()->IMAGEM_URL }}"
+                      <a href="{{route ('catalogo.product.details', ['product_slug'=>$product->slug])}}"><img loading="lazy" src="{{ $produto3->imagens->skip(1)->first()->IMAGEM_URL }}"
                           width="330" height="400" alt=" COLOCAR DESCRIÇÃO " class="pc__img"></a>
                     </div>
                   </div>
@@ -589,7 +589,7 @@
 
               <div class="pc__info position-relative">
                 <p class="pc__category">{{ $produto3->categoria->CATEGORIA_NOME }}</p>
-                <h6 class="pc__title"><a href="details.html">{{$produto3->PRODUTO_NOME}}</a></h6>
+                <h6 class="pc__title"><a href="{{route ('catalogo.product.details', ['product_slug'=>$product->slug])}}">{{$produto3->PRODUTO_NOME}}</a></h6>
                 <div class="product-card__price d-flex">
                   <span class="money price price-old">R$: 800.00</span>
                   <span class="money price price-sale">R$: {{$produto3->PRODUTO_PRECO}}</span>
@@ -638,11 +638,11 @@
                 <div class="swiper-container background-img js-swiper-slider" data-settings='{"resizeObserver": true}'>
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                      <a href="details.html"><img loading="lazy" src="{{ $produto4->imagens->first()->IMAGEM_URL }}" width="330"
+                      <a href="{{route ('catalogo.product.details', ['product_slug'=>$product->slug])}}"><img loading="lazy" src="{{ $produto4->imagens->first()->IMAGEM_URL }}" width="330"
                           height="400" alt=" COLOCAR DESCRIÇÃO " class="pc__img"></a>
                     </div>
                     <div class="swiper-slide">
-                      <a href="details.html"><img loading="lazy" src="{{ $produto4->imagens->skip(1)->first()->IMAGEM_URL }}"
+                      <a href="{{route ('catalogo.product.details', ['product_slug'=>$product->slug])}}"><img loading="lazy" src="{{ $produto4->imagens->skip(1)->first()->IMAGEM_URL }}"
                           width="330" height="400" alt=" COLOCAR DESCRIÇÃO " class="pc__img"></a>
                     </div>
                   </div>
@@ -662,7 +662,7 @@
 
               <div class="pc__info position-relative">
                 <p class="pc__category">{{ $produto4->categoria->CATEGORIA_NOME }}</p>
-                <h6 class="pc__title"><a href="details.html">{{$produto4->PRODUTO_NOME}}</a></h6>
+                <h6 class="pc__title"><a href="{{route ('catalogo.product.details', ['product_slug'=>$product->slug])}}">{{$produto4->PRODUTO_NOME}}</a></h6>
                 <div class="product-card__price d-flex">
                   <span class="money price">R$: {{$produto4->PRODUTO_PRECO}}</span>
                 </div>
@@ -704,11 +704,11 @@
                 <div class="swiper-container background-img js-swiper-slider" data-settings='{"resizeObserver": true}'>
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                      <a href="details.html"><img loading="lazy" src="{{ $produto5->imagens->first()->IMAGEM_URL }}" width="330"
+                      <a href="{{route ('catalogo.product.details', ['product_slug'=>$product->slug])}}"><img loading="lazy" src="{{ $produto5->imagens->first()->IMAGEM_URL }}" width="330"
                           height="400" alt=" COLOCAR DESCRIÇÃO " class="pc__img"></a>
                     </div>
                     <div class="swiper-slide">
-                      <a href="details.html"><img loading="lazy" src="{{ $produto5->imagens->skip(1)->first()->IMAGEM_URL }}"
+                      <a href="{{route ('catalogo.product.details', ['product_slug'=>$product->slug])}}"><img loading="lazy" src="{{ $produto5->imagens->skip(1)->first()->IMAGEM_URL }}"
                           width="330" height="400" alt=" COLOCAR DESCRIÇÃO " class="pc__img"></a>
                     </div>
                   </div>
@@ -728,7 +728,7 @@
 
               <div class="pc__info position-relative">
                 <p class="pc__category">{{ $produto5->categoria->CATEGORIA_NOME }}</p>
-                <h6 class="pc__title"><a href="details.html">{{$produto5->PRODUTO_NOME}}</a></h6>
+                <h6 class="pc__title"><a href="{{route ('catalogo.product.details', ['product_slug'=>$product->slug])}}">{{$produto5->PRODUTO_NOME}}</a></h6>
                 <div class="product-card__price d-flex">
                   <span class="money price">R$: {{$produto5->PRODUTO_PRECO}}</span>
                 </div>
@@ -770,11 +770,11 @@
                 <div class="swiper-container background-img js-swiper-slider" data-settings='{"resizeObserver": true}'>
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                      <a href="details.html"><img loading="lazy" src="{{ $produto6->imagens->first()->IMAGEM_URL }}" width="330"
+                      <a href="{{route ('catalogo.product.details', ['product_slug'=>$product->slug])}}"><img loading="lazy" src="{{ $produto6->imagens->first()->IMAGEM_URL }}" width="330"
                           height="400" alt=" COLOCAR DESCRIÇÃO " class="pc__img"></a>
                     </div>
                     <div class="swiper-slide">
-                      <a href="details.html"><img loading="lazy" src="{{ $produto6->imagens->skip(1)->first()->IMAGEM_URL }}"
+                      <a href="{{route ('catalogo.product.details', ['product_slug'=>$product->slug])}}"><img loading="lazy" src="{{ $produto6->imagens->skip(1)->first()->IMAGEM_URL }}"
                           width="330" height="400" alt=" COLOCAR DESCRIÇÃO " class="pc__img"></a>
                     </div>
                   </div>
@@ -794,7 +794,7 @@
 
               <div class="pc__info position-relative">
                 <p class="pc__category">{{ $produto6->categoria->CATEGORIA_NOME }}</p>
-                <h6 class="pc__title"><a href="details.html">{{$produto6->PRODUTO_NOME}}</a></h6>
+                <h6 class="pc__title"><a href="{{route ('catalogo.product.details', ['product_slug'=>$product->slug])}}">{{$produto6->PRODUTO_NOME}}</a></h6>
                 <div class="product-card__price d-flex">
                   <span class="money price">R$: {{$produto6->PRODUTO_PRECO}}</span>
                 </div>
@@ -836,11 +836,11 @@
                 <div class="swiper-container background-img js-swiper-slider" data-settings='{"resizeObserver": true}'>
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                      <a href="details.html"><img loading="lazy" src="{{ $produto7->imagens->first()->IMAGEM_URL }}" width="330"
+                      <a href="{{route ('catalogo.product.details', ['product_slug'=>$product->slug])}}"><img loading="lazy" src="{{ $produto7->imagens->first()->IMAGEM_URL }}" width="330"
                           height="400" alt=" COLOCAR DESCRIÇÃO " class="pc__img"></a>
                     </div>
                     <div class="swiper-slide">
-                      <a href="details.html"><img loading="lazy" src="{{ $produto7->imagens->skip(1)->first()->IMAGEM_URL }}"
+                      <a href="{{route ('catalogo.product.details', ['product_slug'=>$product->slug])}}"><img loading="lazy" src="{{ $produto7->imagens->skip(1)->first()->IMAGEM_URL }}"
                           width="330" height="400" alt=" COLOCAR DESCRIÇÃO " class="pc__img"></a>
                     </div>
                   </div>
@@ -860,7 +860,7 @@
 
               <div class="pc__info position-relative">
                 <p class="pc__category">{{ $produto7->categoria->CATEGORIA_NOME }}</p>
-                <h6 class="pc__title"><a href="details.html">{{$produto7->PRODUTO_NOME}}</a></h6>
+                <h6 class="pc__title"><a href="{{route ('catalogo.product.details', ['product_slug'=>$product->slug])}}">{{$produto7->PRODUTO_NOME}}</a></h6>
                 <div class="product-card__price d-flex">
                   <span class="money price price-old">R$: 930.00</span>
                   <span class="money price price-sale">R$: {{$produto7->PRODUTO_PRECO}}</span>
@@ -903,11 +903,11 @@
                 <div class="swiper-container background-img js-swiper-slider" data-settings='{"resizeObserver": true}'>
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                      <a href="details.html"><img loading="lazy" src="{{ $produto8->imagens->first()->IMAGEM_URL }}" width="330"
+                      <a href="{{route ('catalogo.product.details', ['product_slug'=>$product->slug])}}"><img loading="lazy" src="{{ $produto8->imagens->first()->IMAGEM_URL }}" width="330"
                           height="400" alt=" COLOCAR DESCRIÇÃO " class="pc__img"></a>
                     </div>
                     <div class="swiper-slide">
-                      <a href="details.html"><img loading="lazy" src="{{ $produto8->imagens->skip(1)->first()->IMAGEM_URL }}"
+                      <a href="{{route ('catalogo.product.details', ['product_slug'=>$product->slug])}}"><img loading="lazy" src="{{ $produto8->imagens->skip(1)->first()->IMAGEM_URL }}"
                           width="330" height="400" alt=" COLOCAR DESCRIÇÃO " class="pc__img"></a>
                     </div>
                   </div>
@@ -927,7 +927,7 @@
 
               <div class="pc__info position-relative">
                 <p class="pc__category">{{ $produto8->categoria->CATEGORIA_NOME }}</p>
-                <h6 class="pc__title"><a href="details.html">{{$produto8->PRODUTO_NOME}}</a></h6>
+                <h6 class="pc__title"><a href="{{route ('catalogo.product.details', ['product_slug'=>$product->slug])}}">{{$produto8->PRODUTO_NOME}}</a></h6>
                 <div class="product-card__price d-flex">
                   <span class="money price">R$: {{$produto8->PRODUTO_PRECO}}</span>
                 </div>
