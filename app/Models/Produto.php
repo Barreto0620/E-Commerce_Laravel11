@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -32,5 +31,10 @@ class Produto extends Model
     {
         return $this->hasMany(ProdutoImagem::class, 'PRODUTO_ID', 'PRODUTO_ID');
     }
-}
 
+    // Definindo a relação com a tabela CATEGORIA
+    public function categoria()
+    {
+        return $this->belongsTo(Categoria::class, 'CATEGORIA_ID', 'CATEGORIA_ID');
+    }
+}
