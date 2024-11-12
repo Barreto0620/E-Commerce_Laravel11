@@ -28,6 +28,17 @@
               <div class="form-floating mb-3">
                 <input id="email" type="email" class="form-control form-control_gray @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required=""
                   autocomplete="email">
+                <label for="email">CPF*</label>
+                @error('email')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+              </div>
+              <div class="pb-3"></div>
+              <div class="form-floating mb-3">
+                <input id="email" type="email" class="form-control form-control_gray @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required=""
+                  autocomplete="email">
                 <label for="email">Email*</label>
                 @error('email')
                     <span class="invalid-feedback" role="alert">
