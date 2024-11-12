@@ -26,10 +26,10 @@
               </div>
               <div class="pb-3"></div>
               <div class="form-floating mb-3">
-                <input id="email" type="email" class="form-control form-control_gray @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required=""
-                  autocomplete="email">
-                <label for="email">CPF*</label>
-                @error('email')
+                <input id="cpf" type="text" class="form-control form-control_gray @error('cpf') is-invalid @enderror" name="cpf" value="{{ old('cpf') }}" required=""
+                  autocomplete="cpf">
+                <label for="cpf">CPF*</label>
+                @error('cpf')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
@@ -37,23 +37,10 @@
               </div>
               <div class="pb-3"></div>
               <div class="form-floating mb-3">
-                <input id="email" type="email" class="form-control form-control_gray @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required=""
+                <input id="USUARIO_EMAIL" type="email" class="form-control form-control_gray @error('USUARIO_EMAIL') is-invalid @enderror" name="USUARIO_EMAIL" value="{{ old('USUARIO_EMAIL') }}" required=""
                   autocomplete="email">
-                <label for="email">Email*</label>
-                @error('email')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-              </div>
-
-              <div class="pb-3"></div>
-
-              <div class="form-floating mb-3">
-                <input id="mobile" type="text" class="form-control form-control_gray @error('mobile') is-invalid @enderror" name="mobile" value="{{ old('mobile') }}"
-                  required="" autocomplete="mobile">
-                <label for="mobile">Celular *</label>
-                @error('mobile')
+                <label for="USUARIO_EMAIL">Email*</label>
+                @error('USUARIO_EMAIL')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
@@ -96,6 +83,5 @@
         </div>
       </div>
     </section>
-  </main>
-
+</main>
 @endsection

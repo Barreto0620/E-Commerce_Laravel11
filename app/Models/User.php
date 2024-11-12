@@ -2,29 +2,30 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable;
+    use Notifiable;
+
+    // Especificando qual campo será utilizado para autenticação
+    public $username = 'USUARIO_EMAIL'; // Definindo o campo correto de email
 
     /**
-     * The attributes that are mass assignable.
+     * Os atributos que podem ser atribuídos em massa.
      *
      * @var array<int, string>
      */
     protected $fillable = [
+        'USUARIO_EMAIL',  // Campo de email na sua tabela
         'name',
-        'email',
-        'mobile',
         'password',
+        // outros campos, se necessário
     ];
 
     /**
-     * The attributes that should be hidden for serialization.
+     * Os atributos que devem ser ocultados na serialização.
      *
      * @var array<int, string>
      */
@@ -34,15 +35,11 @@ class User extends Authenticatable
     ];
 
     /**
-     * Get the attributes that should be cast.
+     * Obter os atributos que devem ser convertidos.
      *
      * @return array<string, string>
      */
-    protected function casts(): array
-    {
-        return [
-            'email_verified_at' => 'datetime',
-            'password' => 'hashed',
-        ];
-    }
+    protected $casts = [
+        'password' => 'hashed',  // Caso utilize o hash no password
+    ];
 }

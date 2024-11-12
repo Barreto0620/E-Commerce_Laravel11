@@ -3,72 +3,52 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
-use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Models\Login;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class RegisterController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Register Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles the registration of new users as well as their
-    | validation and creation. By default this controller uses a trait to
-    | provide this functionality without requiring any additional code.
-    |
-    */
-
-    use RegistersUsers;
-
-    /**
-     * Where to redirect users after registration.
-     *
-     * @var string
-     */
-    protected $redirectTo = '/';
-
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         $this->middleware('guest');
     }
 
-    /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
-     */
+    // Exibe o formulário de registro
+    public function showRegistrationForm()
+    {
+        return view('auth.register');
+    }
+
+    // Validação dos dados de registro
     protected function validator(array $data)
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'cpf' => ['required', 'string', 'size:11', 'unique:USUARIO,USUARIO_CPF'],
+            'USUARIO_EMAIL' => ['required', 'string', 'email', 'max:255', 'unique:USUARIO,USUARIO_EMAIL'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'mobile' => ['required', 'digits:11'], // Exemplo para exatamente 10 dígitos
         ]);
     }
 
-    /**
-     * Create a new user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return \App\Models\User
-     */
-    protected function create(array $data)
+    // Criação do usuário no banco de dados e login após o registro
+    public function register(Request $request)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-            'mobile' => $data['mobile'], // Adiciona o campo mobile na criação do usuário
+        $this->validator($request->all())->validate();
+
+        $user = Login::create([
+            'USUARIO_NOME' => $request->name,
+            'USUARIO_CPF' => $request->cpf,
+            'USUARIO_EMAIL' => $request->USUARIO_EMAIL,
+            'USUARIO_SENHA' => Hash::make($request->password),
         ]);
+
+        // Login automático após o registro
+        Auth::login($user);
+
+        // Redireciona para a home após o login
+        return redirect()->route('home.index');
     }
 }

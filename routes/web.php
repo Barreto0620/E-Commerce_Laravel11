@@ -12,6 +12,9 @@ use App\Http\Controllers\CatalogoController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\AdminLoginController;
 
+use App\Http\Controllers\Auth\RegisterController;
+
+
 
 Auth::routes();
 
@@ -59,3 +62,8 @@ Route::middleware(['auth'])->group(function () {
 
 
 Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+
+// Rota para registro de usuários
+Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
+Route::post('/register', [RegisterController::class, 'register']);
+

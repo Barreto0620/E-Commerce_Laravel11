@@ -2,28 +2,20 @@
 
 namespace App\Models;
 
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Contracts\Auth\Authenticatable;
+use Illuminate\Auth\Authenticatable as AuthenticatableTrait;
 
-class Login extends Authenticatable
+class Login extends Model implements Authenticatable
 {
-    use Notifiable;
+    use AuthenticatableTrait;
 
-    protected $table = 'USUARIO';
-    protected $primaryKey = 'USUARIO_ID';
+    protected $table = 'USUARIO'; // A tabela que você está utilizando
+    protected $primaryKey = 'USUARIO_ID'; // Definindo a chave primária como 'USUARIO_ID'
+    public $incrementing = false; // Impede o Laravel de tentar usar um auto-incremento (caso você não esteja usando)
+    public $timestamps = false; // Impede o uso de 'created_at' e 'updated_at' (caso não tenha esses campos na tabela)
 
     protected $fillable = [
-        'USUARIO_NOME', 'USUARIO_EMAIL', 'USUARIO_SENHA'
+        'USUARIO_NOME', 'USUARIO_CPF', 'USUARIO_EMAIL', 'USUARIO_SENHA',
     ];
-
-    protected $hidden = [
-        'USUARIO_SENHA',
-    ];
-
-    public $timestamps = false;
-
-    public function getAuthPassword()
-    {
-        return $this->USUARIO_SENHA;
-    }
 }
