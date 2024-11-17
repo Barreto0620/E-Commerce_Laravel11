@@ -23,7 +23,7 @@ Auth::routes();
 Route::get('/', [Carrossel1Controller::class, 'index'])->name('home.index');
 
 Route::get('/catalogo', [CatalogoController::class, 'index'])->name('catalogo.index');
-Route::get('/catalogo/{product_slug}', [CatalogoController::class, 'product_details'])->name('catalogo.product_details');
+Route::get('/catalogo/{PRODUTO_ID}', [CatalogoController::class, 'product_details'])->name('catalogo.details');
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/account-dashboard', [UserController::class, 'index'])->name('user.index');

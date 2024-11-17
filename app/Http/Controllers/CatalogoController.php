@@ -19,7 +19,7 @@ class CatalogoController extends Controller
         $produto_id5 = 209; // 6° Item do carrossel
         $produto_id6 = 209; // 7° Item do carrossel
         $produto_id7 = 209; // 8° Item do carrossel
-        
+
         // Vitrine Debaixo
         $produto_id8 = 209; // 1° Item da vitrine
         $produto_id9 = 209; // 2° da vitrine
@@ -29,7 +29,7 @@ class CatalogoController extends Controller
         $produto_id13 = 209; // 6° da vitrine
         $produto_id14 = 209; // 7° da vitrine
         $produto_id15 = 209; // 8° da vitrine
-        
+
         // Puxa os produtos e a imagem do banco de dados pelo id, junto com o nome da categoria
         $produto = Produto::with(['imagens', 'categoria'])->find($produto_id);
         $produto1 = Produto::with(['imagens', 'categoria'])->find($produto_id1);
@@ -38,7 +38,7 @@ class CatalogoController extends Controller
         $produto4 = Produto::with(['imagens', 'categoria'])->find($produto_id4);
         $produto5 = Produto::with(['imagens', 'categoria'])->find($produto_id5);
         $produto6 = Produto::with(['imagens', 'categoria'])->find($produto_id6);
-        $produto7 = Produto::with(['imagens', 'categoria'])->find($produto_id7); 
+        $produto7 = Produto::with(['imagens', 'categoria'])->find($produto_id7);
         $produto8 = Produto::with(['imagens', 'categoria'])->find($produto_id8);
         $produto9 = Produto::with(['imagens', 'categoria'])->find($produto_id9);
         $produto10 = Produto::with(['imagens', 'categoria'])->find($produto_id10);
@@ -46,19 +46,35 @@ class CatalogoController extends Controller
         $produto12 = Produto::with(['imagens', 'categoria'])->find($produto_id12);
         $produto13 = Produto::with(['imagens', 'categoria'])->find($produto_id13);
         $produto14 = Produto::with(['imagens', 'categoria'])->find($produto_id14);
-        $produto15 = Produto::with(['imagens', 'categoria'])->find($produto_id15); 
+        $produto15 = Produto::with(['imagens', 'categoria'])->find($produto_id15);
 
         // Passando as variáveis para a view
-        return view('catalogo', compact('produto', 'produto1',
-         'produto2', 'produto3', 'produto4', 'produto5', 'produto6', 'produto7',
-         'produto8', 'produto9', 'produto10', 'produto11', 'produto12', 'produto13',
-         'produto14', 'produto15'));
+        return view('catalogo', compact(
+            'produto',
+            'produto1',
+            'produto2',
+            'produto3',
+            'produto4',
+            'produto5',
+            'produto6',
+            'produto7',
+            'produto8',
+            'produto9',
+            'produto10',
+            'produto11',
+            'produto12',
+            'produto13',
+            'produto14',
+            'produto15'
+        ));
     }
 
-    public function product_details($product_slug)
-    {
-        $product = Produto::where('slug', $product_slug)->first();
-        return view('product_details', compact('product'));
-    }
+    public function product_details($PRODUTO_ID)
+{
+    // Carregar o produto com as imagens relacionadas
+    $product = Produto::with('imagens')->where('PRODUTO_ID', $PRODUTO_ID)->firstOrFail();
+
+    return view('details', compact('product'));
+}
 
 }
