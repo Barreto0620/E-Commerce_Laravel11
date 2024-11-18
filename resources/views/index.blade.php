@@ -277,7 +277,7 @@
             <div class="swiper-wrapper">
               <div class="swiper-slide product-card product-card_style3">
                 <div class="pc__img-wrapper">
-                  <a href="details.html">
+                  <a href="{{route ('catalogo.details', ['PRODUTO_ID'=>$produto->PRODUTO_ID])}}">
                     <img loading="lazy" src="{{ $produto->imagens->first()->IMAGEM_URL }}" width="258" height="313"
                       alt="PC Gamer Arquetu" class="pc__img">
                     <img loading="lazy" src="{{ $produto->imagens->skip(1)->first()->IMAGEM_URL }}" width="258" height="313"
@@ -286,7 +286,7 @@
                 </div>
 
                 <div class="pc__info position-relative">
-                  <h6 class="pc__title"><a href="details.html">{{ $produto->PRODUTO_NOME }}</a></h6>
+                  <h6 class="pc__title">{{ $produto->PRODUTO_NOME }}</h6>
                   <div class="product-card__price d-flex">
                     <span class="money price text-secondary">R$:{{ $produto->PRODUTO_PRECO }}</span>
                   </div>
@@ -314,7 +314,7 @@
               </div>
               <div class="swiper-slide product-card product-card_style3">
                 <div class="pc__img-wrapper">
-                  <a href="details.html">
+                  <a href="{{route ('catalogo.details', ['PRODUTO_ID'=>$produto1->PRODUTO_ID])}}">
                     <img loading="lazy" src="{{ $produto1->imagens->first()->IMAGEM_URL }}" width="258" height="313"
                       alt="Monitor Gamer Centauri Pulse" class="pc__img">
                     <img loading="lazy" src="{{ $produto1->imagens->skip(1)->first()->IMAGEM_URL }}" width="258" height="313"
@@ -323,7 +323,7 @@
                 </div>
 
                 <div class="pc__info position-relative">
-                  <h6 class="pc__title"><a href="details.html">{{ $produto1->PRODUTO_NOME }}</a></h6>
+                  <h6 class="pc__title">{{ $produto1->PRODUTO_NOME }}</h6>
                   <div class="product-card__price d-flex">
                     <span class="money price text-secondary">R$:{{ $produto1->PRODUTO_PRECO }}</span>
                   </div>
@@ -351,7 +351,7 @@
               </div>
               <div class="swiper-slide product-card product-card_style3">
                 <div class="pc__img-wrapper">
-                  <a href="details.html">
+                  <a href="{{route ('catalogo.details', ['PRODUTO_ID'=>$produto2->PRODUTO_ID])}}">
                     <img loading="lazy" src="{{ $produto2->imagens->first()->IMAGEM_URL }}" width="258" height="313"
                       alt="Water Cooler Gigabyte Aorus" class="pc__img">
                     <img loading="lazy" src="{{ $produto2->imagens->skip(1)->first()->IMAGEM_URL }}" width="258" height="313"
@@ -360,7 +360,7 @@
                 </div>
 
                 <div class="pc__info position-relative">
-                  <h6 class="pc__title"><a href="details.html">{{ $produto2->PRODUTO_NOME }}</a></h6>
+                  <h6 class="pc__title">{{ $produto2->PRODUTO_NOME }}</h6>
                   <div class="product-card__price d-flex">
                     <span class="money price text-secondary">R$:{{ $produto2->PRODUTO_PRECO }}</span>
                   </div>
@@ -388,7 +388,7 @@
               </div>
               <div class="swiper-slide product-card product-card_style3">
                 <div class="pc__img-wrapper">
-                  <a href="details.html">
+                  <a href="{{route ('catalogo.details', ['PRODUTO_ID'=>$produto3->PRODUTO_ID])}}">
                     <img loading="lazy" src="{{ $produto3->imagens->first()->IMAGEM_URL }}" width="258" height="313"
                       alt="Placa de Video Asus GeForce RTX 3060" class="pc__img">
                     <img loading="lazy" src="{{ $produto3->imagens->skip(1)->first()->IMAGEM_URL }}" width="258" height="313"
@@ -397,7 +397,7 @@
                 </div>
 
                 <div class="pc__info position-relative">
-                  <h6 class="pc__title"><a href="details.html">{{ $produto3->PRODUTO_NOME }}</a></h6>
+                  <h6 class="pc__title">{{ $produto3->PRODUTO_NOME }}</h6>
                   <div class="product-card__price d-flex align-items-center">
                     <span class="money price-old">R$:{{ $produto3->PRODUTO_PRECO }} </span><br>
                     <span class="money price text-secondary">R$:500</span>
@@ -426,7 +426,7 @@
               </div>
               <div class="swiper-slide product-card product-card_style3">
                 <div class="pc__img-wrapper">
-                  <a href="details.html">
+                  <a href="{{route ('catalogo.details', ['PRODUTO_ID'=>$produto4->PRODUTO_ID])}}">
                     <img loading="lazy" src="{{ $produto4->imagens->first()->IMAGEM_URL }}" width="258" height="313"
                       alt="Cadeira Office Zinnia Montreal" class="pc__img">
                     <img loading="lazy" src="{{ $produto4->imagens->skip(1)->first()->IMAGEM_URL }}" width="258" height="313"
@@ -435,7 +435,7 @@
                 </div>
 
                 <div class="pc__info position-relative">
-                  <h6 class="pc__title"><a href="details.html">{{ $produto4->PRODUTO_NOME }}</a></h6>
+                  <h6 class="pc__title">{{ $produto4->PRODUTO_NOME }}</h6>
                   <div class="product-card__price d-flex">
                     <span class="money price text-secondary">R$:{{ $produto4->PRODUTO_PRECO }}</span>
                   </div>
@@ -463,7 +463,7 @@
               </div>
               <div class="swiper-slide product-card product-card_style3">
                 <div class="pc__img-wrapper">
-                  <a href="details.html">
+                  <a href="{{route ('catalogo.details', ['PRODUTO_ID'=>$produto5->PRODUTO_ID])}}">
                     <img loading="lazy" src="{{ $produto5->imagens->first()->IMAGEM_URL }}" width="258" height="313"
                       alt="Headset Gamer Corsair Void RGB Elite" class="pc__img">
                     <img loading="lazy" src="{{ $produto5->imagens->skip(1)->first()->IMAGEM_URL }}" width="258" height="313"
@@ -472,7 +472,7 @@
                 </div>
 
                 <div class="pc__info position-relative">
-                  <h6 class="pc__title"><a href="details.html">{{ $produto5->PRODUTO_NOME }}</a></h6>
+                  <h6 class="pc__title">{{ $produto5->PRODUTO_NOME }}</h6>
                   <div class="product-card__price d-flex">
                     <span class="money price text-secondary">R$:{{ $produto5->PRODUTO_PRECO }}</span>
                   </div>
@@ -500,7 +500,7 @@
               </div>
               <div class="swiper-slide product-card product-card_style3">
                 <div class="pc__img-wrapper">
-                  <a href="details.html">
+                  <a href="{{route ('catalogo.details', ['PRODUTO_ID'=>$produto6->PRODUTO_ID])}}">
                     <img loading="lazy" src="{{ $produto6->imagens->first()->IMAGEM_URL }}" width="258" height="313"
                       alt="Processador AMD Ryzen 7 5700X" class="pc__img">
                     <img loading="lazy" src="{{ $produto6->imagens->skip(1)->first()->IMAGEM_URL }}" width="258" height="313"
@@ -509,9 +509,9 @@
                 </div>
 
                 <div class="pc__info position-relative">
-                  <h6 class="pc__title"><a href="details.html">{{ $produto6->PRODUTO_NOME }}</a></h6>
+                  <h6 class="pc__title">{{ $produto6->PRODUTO_NOME }}</h6>
                   <div class="product-card__price d-flex">
-                    <span class="money price text-secondary">R$:{{ $produto->PRODUTO_PRECO }}</span>
+                    <span class="money price text-secondary">R$:{{ $produto6->PRODUTO_PRECO }}</span>
                   </div>
 
                   <div
@@ -537,7 +537,7 @@
               </div>
               <div class="swiper-slide product-card product-card_style3">
                 <div class="pc__img-wrapper">
-                  <a href="details.html">
+                  <a href="{{route ('catalogo.details', ['PRODUTO_ID'=>$produto7->PRODUTO_ID])}}">
                     <img loading="lazy" src="{{ $produto7->imagens->first()->IMAGEM_URL }}" width="258" height="313"
                       alt="Teclado Mecanico Gamer Cooler Master SK622" class="pc__img">
                     <img loading="lazy" src="{{ $produto7->imagens->skip(1)->first()->IMAGEM_URL }}" width="258" height="313"
@@ -546,7 +546,7 @@
                 </div>
 
                 <div class="pc__info position-relative">
-                  <h6 class="pc__title"><a href="details.html">{{ $produto7->PRODUTO_NOME }}</h6>
+                  <h6 class="pc__title">{{ $produto7->PRODUTO_NOME }}<
                   <div class="product-card__price d-flex align-items-center">
                     <span class="money price-old">R$:{{ $produto7->PRODUTO_PRECO }}</span>
                     <span class="money price text-secondary">R$:60</span>
@@ -622,14 +622,14 @@
       <div class="col-6 col-md-4 col-lg-3">
         <div class="product-card product-card_style3 mb-3 mb-md-4 mb-xxl-5">
           <div class="pc__img-wrapper">
-            <a href="details.html">
+            <a href="{{route ('catalogo.details', ['PRODUTO_ID'=>$produto8->PRODUTO_ID])}}">
               <img loading="lazy" src="{{ $produto8->imagens->first()->IMAGEM_URL }}" width="330" height="400"
                 alt="Mesa Gamer Mancer Arcane" class="pc__img">
             </a>
           </div>
 
           <div class="pc__info position-relative">
-            <h6 class="pc__title"><a href="details.html">{{ $produto8->PRODUTO_NOME }}</a></h6>
+            <h6 class="pc__title">{{ $produto8->PRODUTO_NOME }}</h6>
             <div class="product-card__price d-flex align-items-center">
               <span class="money price text-secondary">R$:{{ $produto8->PRODUTO_PRECO }}</span>
             </div>
@@ -638,9 +638,6 @@
               class="anim_appear-bottom position-absolute bottom-0 start-0 d-none d-sm-flex align-items-center bg-body">
               <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-add-cart js-open-aside"
                 data-aside="cartDrawer" title="Add To Cart">Carrinho</button>
-              <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-quick-view"
-                data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                <span class="d-none d-xxl-block">Descrição</span>
                 <span class="d-block d-xxl-none"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <use href="#icon_view" />
@@ -658,14 +655,14 @@
       <div class="col-6 col-md-4 col-lg-3">
         <div class="product-card product-card_style3 mb-3 mb-md-4 mb-xxl-5">
           <div class="pc__img-wrapper">
-            <a href="details.html">
+            <a href="{{route ('catalogo.details', ['PRODUTO_ID'=>$produto9->PRODUTO_ID])}}">
               <img loading="lazy" src="{{ $produto9->imagens->first()->IMAGEM_URL }}" width="330" height="400"
                 alt="SSD Rover, 2TB, M.2 2280" class="pc__img">
             </a>
           </div>
 
           <div class="pc__info position-relative">
-            <h6 class="pc__title"><a href="details.html">{{ $produto9->PRODUTO_NOME }}</a></h6>
+            <h6 class="pc__title">{{ $produto9->PRODUTO_NOME }}</h6>
             <div class="product-card__price d-flex align-items-center">
               <span class="money price text-secondary">R$:{{ $produto9->PRODUTO_PRECO }}</span>
             </div>
@@ -674,9 +671,6 @@
               class="anim_appear-bottom position-absolute bottom-0 start-0 d-none d-sm-flex align-items-center bg-body">
               <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-add-cart js-open-aside"
                 data-aside="cartDrawer" title="Add To Cart">Carrinho</button>
-              <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-quick-view"
-                data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                <span class="d-none d-xxl-block">Descrição</span>
                 <span class="d-block d-xxl-none"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <use href="#icon_view" />
@@ -694,7 +688,7 @@
       <div class="col-6 col-md-4 col-lg-3">
         <div class="product-card product-card_style3 mb-3 mb-md-4 mb-xxl-5">
           <div class="pc__img-wrapper">
-            <a href="details.html">
+            <a href="{{route ('catalogo.details', ['PRODUTO_ID'=>$produto10->PRODUTO_ID])}}">
               <img loading="lazy" src="{{ $produto10->imagens->first()->IMAGEM_URL }}" width="330" height="400"
                 alt="Gabinete Gamer Cooler Master Sneaker X Red" class="pc__img">
             </a>
@@ -702,7 +696,7 @@
           </div>
 
           <div class="pc__info position-relative">
-            <h6 class="pc__title"><a href="details.html">{{ $produto10->PRODUTO_NOME }}</a></h6>
+            <h6 class="pc__title">{{ $produto10->PRODUTO_NOME }}</h6>
             <div class="product-card__price d-flex align-items-center">
               <span class="money price text-secondary">R$:{{ $produto10->PRODUTO_PRECO }}</span>
             </div>
@@ -711,9 +705,6 @@
               class="anim_appear-bottom position-absolute bottom-0 start-0 d-none d-sm-flex align-items-center bg-body">
               <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-add-cart js-open-aside"
                 data-aside="cartDrawer" title="Add To Cart">Carrinho</button>
-              <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-quick-view"
-                data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                <span class="d-none d-xxl-block">Descrição</span>
                 <span class="d-block d-xxl-none"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <use href="#icon_view" />
@@ -731,9 +722,9 @@
       <div class="col-6 col-md-4 col-lg-3">
         <div class="product-card product-card_style3 mb-3 mb-md-4 mb-xxl-5">
           <div class="pc__img-wrapper">
-            <a href="details.html">
+            <a href="{{route ('catalogo.details', ['PRODUTO_ID'=>$produto11->PRODUTO_ID])}}">
               <img loading="lazy" src="{{ $produto11->imagens->first()->IMAGEM_URL }}" width="330" height="400"
-                alt="Console Sony Playstation 5 Slim" class="pc__img">
+                alt="#" class="pc__img">
             </a>
             <div class="product-label bg-red text-white right-0 top-0 left-auto mt-2 mx-2">-67%</div>
           </div>
@@ -749,9 +740,6 @@
               class="anim_appear-bottom position-absolute bottom-0 start-0 d-none d-sm-flex align-items-center bg-body">
               <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-add-cart js-open-aside"
                 data-aside="cartDrawer" title="Add To Cart">Carrinho</button>
-              <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-quick-view"
-                data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                <span class="d-none d-xxl-block">Descrição</span>
                 <span class="d-block d-xxl-none"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <use href="#icon_view" />
@@ -769,14 +757,14 @@
       <div class="col-6 col-md-4 col-lg-3">
         <div class="product-card product-card_style3 mb-3 mb-md-4 mb-xxl-5">
           <div class="pc__img-wrapper">
-            <a href="details.html">
+            <a href="{{route ('catalogo.details', ['PRODUTO_ID'=>$produto12->PRODUTO_ID])}}">
               <img loading="lazy" src="{{ $produto12->imagens->first()->IMAGEM_URL }}" width="330" height="400"
                 alt="PC Gamer Completo Mancer Krampus II" class="pc__img">
             </a>
           </div>
           <div class="product-label bg-red text-white right-0 top-0 left-auto mt-2 mx-2">-42%</div>
           <div class="pc__info position-relative">
-            <h6 class="pc__title"><a href="details.html">{{ $produto12->PRODUTO_NOME }}</a></h6>
+            <h6 class="pc__title">{{ $produto12->PRODUTO_NOME }}</h6>
             <div class="product-card__price d-flex align-items-center">
               <span class="money price-old">R$:{{ $produto12->PRODUTO_PRECO }}</span>
               <span class="money price text-secondary">R$:200</span>
@@ -786,9 +774,6 @@
               class="anim_appear-bottom position-absolute bottom-0 start-0 d-none d-sm-flex align-items-center bg-body">
               <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-add-cart js-open-aside"
                 data-aside="cartDrawer" title="Add To Cart">Carrinho</button>
-              <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-quick-view"
-                data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                <span class="d-none d-xxl-block">Descrição</span>
                 <span class="d-block d-xxl-none"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <use href="#icon_view" />
@@ -806,14 +791,14 @@
       <div class="col-6 col-md-4 col-lg-3">
         <div class="product-card product-card_style3 mb-3 mb-md-4 mb-xxl-5">
           <div class="pc__img-wrapper">
-            <a href="details.html">
+            <a href="{{route ('catalogo.details', ['PRODUTO_ID'=>$produto13->PRODUTO_ID])}}">
               <img loading="lazy" src="{{ $produto13->imagens->first()->IMAGEM_URL }}" width="330" height="400"
                 alt="Notebook Gamer Lenovo IdeaPad Gaming" class="pc__img">
             </a>
           </div>
           <div class="product-label bg-red text-white right-0 top-0 left-auto mt-2 mx-2">TOP 3</div>
           <div class="pc__info position-relative">
-            <h6 class="pc__title"><a href="details.html">{{ $produto13->PRODUTO_NOME }}</a></h6>
+            <h6 class="pc__title">{{ $produto13->PRODUTO_NOME }}</h6>
             <div class="product-card__price d-flex align-items-center">
               <span class="money price text-secondary">R$:{{ $produto13->PRODUTO_PRECO }}</span>
             </div>
@@ -822,9 +807,6 @@
               class="anim_appear-bottom position-absolute bottom-0 start-0 d-none d-sm-flex align-items-center bg-body">
               <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-add-cart js-open-aside"
                 data-aside="cartDrawer" title="Add To Cart">Carrinho</button>
-              <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-quick-view"
-                data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                <span class="d-none d-xxl-block">Descrição</span>
                 <span class="d-block d-xxl-none"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <use href="#icon_view" />
@@ -842,14 +824,14 @@
       <div class="col-6 col-md-4 col-lg-3">
         <div class="product-card product-card_style3 mb-3 mb-md-4 mb-xxl-5">
           <div class="pc__img-wrapper">
-            <a href="details.html">
+            <a href="{{route ('catalogo.details', ['PRODUTO_ID'=>$produto14->PRODUTO_ID])}}">
               <img loading="lazy" src="{{ $produto14->imagens->first()->IMAGEM_URL }}" width="330" height="400"
                 alt="Projetor Intelbras PFL6410" class="pc__img">
             </a>
           </div>
 
           <div class="pc__info position-relative">
-            <h6 class="pc__title"><a href="details.html">{{ $produto14->PRODUTO_NOME }}</a></h6>
+            <h6 class="pc__title">{{ $produto14->PRODUTO_NOME }}</h6>
             <div class="product-card__price d-flex align-items-center">
               <span class="money price text-secondary">R$:{{ $produto14->PRODUTO_PRECO }}</span>
             </div>
@@ -858,9 +840,6 @@
               class="anim_appear-bottom position-absolute bottom-0 start-0 d-none d-sm-flex align-items-center bg-body">
               <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-add-cart js-open-aside"
                 data-aside="cartDrawer" title="Add To Cart">Carrinho</button>
-              <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-quick-view"
-                data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                <span class="d-none d-xxl-block">Descrição</span>
                 <span class="d-block d-xxl-none"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <use href="#icon_view" />
@@ -878,7 +857,7 @@
       <div class="col-6 col-md-4 col-lg-3">
         <div class="product-card product-card_style3 mb-3 mb-md-4 mb-xxl-5">
           <div class="pc__img-wrapper">
-            <a href="details.html">
+            <a href="{{route ('catalogo.details', ['PRODUTO_ID'=>$produto15->PRODUTO_ID])}}">
               <img loading="lazy" src="{{ $produto15->imagens->first()->IMAGEM_URL }}" width="330" height="400"
                 alt="Tablet Samsung S6 Lite" class="pc__img">
             </a>
@@ -894,9 +873,6 @@
               class="anim_appear-bottom position-absolute bottom-0 start-0 d-none d-sm-flex align-items-center bg-body">
               <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-add-cart js-open-aside"
                 data-aside="cartDrawer" title="Add To Cart">Carrinho</button>
-              <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-quick-view"
-                data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                <span class="d-none d-xxl-block">Descrição</span>
                 <span class="d-block d-xxl-none"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <use href="#icon_view" />

@@ -10,25 +10,24 @@ class Carrossel1Controller extends Controller
 {
     public function index()
     {
-        // Primeiro Carrossel
         $produto_id = 209; // 1° Item do carrossel
-        $produto_id1 = 209; // 2° Item do carrossel
-        $produto_id2 = 209; // 3° Item do carrossel
+        $produto_id1 = 207; // 2° Item do carrossel
+        $produto_id2 = 206; // 3° Item do carrossel
         $produto_id3 = 209; // 4° Item do carrossel
-        $produto_id4 = 209; // 5° Item do carrossel
-        $produto_id5 = 209; // 6° Item do carrossel
+        $produto_id4 = 207; // 5° Item do carrossel
+        $produto_id5 = 206; // 6° Item do carrossel
         $produto_id6 = 209; // 7° Item do carrossel
-        $produto_id7 = 209; // 8° Item do carrossel
-        
+        $produto_id7 = 207; // 8° Item do carrossel
+
         // Vitrine Debaixo
-        $produto_id8 = 209; // 1° Item da vitrine
+        $produto_id8 = 206; // 1° Item da vitrine
         $produto_id9 = 209; // 2° da vitrine
         $produto_id10 = 209; // 3° da vitrine
-        $produto_id11 = 209; // 4° da vitrine
-        $produto_id12 = 209; // 5° da vitrine
+        $produto_id11 = 207; // 4° da vitrine
+        $produto_id12 = 206; // 5° da vitrine
         $produto_id13 = 209; // 6° da vitrine
-        $produto_id14 = 209; // 7° da vitrine
-        $produto_id15 = 209; // 8° da vitrine
+        $produto_id14 = 207; // 7° da vitrine
+        $produto_id15 = 206; // 8° da vitrine
         
 
         // Puxa os produtos e a imagem do banco de dados pelo id
