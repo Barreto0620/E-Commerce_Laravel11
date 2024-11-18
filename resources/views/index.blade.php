@@ -295,9 +295,6 @@
                     class="anim_appear-bottom position-absolute bottom-0 start-0 d-none d-sm-flex align-items-center bg-body">
                     <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-add-cart js-open-aside"
                       data-aside="cartDrawer" title="Add To Cart">Carrinho</button>
-                    <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-quick-view"
-                      data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                      <span class="d-none d-xxl-block">Descrição</span>
                       <span class="d-block d-xxl-none"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                           xmlns="http://www.w3.org/2000/svg">
                           <use href="#icon_view" />
@@ -332,9 +329,6 @@
                     class="anim_appear-bottom position-absolute bottom-0 start-0 d-none d-sm-flex align-items-center bg-body">
                     <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-add-cart js-open-aside"
                       data-aside="cartDrawer" title="Add To Cart">Carrinho</button>
-                    <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-quick-view"
-                      data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                      <span class="d-none d-xxl-block">Descrição</span>
                       <span class="d-block d-xxl-none"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                           xmlns="http://www.w3.org/2000/svg">
                           <use href="#icon_view" />
@@ -369,9 +363,6 @@
                     class="anim_appear-bottom position-absolute bottom-0 start-0 d-none d-sm-flex align-items-center bg-body">
                     <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-add-cart js-open-aside"
                       data-aside="cartDrawer" title="Add To Cart">Carrinho</button>
-                    <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-quick-view"
-                      data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                      <span class="d-none d-xxl-block">Descrição</span>
                       <span class="d-block d-xxl-none"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                           xmlns="http://www.w3.org/2000/svg">
                           <use href="#icon_view" />
@@ -399,17 +390,14 @@
                 <div class="pc__info position-relative">
                   <h6 class="pc__title">{{ $produto3->PRODUTO_NOME }}</h6>
                   <div class="product-card__price d-flex align-items-center">
-                    <span class="money price-old">R$:{{ $produto3->PRODUTO_PRECO }} </span><br>
-                    <span class="money price text-secondary">R$:500</span>
+                    <span class="money price-old">R$: 700.00</span><br>
+                    <span class="money price text-secondary">R$:{{ $produto3->PRODUTO_PRECO }}</span>
                   </div>
 
                   <div
                     class="anim_appear-bottom position-absolute bottom-0 start-0 d-none d-sm-flex align-items-center bg-body">
                     <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-add-cart js-open-aside"
                       data-aside="cartDrawer" title="Add To Cart">Carrinho</button>
-                    <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-quick-view"
-                      data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                      <span class="d-none d-xxl-block">Descrição</span>
                       <span class="d-block d-xxl-none"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                           xmlns="http://www.w3.org/2000/svg">
                           <use href="#icon_view" />
@@ -444,9 +432,6 @@
                     class="anim_appear-bottom position-absolute bottom-0 start-0 d-none d-sm-flex align-items-center bg-body">
                     <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-add-cart js-open-aside"
                       data-aside="cartDrawer" title="Add To Cart">Carrinho</button>
-                    <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-quick-view"
-                      data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                      <span class="d-none d-xxl-block">Descrição</span>
                       <span class="d-block d-xxl-none"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                           xmlns="http://www.w3.org/2000/svg">
                           <use href="#icon_view" />
@@ -481,9 +466,6 @@
                     class="anim_appear-bottom position-absolute bottom-0 start-0 d-none d-sm-flex align-items-center bg-body">
                     <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-add-cart js-open-aside"
                       data-aside="cartDrawer" title="Add To Cart">Carrinho</button>
-                    <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-quick-view"
-                      data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                      <span class="d-none d-xxl-block">Descrição</span>
                       <span class="d-block d-xxl-none"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                           xmlns="http://www.w3.org/2000/svg">
                           <use href="#icon_view" />
@@ -518,9 +500,6 @@
                     class="anim_appear-bottom position-absolute bottom-0 start-0 d-none d-sm-flex align-items-center bg-body">
                     <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-add-cart js-open-aside"
                       data-aside="cartDrawer" title="Add To Cart">Carrinho</button>
-                    <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-quick-view"
-                      data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                      <span class="d-none d-xxl-block">Descrição</span>
                       <span class="d-block d-xxl-none"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                           xmlns="http://www.w3.org/2000/svg">
                           <use href="#icon_view" />
@@ -546,19 +525,16 @@
                 </div>
 
                 <div class="pc__info position-relative">
-                  <h6 class="pc__title">{{ $produto7->PRODUTO_NOME }}<
+                  <h6 class="pc__title">{{ $produto7->PRODUTO_NOME }}</h6>
                   <div class="product-card__price d-flex align-items-center">
-                    <span class="money price-old">R$:{{ $produto7->PRODUTO_PRECO }}</span>
-                    <span class="money price text-secondary">R$:60</span>
+                    <span class="money price-old">R$ 1200.00</span>
+                    <span class="money price text-secondary">R$:{{ $produto7->PRODUTO_PRECO }}</span>
                   </div>
 
                   <div
                     class="anim_appear-bottom position-absolute bottom-0 start-0 d-none d-sm-flex align-items-center bg-body">
                     <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-add-cart js-open-aside"
                       data-aside="cartDrawer" title="Add To Cart">Carrinho</button>
-                    <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-quick-view"
-                      data-bs-toggle="modal" data-bs-target="#quickView" title="Quick view">
-                      <span class="d-none d-xxl-block">Descrição</span>
                       <span class="d-block d-xxl-none"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                           xmlns="http://www.w3.org/2000/svg">
                           <use href="#icon_view" />
@@ -732,8 +708,8 @@
           <div class="pc__info position-relative">
             <h6 class="pc__title">{{ $produto11->PRODUTO_NOME }}</h6>
             <div class="product-card__price d-flex align-items-center">
-              <span class="money price-old">R$:{{ $produto11->PRODUTO_PRECO }}</span>
-              <span class="money price text-secondary">R$:200</span>
+              <span class="money price-old">R$: 2100.00</span>
+              <span class="money price text-secondary">R$:{{ $produto11->PRODUTO_PRECO }}</span>
             </div>
 
             <div
@@ -766,8 +742,8 @@
           <div class="pc__info position-relative">
             <h6 class="pc__title">{{ $produto12->PRODUTO_NOME }}</h6>
             <div class="product-card__price d-flex align-items-center">
-              <span class="money price-old">R$:{{ $produto12->PRODUTO_PRECO }}</span>
-              <span class="money price text-secondary">R$:200</span>
+              <span class="money price-old">R$: 1600.00</span>
+              <span class="money price text-secondary">R$:{{ $produto12->PRODUTO_PRECO }}</span>
             </div>
 
             <div

@@ -80,9 +80,9 @@
       <div class="col-lg-5">
         <div class="d-flex justify-content-between mb-4 pb-md-2">
           <div class="breadcrumb mb-0 d-none d-md-block flex-grow-1">
-            <a href="#" class="menu-link menu-link_us-s text-uppercase fw-medium">Home</a>
+            <a href="{{route('home.index')}}" class="menu-link menu-link_us-s text-uppercase fw-medium">Início</a>
             <span class="breadcrumb-separator menu-link fw-medium ps-1 pe-1">/</span>
-            <a href="#" class="menu-link menu-link_us-s text-uppercase fw-medium">The Shop</a>
+            <a href="{{route('catalogo.index')}}" class="menu-link menu-link_us-s text-uppercase fw-medium">Catálogo</a>
           </div><!-- /.breadcrumb -->
 
           <div
@@ -90,14 +90,14 @@
             <a href="#" class="text-uppercase fw-medium"><svg width="10" height="10" viewBox="0 0 25 25"
                 xmlns="http://www.w3.org/2000/svg">
                 <use href="#icon_prev_md" />
-              </svg><span class="menu-link menu-link_us-s">Prev</span></a>
-            <a href="#" class="text-uppercase fw-medium"><span class="menu-link menu-link_us-s">Next</span><svg
+              </svg><span class="menu-link menu-link_us-s">Anterior</span></a>
+            <a href="#" class="text-uppercase fw-medium"><span class="menu-link menu-link_us-s">Proximo</span><svg
                 width="10" height="10" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
                 <use href="#icon_next_md" />
               </svg></a>
           </div><!-- /.shop-acs -->
         </div>
-        <h1 class="product-single__name">Lightweight Puffer Jacket With a Hood</h1>
+        <h1 class="product-single__name">Cropped Faux Leather Jacket</h1>
         <div class="product-single__rating">
           <div class="reviews-group d-flex">
             <svg class="review-star" viewBox="0 0 9 9" xmlns="http://www.w3.org/2000/svg">
