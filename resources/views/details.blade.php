@@ -5,40 +5,34 @@
   <div class="mb-md-1 pb-md-3"></div>
   <section class="product-single container">
     <div class="row">
-      <div class="col-lg-7">
+      <div class="col-lg-7">  
         <div class="product-single__media" data-media-type="vertical-thumbnail">
           <div class="product-single__image">
             <div class="swiper-container">
               <div class="swiper-wrapper">
                 <div class="swiper-slide product-single__image-item">
+                  <img loading="lazy" class="h-auto" src="{{ $produto->imagens->first()->IMAGEM_URL }}" width="374"
+                    height="674" alt="" />
+                </div>
+                <div class="swiper-slide product-single__image-item">
                   <img loading="lazy" class="h-auto" src="{{ $produto->imagens->first()->IMAGEM_URL }}" width="674"
                     height="674" alt="" />
-                </div>
-                <div class="swiper-slide product-single__image-item">
-                  <img loading="lazy" class="h-auto" src="assets/images/products/product_0-1.jpg" width="674"
-                    height="674" alt="" />
-                  <a data-fancybox="gallery" href="../images/products/product_0-1.html" data-bs-toggle="tooltip"
-                    data-bs-placement="left" title="Zoom">
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <use href="#icon_zoom" />
                     </svg>
                   </a>
                 </div>
                 <div class="swiper-slide product-single__image-item">
-                  <img loading="lazy" class="h-auto" src="assets/images/products/product_0-2.jpg" width="674"
+                  <img loading="lazy" class="h-auto" src="{{ $produto->imagens->first()->IMAGEM_URL }}" width="674"
                     height="674" alt="" />
-                  <a data-fancybox="gallery" href="../images/products/product_0-2.html" data-bs-toggle="tooltip"
-                    data-bs-placement="left" title="Zoom">
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <use href="#icon_zoom" />
                     </svg>
                   </a>
                 </div>
                 <div class="swiper-slide product-single__image-item">
-                  <img loading="lazy" class="h-auto" src="assets/images/products/product_0-3.jpg" width="674"
+                  <img loading="lazy" class="h-auto" src="{{ $produto->imagens->first()->IMAGEM_URL }}" width="674"
                     height="674" alt="" />
-                  <a data-fancybox="gallery" href="../images/products/product_0-3.html" data-bs-toggle="tooltip"
-                    data-bs-placement="left" title="Zoom">
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <use href="#icon_zoom" />
                     </svg>
@@ -59,13 +53,13 @@
             <div class="swiper-container">
               <div class="swiper-wrapper">
                 <div class="swiper-slide product-single__image-item"><img loading="lazy" class="h-auto"
-                    src="assets/images/products/product_0.jpg" width="104" height="104" alt="" /></div>
+                    src="{{ $produto->imagens->first()->IMAGEM_URL }}" width="104" height="104" alt="" /></div>
                 <div class="swiper-slide product-single__image-item"><img loading="lazy" class="h-auto"
-                    src="assets/images/products/product_0-1.jpg" width="104" height="104" alt="" /></div>
+                    src="{{ $produto->imagens->first()->IMAGEM_URL }}" width="104" height="104" alt="" /></div>
                 <div class="swiper-slide product-single__image-item"><img loading="lazy" class="h-auto"
-                    src="assets/images/products/product_0-2.jpg" width="104" height="104" alt="" /></div>
+                    src="{{ $produto->imagens->first()->IMAGEM_URL }}" width="104" height="104" alt="" /></div>
                 <div class="swiper-slide product-single__image-item"><img loading="lazy" class="h-auto"
-                    src="assets/images/products/product_0-3.jpg" width="104" height="104" alt="" /></div>
+                    src="{{ $produto->imagens->first()->IMAGEM_URL }}" width="104" height="104" alt="" /></div>
               </div>
             </div>
           </div>
@@ -304,33 +298,39 @@
 
           <div class="swiper-slide product-card">
             <div class="pc__img-wrapper">
-              <a href="details.html">
-                <img loading="lazy" src="{{ $produto9->imagens->first()->IMAGEM_URL }}" width="330" height="400"
-                  alt="{{$produto9->PRODUTO_NOME}}" class="pc__img">
-                <img loading="lazy" src="{{ $produto9->imagens->skip(1)->first()->IMAGEM_URL }}" width="330" height="400"
-                  alt="{{$produto9->PRODUTO_NOME}}">
-              </a>
-              <button
-                class="pc__atc btn anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside"
-                data-aside="cartDrawer" title="Add To Cart">Carrinho</button>
+                <!-- Link que direciona para a página de detalhes do produto -->
+                <a href="{{ route('catalogo.details', ['PRODUTO_ID' => $produto->PRODUTO_ID]) }}">
+                    <img loading="lazy" src="{{ $produto->imagens->first()->IMAGEM_URL }}" width="330" height="400"
+                         alt="{{ $produto->PRODUTO_NOME }}" class="pc__img">
+                    <img loading="lazy" src="{{ $produto->imagens->first()->IMAGEM_URL }}" width="330" height="400"
+                         alt="{{ $produto->PRODUTO_NOME }}">
+                </a>
+                <button class="pc__atc btn anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside"
+                        data-aside="cartDrawer" title="Add To Cart">Carrinho</button>
             </div>
-
+        
             <div class="pc__info position-relative">
-              <p class="pc__category">{{$produto9->categoria->CATEGORIA_NOME}}</p>
-              <h6 class="pc__title"><a href="#">{{$produto9->PRODUTO_NOME}}</a></h6>
-              <div class="product-card__price d-flex">
-                <span class="money price">R$: {{$produto9->PRODUTO_PRECO}}</span>
-              </div>
-
-              <button class="pc__btn-wl position-absolute top-0 end-0 bg-transparent border-0 js-add-wishlist"
-                title="Add To Wishlist">
-                <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <use href="#icon_heart" />
-                </svg>
-              </button>
+                <!-- Exibe a categoria do produto -->
+                <p class="pc__category">{{ $produto->categoria->CATEGORIA_NOME }}</p>
+                
+                <!-- Nome do produto, linkando para a página de detalhes -->
+                <h6 class="pc__title"><a href="{{ route('catalogo.details', ['PRODUTO_ID' => $produto->PRODUTO_ID]) }}">{{ $produto->PRODUTO_NOME }}</a></h6>
+                
+                <!-- Exibe o preço do produto -->
+                <div class="product-card__price d-flex">
+                    <span class="money price">R$: {{ $produto->PRODUTO_PRECO }}</span>
+                </div>
+        
+                <!-- Botão de adição à lista de desejos -->
+                <button class="pc__btn-wl position-absolute top-0 end-0 bg-transparent border-0 js-add-wishlist"
+                        title="Add To Wishlist">
+                    <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <use href="#icon_heart" />
+                    </svg>
+                </button>
             </div>
-          </div>
-
+        </div>
+        
         </div><!-- /.swiper-wrapper -->
       </div><!-- /.swiper-container js-swiper-slider -->
 

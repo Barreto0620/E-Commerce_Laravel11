@@ -15,9 +15,9 @@ class CatalogoController extends Controller
         // Carregar todos os produtos com as relações necessárias
         $produtos = Produto::with(['imagens', 'categoria'])->get();
 
-        // Dividir os produtos entre carrossel e vitrine (exemplo: 8 no carrossel, o restante na vitrine)
-        $produtosCarrossel = $produtos->take(8); // Pegue os primeiros 8 produtos
-        $produtosVitrine = $produtos->skip(8);  // O restante será usado na vitrine
+        // Dividir os produtos entre carrossel e vitrine (exemplo: 9 no carrossel, o restante na vitrine)
+        $produtosCarrossel = $produtos->take(9); // Pegue os primeiros 9 produtos
+        $produtosVitrine = $produtos->skip(9);  // O restante será usado na vitrine
 
         // Passar os dados para a view
         return view('catalogo', compact('produtosCarrossel', 'produtosVitrine'));
@@ -34,4 +34,6 @@ class CatalogoController extends Controller
         // Passar o produto para a view
         return view('details', compact('produto'));
     }
+
+
 }
