@@ -14,27 +14,29 @@
 <main class="pt-90">
     <div class="mb-4 pb-4"></div>
     <section class="shop-checkout container">
-        <h2 class="page-title">Cart</h2>
+        <h2 class="page-title">Carrinho</h2>
         <div class="checkout-steps">
             <a href="javascript:void();" class="checkout-steps__item active">
                 <span class="checkout-steps__item-number">01</span>
                 <span class="checkout-steps__item-title">
-                    <span>Shopping Bag</span>
-                    <em>Manage Your Items List</em>
+                    <span>Carrinho de compras</span>
+                    <em>Gerencie sua lista de itens
+                    </em>
                 </span>
             </a>
             <a href="javascript:void();" class="checkout-steps__item">
                 <span class="checkout-steps__item-number">02</span>
                 <span class="checkout-steps__item-title">
-                    <span>Shipping and Checkout</span>
-                    <em>Checkout Your Items List</em>
+                    <span>Envio e finalização da compra</span>
+                    <em>Confira sua lista de itens</em>
                 </span>
             </a>
             <a href="javascript:void();" class="checkout-steps__item">
                 <span class="checkout-steps__item-number">03</span>
                 <span class="checkout-steps__item-title">
-                    <span>Confirmation</span>
-                    <em>Order Confirmation</em>
+                    <span>Confirmação</span>
+                    <em>Confirmação do pedido
+                    </em>
                 </span>
             </a>
         </div>
@@ -44,11 +46,11 @@
                 <table class="cart-table">
                     <thead>
                         <tr>
-                            <th>Product</th>
+                            <th>Produto</th>
                             <th></th>
-                            <th>Price</th>
-                            <th>Quantity</th>
-                            <th>Subtotal</th>
+                            <th>Valor</th>
+                            <th>Quantidade</th>
+                            <th>Total</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -64,13 +66,13 @@
                                 <div class="shopping-cart__product-item__detail">
                                     <h4>{{$cartItem->name}}</h4>
                                     <ul class="shopping-cart__product-item__options">
-                                        <li>Color: Yellow</li>
-                                        <li>Size: L</li>
+                                        <li>Cor: Azul</li>
+                                        <li>Tamanho: M</li>
                                     </ul>
                                 </div>
                             </td>
                             <td>
-                                <span class="shopping-cart__product-price">${{$cartItem->price}}</span>
+                                <span class="shopping-cart__product-price">R${{$cartItem->price}}</span>
                             </td>
                             <td>
                                 <div class="qty-control position-relative">
@@ -80,7 +82,7 @@
                                 </div>
                             </td>
                             <td>
-                                <span class="shopping-cart__subtotal">${{$cartItem->subTotal()}}</span>
+                                <span class="shopping-cart__subtotal">R${{$cartItem->subTotal()}}</span>
                             </td>
                             <td>
                                 <a href="javascript:void(0)" class="remove-cart">
@@ -96,40 +98,40 @@
                 </table>
                 <div class="cart-table-footer">
                     <input class="form-control" type="text" name="coupon_code" placeholder="Coupon Code">
-                            <input class="btn-link fw-medium position-absolute top-0 end-0 h-100 px-4" type="submit" value="APPLY COUPON">                                                        
+                            <input class="btn-link fw-medium position-absolute top-0 end-0 h-100 px-4" type="submit" value="APPLY COUPON">                                                       
                     <form class="position-relative bg-body">                       
-                        <button class="btn btn-light" type="submit">CLEAR CART</button>
+                        <button class="btn btn-light" type="submit">Limpar Carrinho</button>
                     </form>
                 </div>                
             </div>
             <div class="shopping-cart__totals-wrapper">
                 <div class="sticky-content">
                     <div class="shopping-cart__totals">
-                        <h3>Cart Totals</h3>
+                        <h3>Valor do Carrinho</h3>
                        <table class="cart-totals">
                                 <tbody>
                                     <tr>
-                                        <th>Subtotal</th>
-                                        <td>${{Cart::instance('cart')->subtotal()}}</td>
+                                        <th>Total</th>
+                                        <td>R${{Cart::instance('cart')->subtotal()}}</td>
                                     </tr>   
                                     <tr>
-                                        <th>SHIPPING</th>
-                                        <td class="text-right">Free</td>
+                                        <th>Frete</th>
+                                        <td class="text-right">Grátis</td>
                                     </tr>                             
                                     <tr>
-                                        <th>VAT</th>
-                                        <td>${{Cart::instance('cart')->tax()}}</td>
+                                        <th>Imposto</th>
+                                        <td>R${{Cart::instance('cart')->tax()}}</td>
                                     </tr>
                                     <tr class="cart-total">
                                         <th>Total</th>
-                                        <td>${{Cart::instance('cart')->total()}}</td>
+                                        <td>R${{Cart::instance('cart')->total()}}</td>
                                     </tr>
                                 </tbody>
                             </table>
                     </div>
                     <div class="mobile_fixed-btn_wrapper">
                         <div class="button-wrapper container">
-                            <a href="#" class="btn btn-primary btn-checkout">PROCEED TO CHECKOUT</a>
+                            <a href="#" class="btn btn-primary btn-checkout">COMPRAR</a>
                         </div>
                     </div>
                 </div>
@@ -137,9 +139,9 @@
             @else
                 <div class="row">
                     <div class="col-md-12 text-center pt-5 pb-5">
-                        <p>No item found in your cart</p>
+                        <p>Não há itens no seu carrinho :C</p>
 
-                        <a href="{{route('catalogo.index')}}" class="btn btn-info">Shop Now</a>
+                        <a href="{{route('shop.index')}}" class="btn btn-info">Ir para Catálogo</a>
                     </div>
                 </div>
             @endif
