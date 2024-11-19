@@ -89,9 +89,10 @@
           <p>{{ $produto->PRODUTO_DESC }}</p>
         </div>
         @if(Cart::instance("cart")->content()->Where('id',$produto->PRODUTO_ID)->count()>0)
-          <a href="{{route('cart.index')}}" class="btn btn-warning mb-3">Go to Cart</a>
+          <a href="{{route('cart.index')}}" class="btn btn-warning mb-3">Adicionar ao carrinho</a>
         @else
-        <form name="addtocart-form" method="post">
+        <form name="addtocart-form" method="post" action="{{route('cart.add')}}">
+          
           <div class="product-single__addtocart">
             <div class="qty-control position-relative">
               <input type="number" name="quantity" value="1" min="1" class="qty-control__number text-center">
