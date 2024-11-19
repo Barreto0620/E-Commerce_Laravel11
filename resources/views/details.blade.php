@@ -294,45 +294,46 @@
             }
           }
         }'>
-        <div class="swiper-wrapper">
-
-          <div class="swiper-slide product-card">
-            <div class="pc__img-wrapper">
-                <!-- Link que direciona para a página de detalhes do produto -->
-                <a href="{{ route('catalogo.details', ['PRODUTO_ID' => $produto->PRODUTO_ID]) }}">
-                    <img loading="lazy" src="{{ $produto->imagens->first()->IMAGEM_URL }}" width="330" height="400"
-                         alt="{{ $produto->PRODUTO_NOME }}" class="pc__img">
-                    <img loading="lazy" src="{{ $produto->imagens->first()->IMAGEM_URL }}" width="330" height="400"
-                         alt="{{ $produto->PRODUTO_NOME }}">
-                </a>
-                <button class="pc__atc btn anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside"
-                        data-aside="cartDrawer" title="Add To Cart">Carrinho</button>
-            </div>
         
-            <div class="pc__info position-relative">
-                <!-- Exibe a categoria do produto -->
-                <p class="pc__category">{{ $produto->categoria->CATEGORIA_NOME }}</p>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    @foreach ($produtosRelacionados as $produtoRelacionado)
+                    <div class="swiper-slide product-card" style="margin-right: 15px;"> <!-- Espaçamento -->
+                        <div class="pc__img-wrapper">
+                            <!-- Link que direciona para a página de detalhes do produto -->
+                            <a href="{{ route('catalogo.details', ['PRODUTO_ID' => $produtoRelacionado->PRODUTO_ID]) }}">
+                                <img loading="lazy" src="{{$produtoRelacionado->imagens->first()->IMAGEM_URL }}" width="330" height="400"
+                                     alt="{{ $produtoRelacionado->PRODUTO_NOME }}" class="pc__img">
+                            </a>
+                            <button class="pc__atc btn anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside"
+                                    data-aside="cartDrawer" title="Add To Cart">Carrinho</button>
+                        </div>
                 
-                <!-- Nome do produto, linkando para a página de detalhes -->
-                <h6 class="pc__title"><a href="{{ route('catalogo.details', ['PRODUTO_ID' => $produto->PRODUTO_ID]) }}">{{ $produto->PRODUTO_NOME }}</a></h6>
+                        <div class="pc__info position-relative">
+                            <!-- Exibe a categoria do produto -->
+                            <p class="pc__category">{{ $produtoRelacionado->categoria->CATEGORIA_NOME }}</p>
+                            
+                            <!-- Nome do produto, linkando para a página de detalhes -->
+                            <h6 class="pc__title"><a href="{{ route('catalogo.details', ['PRODUTO_ID' => $produtoRelacionado->PRODUTO_ID]) }}">{{ $produtoRelacionado->PRODUTO_NOME }}</a></h6>
+                            
+                            <!-- Exibe o preço do produto -->
+                            <div class="product-card__price d-flex">
+                                <span class="money price">R$: {{ $produtoRelacionado->PRODUTO_PRECO }}</span>
+                            </div>
                 
-                <!-- Exibe o preço do produto -->
-                <div class="product-card__price d-flex">
-                    <span class="money price">R$: {{ $produto->PRODUTO_PRECO }}</span>
+                            <!-- Botão de adição à lista de desejos -->
+                            <button class="pc__btn-wl position-absolute top-0 end-0 bg-transparent border-0 js-add-wishlist"
+                                    title="Add To Wishlist">
+                                <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <use href="#icon_heart" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    @endforeach
                 </div>
-        
-                <!-- Botão de adição à lista de desejos -->
-                <button class="pc__btn-wl position-absolute top-0 end-0 bg-transparent border-0 js-add-wishlist"
-                        title="Add To Wishlist">
-                    <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <use href="#icon_heart" />
-                    </svg>
-                </button>
             </div>
         </div>
-        
-        </div><!-- /.swiper-wrapper -->
-      </div><!-- /.swiper-container js-swiper-slider -->
 
       <div class="products-carousel__prev position-absolute top-50 d-flex align-items-center justify-content-center">
         <svg width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">

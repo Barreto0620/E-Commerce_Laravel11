@@ -31,9 +31,13 @@ class CatalogoController extends Controller
         // Obter um produto específico
         $produto = Produto::with(['imagens', 'categoria'])->findOrFail($id);
 
-        // Passar o produto para a view
-        return view('details', compact('produto'));
+        // Carregar produtos relacionados, excluindo o produto atual
+        $produtosRelacionados = Produto::with(['imagens', 'categoria'])
+            ->where('PRODUTO_ID', '!=', $produto->PRODUTO_ID) // Exclui o produto atual
+            ->take(9) // Limita a 9 produtos
+            ->get();
+
+        // Passar o produto e os produtos relacionados para a view
+        return view('details', compact('produto', 'produtosRelacionados'));
     }
-
-
 }
