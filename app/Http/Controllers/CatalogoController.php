@@ -72,9 +72,9 @@ class CatalogoController extends Controller
     public function product_details($PRODUTO_ID)
 {
     // Carregar o produto com as imagens relacionadas
-    $product = Produto::with('imagens')->where('PRODUTO_ID', $PRODUTO_ID)->first();
+    $produto = Produto::with('imagens')->where('PRODUTO_ID', $PRODUTO_ID)->first();
 
-    return view('details', compact('product'));
+    return view('details', compact('produto'));
 }
 
 }
