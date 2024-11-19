@@ -27,6 +27,7 @@ Route::get('/catalogo/{PRODUTO_ID}', [CatalogoController::class, 'product_detail
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/account-dashboard', [UserController::class, 'index'])->name('user.index');
+    Route::get('/account-orders', [UserController::class, 'orders'])->name('user.orders');
 });
 
 Route::middleware(['auth', AuthAdmin::class])->group(function () {

@@ -10,10 +10,10 @@
         </div>
         <div class="col-lg-9">
           <div class="page-content my-account__dashboard">
-            <p>Olá <strong>Usuário</strong></p>
-            <p>No painel da sua conta, você pode visualizar seus <a class="unerline-link" href="account_orders.html">pedidos
-                recentes</a>, gerenciar seus <a class="unerline-link" href="account_edit_address.html">endereços
-                de entrega</a>, <a class="unerline-link" href="account_edit.html">editar sua senha e os detalhes de sua conta.</a></p>
+            <p>Olá <strong>ALPHA</strong></p>
+            <p>No painel da sua conta, você pode visualizar seus <a class="unerline-link" href="{{ route('user.index') }}">pedidos
+                recentes</a>, gerenciar seus <a class="unerline-link" href="{{ route('user.index') }}">endereços
+                de entrega</a> e <a class="unerline-link" href="{{ route('user.index') }}">editar os detalhes de sua conta.</a></p>
           </div>
         </div>
       </div>
