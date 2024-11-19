@@ -89,7 +89,7 @@
           <p>{{ $produto->PRODUTO_DESC }}</p>
         </div>
         @if(Cart::instance("cart")->content()->Where('id',$produto->PRODUTO_ID)->count()>0)
-        <a href="{{route('cart.index')}}" class="btn btn-warning mb-3">Adicionar ao carrinho</a>
+        <a href="{{route('cart.index')}}" class="btn btn-warning mb-3">Adicionado ao carrinho</a>
         @else
         <form name="addtocart-form" method="post" action="{{ route('cart.add') }}">
           @csrf <!-- Token CSRF para proteger contra ataques CSRF -->
