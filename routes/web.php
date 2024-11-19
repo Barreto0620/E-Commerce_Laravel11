@@ -64,4 +64,4 @@ Route::post('/register', [RegisterController::class, 'register']);
 
 // Rota para carrinho
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
-Route::post('/cart/store', [CartController::class, 'addToCart'])->name('cart.store');
+Route::post('/cart', [CartController::class, 'addToCart'])->name('cart.add');

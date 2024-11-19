@@ -5,15 +5,15 @@
   <div class="mb-md-1 pb-md-3"></div>
   <section class="product-single container">
     <div class="row">
-      <div class="col-lg-7">  
+      <div class="col-lg-7">
         <div class="product-single__media" data-media-type="vertical-thumbnail">
           <div class="product-single__image">
             <div class="swiper-container">
               <div class="swiper-wrapper">
                 @foreach ($produto->imagens as $imagem)
-                  <div class="swiper-slide product-single__image-item">
-                    <img loading="lazy" class="h-auto" src="{{ $imagem->IMAGEM_URL }}" width="374" height="674" alt="" />
-                  </div>
+                <div class="swiper-slide product-single__image-item">
+                  <img loading="lazy" class="h-auto" src="{{ $imagem->IMAGEM_URL }}" width="374" height="674" alt="" />
+                </div>
                 @endforeach
               </div>
               <div class="swiper-button-prev">
@@ -32,9 +32,9 @@
             <div class="swiper-container">
               <div class="swiper-wrapper">
                 @foreach ($produto->imagens as $imagem)
-                  <div class="swiper-slide product-single__image-item">
-                    <img loading="lazy" class="h-auto" src="{{ $imagem->IMAGEM_URL }}" width="104" height="104" alt="" />
-                  </div>
+                <div class="swiper-slide product-single__image-item">
+                  <img loading="lazy" class="h-auto" src="{{ $imagem->IMAGEM_URL }}" width="104" height="104" alt="" />
+                </div>
                 @endforeach
               </div>
             </div>
@@ -89,22 +89,27 @@
           <p>{{ $produto->PRODUTO_DESC }}</p>
         </div>
         @if(Cart::instance("cart")->content()->Where('id',$produto->PRODUTO_ID)->count()>0)
-          <a href="{{route('cart.index')}}" class="btn btn-warning mb-3">Adicionar ao carrinho</a>
+        <a href="{{route('cart.index')}}" class="btn btn-warning mb-3">Adicionar ao carrinho</a>
         @else
-        <form name="addtocart-form" method="post" action="{{route('cart.add')}}">
-          
+        <form name="addtocart-form" method="post" action="{{ route('cart.add') }}">
+          @csrf <!-- Token CSRF para proteger contra ataques CSRF -->
+
           <div class="product-single__addtocart">
+            <!-- Controle de quantidade do produto -->
             <div class="qty-control position-relative">
               <input type="number" name="quantity" value="1" min="1" class="qty-control__number text-center">
               <div class="qty-control__reduce">-</div>
               <div class="qty-control__increase">+</div>
             </div><!-- .qty-control -->
-            <input type="hidden" name="id" value="{{ $produto->PRODUTO_ID }}" /> 
-            <input type="hidden" name="name" value="{{ $produto->PRODUTO_NOME }}" /> 
+
+            <!-- Campos escondidos com informações do produto -->
+            <input type="hidden" name="id" value="{{ $produto->PRODUTO_ID }}" />
+            <input type="hidden" name="name" value="{{ $produto->PRODUTO_NOME }}" />
             <input type="hidden" name="price" value="{{ $produto->PRODUTO_PRECO }}" />
 
+            <!-- Botão de submissão do formulário -->
             <button type="submit" class="btn btn-primary btn-addtocart" data-aside="cartDrawer">Comprar</button>
-          </div>
+          </div><!-- .product-single__addtocart -->
         </form>
         @endif
         <div class="product-single__addtolinks">
