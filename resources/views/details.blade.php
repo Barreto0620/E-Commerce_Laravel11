@@ -122,18 +122,34 @@
         <div class="product-single__short-desc">
           <p>{{ $produto->PRODUTO_DESC }}</p>
         </div>
-        <form name="addtocart-form" method="post">
+        <form name="addtocart-form" method="POST" action="{{ route('cart.add') }}">
+          @csrf
           <div class="product-single__addtocart">
-            <div class="qty-control position-relative">
-              <input type="number" name="quantity" value="1" min="1"
-                class="qty-control__number text-center">
-              <div class="qty-control__reduce">-</div>
-              <div class="qty-control__increase">+</div>
-            </div><!-- .qty-control -->
-            <button type="submit" class="btn btn-primary btn-addtocart js-open-aside"
-              data-aside="cartDrawer">Comprar</button>
+              <!-- Controle de Quantidade -->
+              <div class="qty-control position-relative">
+                  <input 
+                      type="number" 
+                      name="qty" 
+                      value="1" 
+                      min="1" 
+                      class="qty-control__number text-center"
+                      required>
+                  <div class="qty-control__reduce">-</div>
+                  <div class="qty-control__increase">+</div>
+              </div>
+      
+              <!-- Campos ocultos para enviar os detalhes do produto -->
+              <input type="hidden" name="PRODUTO_ID" value="{{ $produto->PRODUTO_ID }}">
+              <input type="hidden" name="PRODUTO_NOME" value="{{ $produto->PRODUTO_NOME }}">
+              <input type="hidden" name="PRODUTO_PRECO" value="{{ $produto->PRODUTO_PRECO }}">
+      
+              <!-- Botão de Enviar -->
+              <button type="submit" class="btn btn-primary btn-addtocart" data-aside="cartDrawer">
+                  Comprar
+              </button>
           </div>
-        </form>
+      </form>
+      
         <div class="product-single__addtolinks">
           <share-button class="share-button">
             <button

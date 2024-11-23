@@ -63,6 +63,17 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [RegisterController::class, 'register']);
 
-// Rota para carrinho
+// Rota para exibir o carrinho
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
-Route::post('/cart', [CartController::class, 'addToCart'])->name('cart.add');
+
+// Rota para adicionar um item ao carrinho
+Route::post('/cart/add', [CartController::class, 'add_to_cart'])->name('cart.add');
+
+// Rota para atualizar as quantidades de itens no carrinho
+Route::post('/cart/update', [CartController::class, 'update_cart'])->name('cart.update');
+
+// Rota para remover um item específico do carrinho
+Route::get('/cart/remove/{rowId}', [CartController::class, 'remove_from_cart'])->name('cart.remove');
+
+// Rota para limpar todo o carrinho
+Route::get('/cart/clear', [CartController::class, 'clear_cart'])->name('cart.clear');
