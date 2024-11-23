@@ -63,7 +63,7 @@
                                             <td>
                                                 <div class="shopping-cart__product-item">
                                                     <img loading="lazy"
-                                                        src="{{ asset('uploads/products/thumbnails/' . $item->options->image) }}"
+                                                        src="{{ $item->model->imagens->isNotEmpty() ? asset($item->model->imagens->first()->IMAGEM_URL) : asset('images/default-placeholder.png') }}"
                                                         width="120" height="120" alt="{{ $item->name }}" />
                                                 </div>
                                             </td>
@@ -75,19 +75,26 @@
                                             </td>
                                             <!-- Preço Unitário -->
                                             <td>
-                                                <span class="shopping-cart__product-price">R${{ number_format($item->price, 2, ',', '.') }}</span>
+                                                <span
+                                                    class="shopping-cart__product-price">R${{ number_format($item->price, 2, ',', '.') }}</span>
                                             </td>
                                             <!-- Quantidade -->
                                             <td>
-                                                <div class="qty-control position-relative">
+                                                <div class="qty-control">
+                                                    <button type="button" class="qty-control__btn"
+                                                        onclick="changeQuantity('{{ $item->rowId }}', -1)">-</button>
                                                     <input type="number" name="quantities[{{ $item->rowId }}]"
                                                         value="{{ $item->qty }}" min="1"
-                                                        class="qty-control__number text-center">
+                                                        class="qty-control__number text-center"
+                                                        id="quantity_{{ $item->rowId }}">
+                                                    <button type="button" class="qty-control__btn"
+                                                        onclick="changeQuantity('{{ $item->rowId }}', 1)">+</button>
                                                 </div>
                                             </td>
                                             <!-- Subtotal -->
                                             <td>
-                                                <span class="shopping-cart__subtotal">R${{ number_format($item->subtotal, 2, ',', '.') }}</span>
+                                                <span
+                                                    class="shopping-cart__subtotal">R${{ number_format($item->subtotal, 2, ',', '.') }}</span>
                                             </td>
                                             <!-- Botão de Remover -->
                                             <td>
@@ -153,8 +160,182 @@
                     </div>
                 @endif
             </div>
-            
+
+
+
+
 
         </section>
     </main>
+
+
+    <script>
+    // Função para alterar a quantidade
+    function changeQuantity(rowId, increment) {
+        let quantityInput = document.getElementById('quantity_' + rowId);
+        let currentQuantity = parseInt(quantityInput.value);
+        let newQuantity = currentQuantity + increment;
+        if (newQuantity >= 1) {
+            quantityInput.value = newQuantity;
+        }
+    }
+</script>
+
+<style>
+    .shopping-cart {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+    }
+
+    .cart-table-container {
+        flex: 1;
+        padding-right: 30px;
+    }
+
+    .cart-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+
+    .cart-table th, .cart-table td {
+        padding: 15px;
+        text-align: left;
+        vertical-align: middle;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .cart-table th {
+        background-color: #f5f5f5;
+    }
+
+    .qty-control {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .qty-control__btn {
+        background-color: #f1f1f1;
+        border: 1px solid #ccc;
+        padding: 8px 15px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+    .qty-control__btn:hover {
+        background-color: #ddd;
+    }
+
+    .qty-control__number {
+        width: 50px;
+        height: 40px;
+        text-align: center;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .shopping-cart__product-item img {
+        border-radius: 5px;
+    }
+
+    .shopping-cart__product-item__detail h4 {
+        margin: 0;
+        font-size: 18px;
+    }
+
+    .shopping-cart__product-price {
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .shopping-cart__subtotal {
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .cart-table-footer {
+        text-align: right;
+        margin-top: 20px;
+    }
+
+    .cart-totals {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .cart-totals th, .cart-totals td {
+        padding: 10px;
+        text-align: left;
+    }
+
+    .cart-total th {
+        font-weight: bold;
+    }
+
+    .cart-total td {
+        font-weight: bold;
+        color: #E53935;
+    }
+
+    .btn-checkout {
+        display: inline-block;
+        padding: 12px 25px;
+        background-color: #007bff;
+        color: white;
+        font-weight: bold;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s;
+    }
+
+    .btn-checkout:hover {
+        background-color: #0056b3;
+    }
+
+    .cart-table th, .cart-table td {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .shopping-cart__totals-wrapper {
+        width: 30%;
+        padding-left: 30px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .sticky-content {
+        position: sticky;
+        top: 0;
+        padding: 20px;
+        background: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+    }
+
+    .cart-table-footer, .shopping-cart__totals-wrapper {
+        margin-top: 10px;
+    }
+
+    .shopping-cart__totals-wrapper {
+        display: block;
+        width: 100%;
+        max-width: 100%;  /* Ajuste para manter o resumo do carrinho bem preenchido */
+        margin-left: auto;
+        margin-right: auto;
+        padding: 30px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+</style>
 @endsection
