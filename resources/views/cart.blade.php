@@ -75,8 +75,7 @@
                                             </td>
                                             <!-- Preço Unitário -->
                                             <td>
-                                                <span
-                                                    class="shopping-cart__product-price">R${{ number_format($item->price, 2, ',', '.') }}</span>
+                                                <span class="shopping-cart__product-price">R${{ number_format($item->price, 2, ',', '.') }}</span>
                                             </td>
                                             <!-- Quantidade -->
                                             <td>
@@ -88,8 +87,7 @@
                                             </td>
                                             <!-- Subtotal -->
                                             <td>
-                                                <span
-                                                    class="shopping-cart__subtotal">R${{ number_format($item->subtotal, 2, ',', '.') }}</span>
+                                                <span class="shopping-cart__subtotal">R${{ number_format($item->subtotal, 2, ',', '.') }}</span>
                                             </td>
                                             <!-- Botão de Remover -->
                                             <td>
@@ -155,6 +153,7 @@
                     </div>
                 @endif
             </div>
+            
 
         </section>
     </main>

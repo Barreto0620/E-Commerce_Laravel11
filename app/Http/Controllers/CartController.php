@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Produto;
 use Surfsidemedia\Shoppingcart\Facades\Cart;
 
 class CartController extends Controller
@@ -16,26 +17,30 @@ class CartController extends Controller
 
     // Adicionar um item ao carrinho
     public function add_to_cart(Request $request)
-{
-    // Validação básica dos dados recebidos
-    $request->validate([
-        'id' => 'required',
-        'name' => 'required',
-        'qty' => 'required|integer|min:1',
-        'price' => 'required|numeric|min:0'
-    ]);
+    {
+        // Validação básica dos dados recebidos
+        $request->validate([
+            'PRODUTO_ID' => 'required|exists:PRODUTO,PRODUTO_ID',
+            'qty' => 'required|integer|min:1',
+        ]);
 
-    // Adicionar ao carrinho
-    Cart::instance('cart')->add(
-        $request->PRODUTO_ID, // Alterado de 'id' para 'PRODUTO_ID'
-        $request->PRODUTO_NOME,
-        $request->qty,
-        $request->PRODUTO_PRECO
-    )->associate('App\Models\Produto');    
+        // Buscar o produto no banco de dados
+        $produto = Produto::find($request->PRODUTO_ID);
 
-    return redirect()->route('cart.index')->with('success', 'Produto adicionado ao carrinho com sucesso!');
-}
+        if (!$produto || !$produto->PRODUTO_ATIVO) {
+            return redirect()->back()->with('error', 'Produto não disponível.');
+        }
 
+        // Adicionar ao carrinho
+        Cart::instance('cart')->add(
+            $produto->PRODUTO_ID,
+            $produto->PRODUTO_NOME,
+            $request->qty,
+            $produto->PRODUTO_PRECO
+        )->associate('App\Models\Produto');
+
+        return redirect()->route('cart.index')->with('success', 'Produto adicionado ao carrinho com sucesso!');
+    }
 
     // Atualizar a quantidade dos itens no carrinho
     public function update_cart(Request $request)
