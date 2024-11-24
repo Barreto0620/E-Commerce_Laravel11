@@ -146,7 +146,7 @@
                                 </table>
                             </div>
                             <div class="button-wrapper container">
-                                <a href="#" class="btn btn-primary btn-checkout">Finalizar Compra</a>
+                                <a href="#" class="btn btn-primary btn-checkout">Próxima Validação</a>
                             </div>
                         </div>
                     </div>
