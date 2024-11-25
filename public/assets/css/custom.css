@@ -5,6 +5,9 @@
 .text-right{
     text-align: right;
 }
+.pt-90 {
+    padding-top: 90px !important;
+}
 
 .my-account__address-list {
     display: flex;

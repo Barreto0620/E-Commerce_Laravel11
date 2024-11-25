@@ -42,12 +42,12 @@
             <div class="character_markup type2">
             <p
               class="text-uppercase font-sofia mark-grey-color animate animate_fade animate_btt animate_delay-10 mb-0">
-              Halloween</p>
+              Black Friday</p>
           </div>
         </div>
         <div class="slideshow-text container position-absolute start-50 top-50 translate-middle">
           <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">
-            Oferta Halloween</h6>
+            Oferta Especial</h6>
           <h2 class="h1 fw-bold animate animate_fade animate_btt animate_delay-5">Notebook Vaio FE15</h2>
           <h2 class="h2 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5"><br>"Ofertas de arrepiar!"<br><br><br></h2>
           <a href="{{route('catalogo.index')}}"

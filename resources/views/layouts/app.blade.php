@@ -478,7 +478,7 @@
           <div class="header-tools__item hover-container">
             <div class="header-tools__item hover-container">
               <a href="{{ Auth::user()->utype === 'ADM' ? route('admin.index') : route('user.index') }}" class="header-tools__item">
-                <span class="pr-6px">{{ Auth::user()->name }}</span>
+                <span class="pr-6px">{{ Auth::user()->USUARIO_NOME }}</span>
                 <svg class="d-block" width="20" height="20" viewBox="0 0 20 20" fill="none"
                   xmlns="http://www.w3.org/2000/svg">
                   <use href="#icon_user" />
@@ -488,11 +488,6 @@
 
 
             @endguest
-            <a href="wishlist.html" class="header-tools__item">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <use href="#icon_heart" />
-              </svg>
-            </a>
 
             <a href="{{route('cart.index')}}" class="header-tools__item header-tools__cart">
               <svg class="d-block" width="20" height="20" viewBox="0 0 20 20" fill="none"
@@ -654,18 +649,7 @@
         </a>
       </div>
 
-      <div class="col-4">
-        <a href="{{route('home.index')}}" class="footer-mobile__link d-flex flex-column align-items-center">
-          <div class="position-relative">
-            <svg class="d-block" width="18" height="18" viewBox="0 0 20 20" fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-              <use href="#icon_heart" />
-            </svg>
-            <span class="wishlist-amount d-block position-absolute js-wishlist-count">3</span>
-          </div>
-          <span>Favoritos</span>
-        </a>
-      </div>
+      
     </div>
   </footer>
 

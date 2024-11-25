@@ -1,16 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    {{-- <style>
-    .cart-totals td{
-        text-align: right;
-    }
-    .cart-total th, .cart-total td{
-        color:green;
-        font-weight: bold;
-        font-size: 21px !important;
-    }
-</style> --}}
+    
     <main class="pt-90">
         <div class="mb-4 pb-4"></div>
         <section class="shop-checkout container">
@@ -336,6 +327,10 @@
         border-radius: 8px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
+
+    .pt-90 {
+    padding-top: 0px !important;
+}
 
 </style>
 @endsection

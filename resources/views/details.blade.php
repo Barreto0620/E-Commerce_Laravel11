@@ -83,7 +83,7 @@
                                 class="menu-link menu-link_us-s text-uppercase fw-medium">Catálogo</a>
                         </div><!-- /.breadcrumb -->
 
-                        <div
+                        <!-- <div
                             class="product-single__prev-next d-flex align-items-center justify-content-between justify-content-md-end flex-grow-1">
                             <a href="#" class="text-uppercase fw-medium"><svg width="10" height="10"
                                     viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
@@ -94,7 +94,7 @@
                                     viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
                                     <use href="#icon_next_md" />
                                 </svg></a>
-                        </div><!-- /.shop-acs -->
+                        </div> -->
                     </div>
                     <h1 class="product-single__name">{{ $produto->PRODUTO_NOME }}</h1>
                     <div class="product-single__rating">
@@ -393,14 +393,6 @@
                                             <span class="money price">R$:
                                                 {{ number_format($produtoRelacionado->PRODUTO_PRECO, 2, ',', '.') }}</span>
                                         </div>
-                                        <button
-                                            class="pc__btn-wl position-absolute top-0 end-0 bg-transparent border-0 js-add-wishlist"
-                                            title="Add To Wishlist">
-                                            <svg width="16" height="16" viewBox="0 0 20 20" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <use href="#icon_heart" />
-                                            </svg>
-                                        </button>
                                     </div>
                                 </div>
                             @endforeach
