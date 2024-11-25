@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Produto;
 use Surfsidemedia\Shoppingcart\Facades\Cart;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Address;
 
 class CartController extends Controller
 {
@@ -71,5 +73,19 @@ class CartController extends Controller
     {
         Cart::instance('cart')->destroy();
         return redirect()->back()->with('success', 'Carrinho limpo com sucesso!');
+    }
+
+    public function checkout()
+    {
+        if (!Auth::check()) {
+            return redirect()->route('login');
+        }
+
+        // Buscar o primeiro endereço cadastrado ou mais recente
+        $address = Address::where('USUARIO_ID', Auth::user()->USUARIO_ID)
+            ->orderBy('ENDERECO_ID', 'desc') // Altere conforme a lógica desejada
+            ->first();
+
+        return view('checkout', compact('address'));
     }
 }
