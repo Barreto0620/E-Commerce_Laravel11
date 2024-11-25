@@ -148,7 +148,7 @@
                             <div class="sticky-content">
                                 <div class="checkout__totals">
                                     <h3>Seu Pedido</h3>
-                                    <table class="checkout-cart-items">
+                                    {{-- <table class="checkout-cart-items">
                                         <thead>
                                             <tr>
                                                 <th>PRODUTO</th>
@@ -156,41 +156,35 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                          @foreach (Cart::instance('cart') as $item)
                                             <tr>
                                                 <td>
-                                                    Vestidos Zessi x 2
+                                                    {{$item->name}} x {{$item->rowId}}
                                                 </td>
                                                 <td align="right">
-                                                    $32.50
+                                                    R$ {{$item->subtotal}}
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <td>
-                                                    Camiseta Kirby
-                                                </td>
-                                                <td align="right">
-                                                    $29.90
-                                                </td>
-                                            </tr>
+                                            @endforeach
                                         </tbody>
-                                    </table>
+                                    </table> --}}
                                     <table class="checkout-totals">
                                         <tbody>
                                             <tr>
                                                 <th>SUBTOTAL</th>
-                                                <td align="right">$62.40</td>
+                                                <td align="right">R$ {{Cart::instance('cart')->subtotal()}}</td>
                                             </tr>
                                             <tr>
                                                 <th>FRETE</th>
                                                 <td align="right">Frete grátis</td>
                                             </tr>
                                             <tr>
-                                                <th>IVA</th>
-                                                <td align="right">$19</td>
+                                                <th>Serviço</th>
+                                                <td align="right">R${{Cart::instance('cart')->tax()}}</td>
                                             </tr>
                                             <tr>
                                                 <th>TOTAL</th>
-                                                <td align="right">$81.40</td>
+                                                <td align="right">R$ {{Cart::instance('cart')->total()}}</td>
                                             </tr>
                                         </tbody>
                                     </table>

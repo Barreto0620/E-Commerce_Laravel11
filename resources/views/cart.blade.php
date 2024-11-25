@@ -126,7 +126,7 @@
                                             <td>Grátis</td>
                                         </tr>
                                         <tr>
-                                            <th>Imposto</th>
+                                            <th>Taxa de Serviço</th>
                                             <td>R${{ Cart::instance('cart')->tax() }}</td>
                                         </tr>
                                         <tr class="cart-total">
