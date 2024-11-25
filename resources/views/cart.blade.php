@@ -14,7 +14,7 @@
     <main class="pt-90">
         <div class="mb-4 pb-4"></div>
         <section class="shop-checkout container">
-            <h2 class="page-title">Carrinho</h2>
+            <h2 class="page-title">Seu Carrinho</h2>
             <div class="checkout-steps">
                 <a href="javascript:void(0)" class="checkout-steps__item active">
                     <span class="checkout-steps__item-number">01</span>
@@ -24,11 +24,11 @@
                         </em>
                     </span>
                 </a>
-                <a href="javascript:void(0)" class="checkout-steps__item">
+                <a href="{{route('cart.checkout')}}" class="checkout-steps__item">
                     <span class="checkout-steps__item-number">02</span>
                     <span class="checkout-steps__item-title">
                         <span>Envio e finalização da compra</span>
-                        <em>Confira sua lista de itens</em>
+                        <em>Confira o local de entrega</em>
                     </span>
                 </a>
                 <a href="javascript:void(0)" class="checkout-steps__item">
@@ -146,7 +146,7 @@
                                 </table>
                             </div>
                             <div class="button-wrapper container">
-                                <a href="#" class="btn btn-primary btn-checkout">Próxima Validação</a>
+                                <a href="{{ route('cart.checkout') }}" class="btn btn-primary btn-checkout">Próxima Validação</a>
                             </div>
                         </div>
                     </div>

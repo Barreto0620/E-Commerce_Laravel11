@@ -80,3 +80,8 @@ Route::get('/cart/clear', [CartController::class, 'clear_cart'])->name('cart.cle
 
 // Rota para exibir a página de checkout
 Route::get('/checkout', [CartController::class, 'checkout'])->name('cart.checkout');
+
+// Rota para processar o checkout
+Route::post('/checkout/process', [CartController::class, 'process'])->name('checkout.process');
+
+

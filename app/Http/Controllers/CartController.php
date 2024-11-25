@@ -7,6 +7,7 @@ use App\Models\Produto;
 use Surfsidemedia\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Address;
+use Illuminate\Validation\ValidationException;
 
 class CartController extends Controller
 {
@@ -87,5 +88,44 @@ class CartController extends Controller
             ->first();
 
         return view('checkout', compact('address'));
+    }
+
+    public function process(Request $request)
+    {
+        try {
+            // Validação dos dados de entrada
+            $validated = $request->validate([
+                'ENDERECO_NOME' => 'required|string|max:255',
+                'ENDERECO_TELEFONE' => 'required|string|max:20',
+                'ENDERECO_CEP' => 'required|string|max:10',
+                'ENDERECO_ESTADO' => 'required|string|max:50',
+                'ENDERECO_CIDADE' => 'required|string|max:50',
+                'ENDERECO_RUA' => 'required|string|max:255',
+                'ENDERECO_COMPLEMENTO' => 'nullable|string|max:255',
+                'ENDERECO_REFERENCIA' => 'nullable|string|max:255',
+            ]);
+
+            // Atribuindo o ID do usuário autenticado ao dado
+            $validated['USUARIO_ID'] = Auth::user()->USUARIO_ID;
+
+            // Criação do novo endereço no banco de dados
+            $address = Address::create($validated);
+
+            // Adicione o dd aqui para depuração
+            dd($address);  // Verifica os dados salvos
+
+            // Verificando se o endereço foi salvo com sucesso
+            if ($address) {
+                return redirect()->route('checkout.success')->with('success', 'Endereço salvo com sucesso!');
+            } else {
+                return redirect()->back()->with('error', 'Falha ao salvar o endereço.')->withInput();
+            }
+        } catch (ValidationException $e) {
+            // Em caso de falha na validação
+            return redirect()->back()->withErrors($e->errors())->withInput();
+        } catch (\Exception $e) {
+            // Em caso de erro genérico
+            return redirect()->back()->with('error', 'Ocorreu um erro ao salvar o endereço. Tente novamente.')->withInput();
+        }
     }
 }
