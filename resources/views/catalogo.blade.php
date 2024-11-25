@@ -431,7 +431,6 @@
 
                             @if(Cart::instance('cart')->content()->where('id', $produto->PRODUTO_ID)->count() > 0)
                                 <a href="{{ route('cart.index') }}" class="pc__atc btn anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium btn-warning mb-3">Ir para o carrinho</a>
-          
                             @else
                             <form name="addtocart-form" method="POST" action="{{ route('cart.add') }}">
                                 @csrf
@@ -474,14 +473,6 @@
                                 </div>
                                 <span class="reviews-note text-lowercase text-secondary ms-1">+ 8 MIL Avaliações</span>
                             </div>
-
-                            <button
-                                class="pc__btn-wl position-absolute top-0 end-0 bg-transparent border-0 js-add-wishlist"
-                                title="Add To Wishlist">
-                                <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <use href="#icon_heart" />
-                                </svg>
-                            </button>
                         </div>
                     </div>
                 </div>
