@@ -408,7 +408,7 @@
               <a href="cart.html" class="navigation__link">Cart</a>
             </li> -->
             <li class="navigation__item">
-              <a href="about.html" class="navigation__link">Sobre</a>
+              <a href="{{route('sobre')}}" class="navigation__link">Sobre</a>
             </li>
             <li class="navigation__item">
               <a href="contact.html" class="navigation__link">Dúvidas</a>
@@ -569,7 +569,7 @@
         <div class="footer-column footer-menu mb-4 mb-lg-0">
           <h6 class="sub-menu__title text-uppercase">Empresa</h6>
           <ul class="sub-menu__list list-unstyled">
-            <li class="sub-menu__item"><a href="about-2.html" class="menu-link menu-link_us-s">Quem Somos</a></li>
+            <li class="sub-menu__item"><a href="{{route('sobre')}}" class="menu-link menu-link_us-s">Quem Somos</a></li>
             <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">EcoSystem</a></li>
             <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">ExPress</a></li>
             {{-- <li class="sub-menu__item"><a href="blog_list1.html" class="menu-link menu-link_us-s">Blog</a></li>
