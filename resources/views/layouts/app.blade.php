@@ -322,7 +322,7 @@
               <a href="about.html" class="navigation__link">Sobre</a>
             </li>
             <li class="navigation__item">
-              <a href="contact.html" class="navigation__link">Contato</a>
+              <a href="contact.html" class="navigation__link">Dúvidas</a>
             </li>
           </ul>
         </div>
@@ -411,7 +411,7 @@
               <a href="about.html" class="navigation__link">Sobre</a>
             </li>
             <li class="navigation__item">
-              <a href="contact.html" class="navigation__link">Contato</a>
+              <a href="contact.html" class="navigation__link">Dúvidas</a>
             </li>
           </ul>
         </nav>
