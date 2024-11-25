@@ -13,6 +13,7 @@ use App\Http\Controllers\Auth\AdminLoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\CartController;
 
+
 Auth::routes();
 
 // Rota para listar todos os produtos
@@ -21,6 +22,12 @@ Route::get('/', [Carrossel1Controller::class, 'index'])->name('home.index');
 // Rota para catálogo de produtos
 Route::get('/catalogo', [CatalogoController::class, 'index'])->name('catalogo.index');
 Route::get('/catalogo/{PRODUTO_ID}', [CatalogoController::class, 'product_details'])->name('catalogo.details');
+
+// Rota para sobre
+Route::get('/sobre', function () {
+    return view('sobre');
+})->name('sobre');
+
 
 // Rota para dashboard de usuário autenticado
 Route::middleware(['auth'])->group(function () {
