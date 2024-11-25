@@ -35,7 +35,7 @@
 
     <h2 class="mt-4">Nossa História</h2>
     <p class="lead text-justify" style="font-size: 18px;">
-        Nossa jornada começou em 2023, com um pequeno time de visionários apaixonados por games e tecnologia. 
+        Nossa jornada começou em 2024, com um pequeno time de visionários apaixonados por games e tecnologia. 
         Inicialmente, atendíamos apenas uma pequena comunidade local, mas com o passar do tempo e o sucesso crescente, expandimos nossos horizontes para todo o Brasil.
         Hoje, temos orgulho de ser uma referência para gamers de todos os níveis, oferecendo produtos das melhores marcas e um atendimento que coloca o cliente em primeiro lugar.
     </p>
