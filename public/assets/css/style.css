@@ -14479,6 +14479,7 @@ button.js-add-wishlist.active .flaticon.flaticon-heart, a.add-to-wishlist.active
       .shopping-cart .cart-table thead th {
         font-size: 0.875rem;
         text-transform: uppercase;
+        text-align: center;
         font-weight: 500; }
     .shopping-cart .cart-table tbody tr {
       position: relative;
@@ -14529,6 +14530,8 @@ button.js-add-wishlist.active .flaticon.flaticon-heart, a.add-to-wishlist.active
         @media (min-width: 768px) {
           .shopping-cart .cart-table tbody td .shopping-cart__subtotal {
             float: none;
+            padding-left: 55px;
+            text-align: center;
             margin: 0; } }
       .shopping-cart .cart-table tbody td .remove-cart {
         position: absolute;

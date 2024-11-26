@@ -330,7 +330,7 @@
 
     .pt-90 {
     padding-top: 0px !important;
-}
+    }
 
 </style>
 @endsection
