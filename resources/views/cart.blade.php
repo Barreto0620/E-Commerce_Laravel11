@@ -54,7 +54,7 @@
                                             <td>
                                                 <div class="shopping-cart__product-item">
                                                     <img loading="lazy"
-                                                        src="{{ $item->model->imagens->isNotEmpty() ? asset($item->model->imagens->first()->IMAGEM_URL) : asset('images/default-placeholder.png') }}"
+                                                        src="{{ $item->model->imagens->isNotEmpty() ? asset($item->model->imagens->first()->IMAGEM_URL) : asset('assets/images/imagem_indisponivel.png') }}"
                                                         width="120" height="120" alt="{{ $item->name }}" />
                                                 </div>
                                             </td>

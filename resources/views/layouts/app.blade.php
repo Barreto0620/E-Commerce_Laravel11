@@ -450,10 +450,10 @@
                       <li class="sub-menu__item"><a href="{{route('catalogo.index')}}" class="menu-link menu-link_us-s">Oferta do Dia</a>
                       </li>
                       <li class="sub-menu__item"><a href="{{route('catalogo.index')}}" class="menu-link menu-link_us-s">Lançamentos</a></li>
-                      <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">EcoSystem</a>
+                      <li class="sub-menu__item"><a href="{{route('ecosystem')}}" class="menu-link menu-link_us-s">EcoSystem</a>
                       </li>
                       <li class="sub-menu__item"><a href="{{route('catalogo.index')}}" class="menu-link menu-link_us-s">Somente Aqui</a></li>
-                      <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">ExPress</a></li>
+                      <li class="sub-menu__item"><a href="{{route('express')}}" class="menu-link menu-link_us-s">ExPress</a></li>
                     </ul>
                   </div>
 
@@ -523,46 +523,34 @@
 
           <ul class="social-links list-unstyled d-flex flex-wrap mb-0">
             <li>
-              <a href="#" class="footer__social-link d-block">
-                <svg class="svg-icon svg-icon_facebook" width="9" height="15" viewBox="0 0 9 15"
-                  xmlns="http://www.w3.org/2000/svg">
+              <a href="https://www.facebook.com/" target="_blank" class="footer__social-link d-block">
+                <svg class="svg-icon svg-icon_facebook" width="9" height="15" viewBox="0 0 9 15" xmlns="http://www.w3.org/2000/svg">
                   <use href="#icon_facebook" />
                 </svg>
               </a>
             </li>
             <li>
-              {{-- <a href="#" class="footer__social-link d-block">
-                <svg class="svg-icon svg-icon_twitter" width="14" height="13" viewBox="0 0 14 13"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <use href="#icon_twitter" />
-                </svg>
-              </a> --}}
-            </li>
-            <li>
-              <a href="#" class="footer__social-link d-block">
-                <svg class="svg-icon svg-icon_instagram" width="14" height="13" viewBox="0 0 14 13"
-                  xmlns="http://www.w3.org/2000/svg">
+              <a href="https://www.instagram.com/" target="_blank" class="footer__social-link d-block">
+                <svg class="svg-icon svg-icon_instagram" width="14" height="13" viewBox="0 0 14 13" xmlns="http://www.w3.org/2000/svg">
                   <use href="#icon_instagram" />
                 </svg>
               </a>
             </li>
             <li>
-              <a href="#" class="footer__social-link d-block">
-                <svg class="svg-icon svg-icon_youtube" width="16" height="11" viewBox="0 0 16 11"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M15.0117 1.8584C14.8477 1.20215 14.3281 0.682617 13.6992 0.518555C12.5234 0.19043 7.875 0.19043 7.875 0.19043C7.875 0.19043 3.19922 0.19043 2.02344 0.518555C1.39453 0.682617 0.875 1.20215 0.710938 1.8584C0.382812 3.00684 0.382812 5.46777 0.382812 5.46777C0.382812 5.46777 0.382812 7.90137 0.710938 9.07715C0.875 9.7334 1.39453 10.2256 2.02344 10.3896C3.19922 10.6904 7.875 10.6904 7.875 10.6904C7.875 10.6904 12.5234 10.6904 13.6992 10.3896C14.3281 10.2256 14.8477 9.7334 15.0117 9.07715C15.3398 7.90137 15.3398 5.46777 15.3398 5.46777C15.3398 5.46777 15.3398 3.00684 15.0117 1.8584ZM6.34375 7.68262V3.25293L10.2266 5.46777L6.34375 7.68262Z" />
+              <a href="https://api.whatsapp.com/send?phone=11987654321" target="_blank" class="footer__social-link d-block">
+                <svg class="svg-icon svg-icon_whatsapp" width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7 0C3.13401 0 0 3.13401 0 7C0 8.6579 0.64547 10.1952 1.69434 11.3486L0.478465 13.6264C0.348318 13.8861 0.569332 14.1796 0.862086 14.0947L3.21238 13.3886C4.42609 13.8893 5.7572 14.0887 7 14C10.866 14 14 10.866 14 7C14 3.13401 10.866 0 7 0ZM7 12.6C5.91063 12.6 4.87728 12.3135 3.99375 11.8051L3.7291 11.6516L2.07856 12.1439L2.62279 10.7085L2.45375 10.4331C1.5576 9.13365 1.39925 7.34276 2.02571 5.79027C2.65218 4.23778 4.00899 3.14293 5.58411 2.80471C7.15923 2.4665 8.79389 3.00715 9.87944 4.23416C10.965 5.46116 11.2875 7.17861 10.7075 8.70223C10.1276 10.2259 8.73662 11.3085 7.11625 11.3085C6.61176 11.3085 6.11521 11.196 5.66156 10.9794C5.33806 10.8187 5.15955 10.4167 5.26655 10.0345L5.53284 9.11568C5.61276 8.82955 5.45125 8.522 5.18042 8.44681L3.50579 7.98768C3.17768 7.89771 2.87544 7.68664 2.70393 7.40384C2.53242 7.12103 2.51111 6.79352 2.64649 6.50059L3.11262 5.54118C3.27104 5.2033 3.49604 4.905 3.76988 4.67714L5.06641 3.58034C5.28843 3.4065 5.60393 3.46147 5.75104 3.71086L6.22974 4.506C6.32923 4.67882 6.56373 4.737 6.75945 4.66775L7.44755 4.42434C7.8381 4.28711 8.23734 4.32663 8.56567 4.52863L8.80143 4.67018C8.98965 4.77932 9.02374 5.04047 8.87386 5.20288L7.74063 6.54631C7.59216 6.71506 7.62309 6.99288 7.78785 7.1207L8.59712 7.73361C8.80987 7.89906 9.05287 7.91906 9.23774 7.78661L10.2056 7.09745C10.5635 6.83968 11.0387 6.94434 11.2476 7.36543L11.6548 8.20855C11.8964 8.73234 12.0035 9.31983 11.967 9.90956C11.9306 10.4993 11.7528 11.064 11.4495 11.5352C10.9211 12.4171 10.0505 13.0415 9.05064 13.3075C8.05076 13.5735 7.02034 13.469 6.10361 13.0159C5.18689 12.5628 4.44389 11.7874 3.99375 10.8051L3.7291 11.6516L2.07856 12.1439L2.62279 10.7085L2.45375 10.4331Z"></path>
                 </svg>
               </a>
             </li>
             <li>
-              {{-- <a href="#" class="footer__social-link d-block">
-                <svg class="svg-icon svg-icon_pinterest" width="14" height="15" viewBox="0 0 14 15"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <use href="#icon_pinterest" />
+              <a href="https://www.youtube.com/" target="_blank" class="footer__social-link d-block">
+                <svg class="svg-icon svg-icon_youtube" width="16" height="11" viewBox="0 0 16 11" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15.0117 1.8584C14.8477 1.20215 14.3281 0.682617 13.6992 0.518555C12.5234 0.19043 7.875 0.19043 7.875 0.19043C7.875 0.19043 3.19922 0.19043 2.02344 0.518555C1.39453 0.682617 0.875 1.20215 0.710938 1.8584C0.382812 3.00684 0.382812 5.46777 0.382812 5.46777C0.382812 5.46777 0.382812 7.90137 0.710938 9.07715C0.875 9.7334 1.39453 10.2256 2.02344 10.3896C3.19922 10.6904 7.875 10.6904 7.875 10.6904C7.875 10.6904 12.5234 10.6904 13.6992 10.3896C14.3281 10.2256 14.8477 9.7334 15.0117 9.07715C15.3398 7.90137 15.3398 5.46777 15.3398 5.46777C15.3398 5.46777 15.3398 3.00684 15.0117 1.8584ZM6.34375 7.68262V3.25293L10.2266 5.46777L6.34375 7.68262Z"></path>
                 </svg>
-              </a> --}}
+              </a>
             </li>
+            
           </ul>
         </div>
 
@@ -570,8 +558,8 @@
           <h6 class="sub-menu__title text-uppercase">Empresa</h6>
           <ul class="sub-menu__list list-unstyled">
             <li class="sub-menu__item"><a href="{{route('sobre')}}" class="menu-link menu-link_us-s">Quem Somos</a></li>
-            <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">EcoSystem</a></li>
-            <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">ExPress</a></li>
+            <li class="sub-menu__item"><a href="{{route('ecosystem')}}" class="menu-link menu-link_us-s">EcoSystem</a></li>
+            <li class="sub-menu__item"><a href="{{route('express')}}" class="menu-link menu-link_us-s">ExPress</a></li>
             {{-- <li class="sub-menu__item"><a href="blog_list1.html" class="menu-link menu-link_us-s">Blog</a></li>
             <li class="sub-menu__item"><a href="contact-2.html" class="menu-link menu-link_us-s">Contact Us</a></li> --}}
           </ul>
@@ -591,11 +579,11 @@
         <div class="footer-column footer-menu mb-4 mb-lg-0">
           <h6 class="sub-menu__title text-uppercase">Dúvidas</h6>
           <ul class="sub-menu__list list-unstyled">
-            <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">Pagamento</a>
+            <li class="sub-menu__item"><a href="{{route('duvidas')}}" class="menu-link menu-link_us-s">Pagamento</a>
             </li>
-            <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">Entrega</a>
+            <li class="sub-menu__item"><a href="{{route('duvidas')}}" class="menu-link menu-link_us-s">Entrega</a>
             </li>
-            <li class="sub-menu__item"><a href="#" class="menu-link menu-link_us-s">Garantia</a></li>
+            <li class="sub-menu__item"><a href="{{route('duvidas')}}" class="menu-link menu-link_us-s">Garantia</a></li>
           </ul>
         </div>
 
@@ -619,7 +607,7 @@
       <div class="container d-md-flex align-items-center">
         <span class="footer-copyright me-auto">©2024 Hexatech</span>
         <div class="footer-settings d-md-flex align-items-center">
-          <a href="#">Política de Privacidade</a> &nbsp;|&nbsp; <a href="#">Termos &amp;
+          <a href="{{route('politica')}}">Política de Privacidade</a> &nbsp;|&nbsp; <a href="{{route('politica')}}">Termos &amp;
             Condições</a>
         </div>
       </div>

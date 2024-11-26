@@ -410,7 +410,7 @@
                                         <a
                                             href="{{ route('catalogo.details', ['PRODUTO_ID' => $produto->PRODUTO_ID]) }}">
                                             <img loading="lazy"
-                                                src="{{ asset('images/default-placeholder.png') }}"
+                                                src="{{ asset('assets/images/imagem_indisponivel.png') }}"
                                                 width="330" height="400"
                                                 alt="Imagem indisponível" class="pc__img">
                                         </a>

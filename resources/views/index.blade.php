@@ -572,7 +572,7 @@
                             </div>
                             <div class="category-banner__item-content">
                                 <h3 class="mb-0">Serviço de Retirada</h3>
-                                <a href="#" class="btn-link default-underline text-uppercase fw-medium">Conhecer</a>
+                                <a href="{{route('ecosystem')}}" class="btn-link default-underline text-uppercase fw-medium">Conhecer</a>
                             </div>
                         </div>
                     </div>
@@ -586,7 +586,7 @@
                             </div>
                             <div class="category-banner__item-content">
                                 <h3 class="mb-0">Entrega Expressa</h3>
-                                <a href="#" class="btn-link default-underline text-uppercase fw-medium">Conhecer</a>
+                                <a href="{{route('express')}}" class="btn-link default-underline text-uppercase fw-medium">Conhecer</a>
                             </div>
                         </div>
                     </div>

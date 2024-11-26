@@ -12,9 +12,29 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\AdminLoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\CartController;
-
+use App\Http\Controllers\SobreController;
+use App\Http\Controllers\EcosystemController;
+use App\Http\Controllers\ExpressController;
+use App\Http\Controllers\DuvidasController;
+use App\Http\Controllers\PoliticaController;
 
 Auth::routes();
+
+
+// Rota para Política de Privacidade e Termos
+Route::get('/politica', [PoliticaController::class, 'index'])->name('politica');
+
+// Rota para a página "Sobre"
+Route::get('/sobre', [SobreController::class, 'index'])->name('sobre');
+
+// Rota para a página "Ecosystem"
+Route::get('/ecosystem', [EcosystemController::class, 'index'])->name('ecosystem');
+
+// Rota para a página "Express"
+Route::get('/express', [ExpressController::class, 'index'])->name('express');
+
+// Rota para a página "Dúvidas"
+Route::get('/duvidas', [DuvidasController::class, 'index'])->name('duvidas');
 
 // Rota para listar todos os produtos
 Route::get('/', [Carrossel1Controller::class, 'index'])->name('home.index');
@@ -23,11 +43,8 @@ Route::get('/', [Carrossel1Controller::class, 'index'])->name('home.index');
 Route::get('/catalogo', [CatalogoController::class, 'index'])->name('catalogo.index');
 Route::get('/catalogo/{PRODUTO_ID}', [CatalogoController::class, 'product_details'])->name('catalogo.details');
 
-// Rota para sobre
-Route::get('/sobre', function () {
-    return view('sobre');
-})->name('sobre');
-
+// Rota para a página "Sobre"
+Route::get('/sobre', [SobreController::class, 'index'])->name('sobre');
 
 // Rota para dashboard de usuário autenticado
 Route::middleware(['auth'])->group(function () {

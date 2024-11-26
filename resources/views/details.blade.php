@@ -16,7 +16,7 @@
                                                 height="674" alt="Imagem do produto" />
                                         @else
                                             <img loading="lazy" class="h-auto"
-                                                src="{{ asset('images/default-placeholder.png') }}" width="374"
+                                                src="{{ asset('assets/images/imagem_indisponivel.png') }}" width="374"
                                                 height="674" alt="Imagem indisponível" />
                                         @endif
                                     </div>
@@ -27,7 +27,7 @@
                                                 height="674" alt="Imagem do produto" />
                                         @else
                                             <img loading="lazy" class="h-auto"
-                                                src="{{ asset('images/default-placeholder.png') }}" width="674"
+                                                src="{{ asset('assets/images/imagem_indisponivel.png') }}" width="674"
                                                 height="674" alt="Imagem indisponível" />
                                         @endif
                                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
@@ -63,7 +63,7 @@
                                     @if ($produto->imagens->isEmpty())
                                         <div class="swiper-slide product-single__image-item">
                                             <img loading="lazy" class="h-auto"
-                                                src="{{ asset('images/default-placeholder.png') }}" width="104"
+                                                src="{{ asset('assets/images/imagem_indisponivel.png') }}" width="104"
                                                 height="104" alt="Imagem indisponível" />
                                         </div>
                                     @endif
@@ -354,7 +354,7 @@
                                                     width="330" height="400"
                                                     alt="{{ $produtoRelacionado->PRODUTO_NOME }}" class="pc__img">
                                             @else
-                                                <img loading="lazy" src="{{ asset('images/default-placeholder.png') }}"
+                                                <img loading="lazy" src="{{ asset('assets/images/imagem_indisponivel.png') }}"
                                                     width="330" height="400" alt="Imagem indisponível"
                                                     class="pc__img">
                                             @endif

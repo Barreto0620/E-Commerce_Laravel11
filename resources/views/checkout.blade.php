@@ -246,12 +246,12 @@
 
                                     <div class="policy-text">
                                         Seus dados pessoais serão usados para processar seu pedido, apoiar sua experiência
-                                        durante a navegação no site e para outros fins descritos em nossa <a href="terms.html"
+                                        durante a navegação no site e para outros fins descritos em nossa <a href="{{ route('politica') }}"
                                             target="_blank">política de privacidade</a>.
                                     </div>
                                 </div>
 
-                                <button type="submit" class="btn btn-primary">FINALIZAR PEDIDO</button>
+                                <button type="submit" class="btn btn-primary{{--  btn-checkout --}}">FINALIZAR PEDIDO</button>
                             </div>
                         </div>
                     </div>
