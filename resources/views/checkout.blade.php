@@ -25,7 +25,7 @@
                         <em>Confira o local de entrega</em>
                     </span>
                 </a>
-                <a href="javascript:void(0)" class="checkout-steps__item">
+                <a href="{{route('cart.order.confirmation')}}" class="checkout-steps__item">
                     <span class="checkout-steps__item-number">03</span>
                     <span class="checkout-steps__item-title">
                         <span>Confirmação</span>
@@ -51,7 +51,7 @@
                                 <div class="form-floating my-3">
                                     <input type="text" class="form-control" name="ENDERECO_NOME"
                                         value="{{ old('ENDERECO_NOME', $endereco->nome ?? '') }}" required>
-                                    <label for="ENDERECO_NOME">Nome Completo *</label>
+                                    <label for="ENDERECO_NOME">Endereço *</label>
                                     @error('ENDERECO_NOME')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -179,12 +179,12 @@
                                                 <td align="right">Frete grátis</td>
                                             </tr>
                                             <tr>
-                                                <th>Serviço</th>
+                                                <th>SERVIÇO</th>
                                                 <td align="right">R${{Cart::instance('cart')->tax()}}</td>
                                             </tr>
                                             <tr>
                                                 <th>TOTAL</th>
-                                                <td align="right">R$ {{Cart::instance('cart')->total()}}</td>
+                                                <td align="right" style="font-weight: bold; color: #E53935;">R${{Cart::instance('cart')->total()}}</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -251,7 +251,7 @@
                                     </div>
                                 </div>
 
-                                <button type="submit" class="btn btn-primary{{--  btn-checkout --}}">FINALIZAR PEDIDO</button>
+                                <button type="submit" class="btn btn-primary" href="{{ route('cart.order.confirmation')}}">FINALIZAR PEDIDO</button>
                             </div>
                         </div>
                     </div>

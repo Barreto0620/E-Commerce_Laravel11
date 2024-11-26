@@ -128,4 +128,9 @@ class CartController extends Controller
             return redirect()->back()->with('error', 'Ocorreu um erro ao salvar o endereço. Tente novamente.')->withInput();
         }
     }
+
+    public function order_confirmation()
+    {
+        return view('order_confirmation');
+    }
 }

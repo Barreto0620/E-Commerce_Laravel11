@@ -108,4 +108,4 @@ Route::get('/checkout', [CartController::class, 'checkout'])->name('cart.checkou
 // Rota para processar o checkout
 Route::post('/checkout/process', [CartController::class, 'process'])->name('checkout.process');
 
-
+Route::get('/order-confirmation', [CartController::class, 'order_confirmation'])->name('cart.order.confirmation');
