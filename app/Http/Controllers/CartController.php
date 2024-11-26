@@ -82,9 +82,9 @@ class CartController extends Controller
             return redirect()->route('login');
         }
 
-        // Buscar o primeiro endereço cadastrado ou mais recente
+        // Buscar o endereço mais recente do usuário
         $address = Address::where('USUARIO_ID', Auth::user()->USUARIO_ID)
-            ->orderBy('ENDERECO_ID', 'desc') // Altere conforme a lógica desejada
+            ->orderBy('ENDERECO_ID', 'desc')
             ->first();
 
         return view('checkout', compact('address'));
@@ -93,39 +93,39 @@ class CartController extends Controller
     public function process(Request $request)
     {
         try {
-            // Validação dos dados de entrada
+            // Validação dos dados do endereço
             $validated = $request->validate([
                 'ENDERECO_NOME' => 'required|string|max:255',
-                'ENDERECO_TELEFONE' => 'required|string|max:20',
                 'ENDERECO_CEP' => 'required|string|max:10',
                 'ENDERECO_ESTADO' => 'required|string|max:50',
                 'ENDERECO_CIDADE' => 'required|string|max:50',
-                'ENDERECO_RUA' => 'required|string|max:255',
+                'ENDERECO_LOGRADOURO' => 'required|string|max:255',
+                'ENDERECO_NUMERO' => 'required|integer',
                 'ENDERECO_COMPLEMENTO' => 'nullable|string|max:255',
-                'ENDERECO_REFERENCIA' => 'nullable|string|max:255',
             ]);
 
-            // Atribuindo o ID do usuário autenticado ao dado
+            // Adicionar ID do usuário ao endereço
             $validated['USUARIO_ID'] = Auth::user()->USUARIO_ID;
 
-            // Criação do novo endereço no banco de dados
-            $address = Address::create($validated);
+            // Atualizar ou criar o endereço
+            $address = Address::updateOrCreate(
+                [
+                    'USUARIO_ID' => Auth::user()->USUARIO_ID,
+                    'ENDERECO_NOME' => $validated['ENDERECO_NOME']
+                ],
+                $validated
+            );
 
-            // Adicione o dd aqui para depuração
-            dd($address);  // Verifica os dados salvos
-
-            // Verificando se o endereço foi salvo com sucesso
             if ($address) {
-                return redirect()->route('checkout.success')->with('success', 'Endereço salvo com sucesso!');
+                return redirect()->route('cart.order.confirmation')
+                    ->with('success', 'Endereço salvo com sucesso!');
             } else {
-                return redirect()->back()->with('error', 'Falha ao salvar o endereço.')->withInput();
+                return redirect()->back()->with('error', 'Falha ao salvar o endereço.');
             }
-        } catch (ValidationException $e) {
-            // Em caso de falha na validação
-            return redirect()->back()->withErrors($e->errors())->withInput();
         } catch (\Exception $e) {
-            // Em caso de erro genérico
-            return redirect()->back()->with('error', 'Ocorreu um erro ao salvar o endereço. Tente novamente.')->withInput();
+            return redirect()->back()
+                ->with('error', 'Erro ao salvar o endereço: ' . $e->getMessage())
+                ->withInput();
         }
     }
 

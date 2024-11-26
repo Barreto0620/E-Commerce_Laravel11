@@ -45,105 +45,106 @@
                             </div>
                         </div>
 
-                        <div class="row mt-5">
-                            <!-- Nome completo -->
+                        <div class="row">
+                            <!-- Nome do Endereço -->
                             <div class="col-md-6">
                                 <div class="form-floating my-3">
-                                    <input type="text" class="form-control" name="ENDERECO_NOME"
-                                        value="{{ old('ENDERECO_NOME', $endereco->nome ?? '') }}" required>
-                                    <label for="ENDERECO_NOME">Endereço *</label>
+                                    <input type="text" class="form-control" name="ENDERECO_NOME" value="{{ old('ENDERECO_NOME', $address->ENDERECO_NOME ?? '') }}" required>
+                                    <label for="ENDERECO_NOME">Nome do Endereço *</label>
                                     @error('ENDERECO_NOME')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
                             </div>
-
-                            <!-- Telefone -->
+                        
+                            <!-- Telefone (não mencionado no controller, mas pode ser adicionado se necessário) -->
                             <div class="col-md-6">
                                 <div class="form-floating my-3">
-                                    <input type="text" class="form-control" name="ENDERECO_TELEFONE"
-                                        value="{{ old('ENDERECO_TELEFONE', $endereco->telefone ?? '') }}" required>
+                                    <input type="text" class="form-control" name="ENDERECO_TELEFONE" value="{{ old('ENDERECO_TELEFONE', $address->ENDERECO_TELEFONE ?? '') }}" required>
                                     <label for="ENDERECO_TELEFONE">Número de Telefone *</label>
                                     @error('ENDERECO_TELEFONE')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
                             </div>
-
+                        
                             <!-- CEP -->
                             <div class="col-md-4">
                                 <div class="form-floating my-3">
-                                    <input type="text" class="form-control" name="ENDERECO_CEP"
-                                        value="{{ old('ENDERECO_CEP', $endereco->cep ?? '') }}" required>
+                                    <input type="text" class="form-control" name="ENDERECO_CEP" value="{{ old('ENDERECO_CEP', $address->ENDERECO_CEP ?? '') }}" required>
                                     <label for="ENDERECO_CEP">CEP *</label>
                                     @error('ENDERECO_CEP')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
                             </div>
-
+                        
                             <!-- Estado -->
                             <div class="col-md-4">
                                 <div class="form-floating mt-3 mb-3">
-                                    <input type="text" class="form-control" name="ENDERECO_ESTADO"
-                                        value="{{ old('ENDERECO_ESTADO', $endereco->estado ?? '') }}" required>
+                                    <input type="text" class="form-control" name="ENDERECO_ESTADO" value="{{ old('ENDERECO_ESTADO', $address->ENDERECO_ESTADO ?? '') }}" required>
                                     <label for="ENDERECO_ESTADO">Estado *</label>
                                     @error('ENDERECO_ESTADO')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
                             </div>
-
+                        
                             <!-- Cidade -->
                             <div class="col-md-4">
                                 <div class="form-floating my-3">
-                                    <input type="text" class="form-control" name="ENDERECO_CIDADE"
-                                        value="{{ old('ENDERECO_CIDADE', $endereco->cidade ?? '') }}" required>
+                                    <input type="text" class="form-control" name="ENDERECO_CIDADE" value="{{ old('ENDERECO_CIDADE', $address->ENDERECO_CIDADE ?? '') }}" required>
                                     <label for="ENDERECO_CIDADE">Cidade *</label>
                                     @error('ENDERECO_CIDADE')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
                             </div>
-
-                            <!-- Rua e Número -->
+                        
+                            <!-- Logradouro e Número -->
                             <div class="col-md-6">
                                 <div class="form-floating my-3">
-                                    <input type="text" class="form-control" name="ENDERECO_RUA"
-                                        value="{{ old('ENDERECO_RUA', $endereco->rua ?? '') }}" required>
-                                    <label for="ENDERECO_RUA">Rua e Número *</label>
-                                    @error('ENDERECO_RUA')
+                                    <input type="text" class="form-control" name="ENDERECO_LOGRADOURO" value="{{ old('ENDERECO_LOGRADOURO', $address->ENDERECO_LOGRADOURO ?? '') }}" required>
+                                    <label for="ENDERECO_LOGRADOURO">Logradouro *</label>
+                                    @error('ENDERECO_LOGRADOURO')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
                             </div>
-
+                        
+                            <div class="col-md-6">
+                                <div class="form-floating my-3">
+                                    <input type="number" class="form-control" name="ENDERECO_NUMERO" value="{{ old('ENDERECO_NUMERO', $address->ENDERECO_NUMERO ?? '') }}" required>
+                                    <label for="ENDERECO_NUMERO">Número *</label>
+                                    @error('ENDERECO_NUMERO')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                        
                             <!-- Complemento -->
                             <div class="col-md-6">
                                 <div class="form-floating my-3">
-                                    <input type="text" class="form-control" name="ENDERECO_COMPLEMENTO"
-                                        value="{{ old('ENDERECO_COMPLEMENTO', $endereco->complemento ?? '') }}" required>
-                                    <label for="ENDERECO_COMPLEMENTO">Complemento *</label>
+                                    <input type="text" class="form-control" name="ENDERECO_COMPLEMENTO" value="{{ old('ENDERECO_COMPLEMENTO', $address->ENDERECO_COMPLEMENTO ?? '') }}">
+                                    <label for="ENDERECO_COMPLEMENTO">Complemento</label>
                                     @error('ENDERECO_COMPLEMENTO')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
                             </div>
-
+                        
                             <!-- Ponto de Referência -->
                             <div class="col-md-12">
                                 <div class="form-floating my-3">
-                                    <input type="text" class="form-control" name="ENDERECO_REFERENCIA"
-                                        value="{{ old('ENDERECO_REFERENCIA', $endereco->referencia ?? '') }}" required>
-                                    <label for="ENDERECO_REFERENCIA">Ponto de Referência *</label>
+                                    <input type="text" class="form-control" name="ENDERECO_REFERENCIA" value="{{ old('ENDERECO_REFERENCIA', $address->ENDERECO_REFERENCIA ?? '') }}">
+                                    <label for="ENDERECO_REFERENCIA">Ponto de Referência</label>
                                     @error('ENDERECO_REFERENCIA')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
-                                    </div>
                                 </div>
                             </div>
                         </div>
-
+                    </div>
                         <div class="checkout__totals-wrapper">
                             <div class="sticky-content">
                                 <div class="checkout__totals">
@@ -193,7 +194,7 @@
                                 <div class="checkout__payment-methods">
                                     <div class="form-check">
                                         <input class="form-check-input form-check-input_fill" type="radio"
-                                            name="checkout_payment_method" id="checkout_payment_method_1">
+                                               name="checkout_payment_method" id="checkout_payment_method_1" value="pix" required>
                                         <label class="form-check-label" for="checkout_payment_method_1">
                                             Pagamento no Pix
                                             <p class="option-detail">
@@ -203,10 +204,10 @@
                                             </p>
                                         </label>
                                     </div>
-
+                                
                                     <div class="form-check">
                                         <input class="form-check-input form-check-input_fill" type="radio"
-                                            name="checkout_payment_method" id="checkout_payment_method_2">
+                                               name="checkout_payment_method" id="checkout_payment_method_2" value="boleto" required>
                                         <label class="form-check-label" for="checkout_payment_method_2">
                                             Pagamento por Boleto
                                             <p class="option-detail">
@@ -216,10 +217,10 @@
                                             </p>
                                         </label>
                                     </div>
-
+                                
                                     <div class="form-check">
                                         <input class="form-check-input form-check-input_fill" type="radio"
-                                            name="checkout_payment_method" id="checkout_payment_method_3">
+                                               name="checkout_payment_method" id="checkout_payment_method_3" value="entrega" required>
                                         <label class="form-check-label" for="checkout_payment_method_3">
                                             Pagamento na Entrega
                                             <p class="option-detail">
@@ -229,10 +230,10 @@
                                             </p>
                                         </label>
                                     </div>
-
+                                
                                     <div class="form-check">
                                         <input class="form-check-input form-check-input_fill" type="radio"
-                                            name="checkout_payment_method" id="checkout_payment_method_4">
+                                               name="checkout_payment_method" id="checkout_payment_method_4" value="paypal" required>
                                         <label class="form-check-label" for="checkout_payment_method_4">
                                             PayPal
                                             <p class="option-detail">
@@ -242,6 +243,8 @@
                                             </p>
                                         </label>
                                     </div>
+                                </div>
+                                
 
 
                                     <div class="policy-text">
