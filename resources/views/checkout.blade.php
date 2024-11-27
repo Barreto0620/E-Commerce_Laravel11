@@ -227,7 +227,11 @@
 
                         <div id="payment-details" class="mt-3 mb-3"></div>
                         
-                        <button type="submit" class="btn btn-primary">FINALIZAR PEDIDO</button>
+                        <form name="checkout-form" method="POST" action="{{ route('checkout.process') }}">
+                            @csrf
+                            <!-- Campos do endereço e pagamento -->
+                            <button type="submit" class="btn btn-primary">FINALIZAR PEDIDO</button>
+                        </form>
 
                         <div class="policy-text mt-4">
                             Seus dados pessoais serão usados para processar seu pedido, apoiar sua experiência

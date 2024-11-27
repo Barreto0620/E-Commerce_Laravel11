@@ -92,70 +92,86 @@ class CartController extends Controller
     }
 
     public function process(Request $request)
-{
-    // Validação dos campos do formulário
-    $validatedData = $request->validate([
-        'checkout_payment_method' => 'required|string|in:pix,boleto,entrega,paypal',
-        'ENDERECO_NOME' => 'required|string|max:255',
-        'ENDERECO_TELEFONE' => 'required|string|max:15',
-        'ENDERECO_CEP' => 'required|string|max:10',
-        'ENDERECO_ESTADO' => 'required|string|max:100',
-        'ENDERECO_CIDADE' => 'required|string|max:100',
-        'ENDERECO_LOGRADOURO' => 'required|string|max:255',
-        'ENDERECO_NUMERO' => 'required|integer',
-    ], [
-        'checkout_payment_method.required' => 'Escolha um método de pagamento.',
-        'checkout_payment_method.in' => 'O método de pagamento selecionado é inválido.',
-        'ENDERECO_NOME.required' => 'O nome do endereço é obrigatório.',
-        'ENDERECO_TELEFONE.required' => 'O telefone é obrigatório.',
-        'ENDERECO_CEP.required' => 'O CEP é obrigatório.',
-        // Adicione mensagens para os demais campos conforme necessário
-    ]);
+    {
+        // Validação dos campos do formulário
+        $validatedData = $request->validate([
+            'checkout_payment_method' => 'required|string|in:pix,boleto,entrega,paypal',
+            'ENDERECO_NOME' => 'required|string|max:255',
+            'ENDERECO_TELEFONE' => 'required|string|max:15',
+            'ENDERECO_CEP' => 'required|string|max:10',
+            'ENDERECO_ESTADO' => 'required|string|max:100',
+            'ENDERECO_CIDADE' => 'required|string|max:100',
+            'ENDERECO_LOGRADOURO' => 'required|string|max:255',
+            'ENDERECO_NUMERO' => 'required|integer',
+        ], [
+            'checkout_payment_method.required' => 'Escolha um método de pagamento.',
+            'checkout_payment_method.in' => 'O método de pagamento selecionado é inválido.',
+            'ENDERECO_NOME.required' => 'O nome do endereço é obrigatório.',
+            'ENDERECO_TELEFONE.required' => 'O telefone é obrigatório.',
+            'ENDERECO_CEP.required' => 'O CEP é obrigatório.',
+            // Mensagens adicionais para validação
+        ]);
 
-    $paymentMethod = $validatedData['checkout_payment_method'];
-    $addressData = $request->only([
-        'ENDERECO_NOME', 'ENDERECO_TELEFONE', 'ENDERECO_CEP', 
-        'ENDERECO_ESTADO', 'ENDERECO_CIDADE', 'ENDERECO_LOGRADOURO', 
-        'ENDERECO_NUMERO'
-    ]);
+        // Capturar os dados do pedido
+        $paymentMethod = $validatedData['checkout_payment_method'];
+        $addressData = $request->only([
+            'ENDERECO_NOME',
+            'ENDERECO_TELEFONE',
+            'ENDERECO_CEP',
+            'ENDERECO_ESTADO',
+            'ENDERECO_CIDADE',
+            'ENDERECO_LOGRADOURO',
+            'ENDERECO_NUMERO'
+        ]);
 
-    // Processar o método de pagamento selecionado
-    switch ($paymentMethod) {
-        case 'pix':
-            // Lógica para pagamento via Pix
-            return redirect()->route('cart.order.confirmation')
-                             ->with('success', 'Pix gerado com sucesso. Confira seu QR Code!');
-        case 'boleto':
-            // Lógica para gerar boleto
-            return redirect()->route('cart.order.confirmation')
-                             ->with('success', 'Boleto gerado com sucesso. Verifique seu e-mail.');
-        case 'entrega':
-            // Lógica para pagamento na entrega
-            return redirect()->route('cart.order.confirmation')
-                             ->with('success', 'Pedido confirmado. Pagamento na entrega.');
-        case 'paypal':
-            // Lógica para integrar com o PayPal
-            return redirect()->route('cart.order.confirmation')
-                             ->with('success', 'Pagamento processado via PayPal.');
-        default:
-            return redirect()->back()
-                             ->with('error', 'Método de pagamento inválido.');
+        // Gerar o resumo do pedido
+        $order = [
+            'id' => uniqid('ORDER_'),
+            'subtotal' => Cart::instance('cart')->subtotal(),
+            'frete' => 'Grátis', // Pode ser ajustado com lógica adicional para cálculo de frete
+            'taxa' => Cart::instance('cart')->tax(),
+            'total' => Cart::instance('cart')->total(),
+            'endereco' => $addressData,
+            'metodo_pagamento' => $paymentMethod,
+        ];
+
+        // Salvar o pedido na sessão para exibição na página de confirmação
+        session(['order' => $order]);
+
+        // Processar o método de pagamento selecionado
+        switch ($paymentMethod) {
+            case 'pix':
+                // Simular lógica para pagamento via Pix
+                return redirect()->route('cart.order.confirmation')
+                    ->with('success', 'Pix gerado com sucesso. Confira seu QR Code!');
+            case 'boleto':
+                // Simular geração de boleto
+                return redirect()->route('cart.order.confirmation')
+                    ->with('success', 'Boleto gerado com sucesso. Verifique seu e-mail.');
+            case 'entrega':
+                // Lógica para pagamento na entrega
+                return redirect()->route('cart.order.confirmation')
+                    ->with('success', 'Pedido confirmado. Pagamento na entrega.');
+            case 'paypal':
+                // Simular integração com o PayPal
+                return redirect()->route('cart.order.confirmation')
+                    ->with('success', 'Pagamento processado via PayPal.');
+            default:
+                return redirect()->back()
+                    ->with('error', 'Método de pagamento inválido.');
+        }
     }
-}
 
     public function order_confirmation()
     {
-        return view('order_confirmation');
-    }
+        // Verificar se os dados do pedido estão na sessão
+        $order = session('order');
 
-    public function clearCart()
-    {
-        // Limpar o carrinho da sessão
-        session()->forget('cart');  // Se o carrinho estiver na sessão
-        // ou
-        // Cart::where('user_id', auth()->id())->delete();  // Se o carrinho estiver no banco de dados
+        if (!$order) {
+            return redirect()->route('cart.index')->withErrors('Nenhum pedido encontrado.');
+        }
 
-        // Redirecionar para a página de pedidos
-        return redirect()->route('user.index');
+        // Exibir a página de confirmação com os detalhes do pedido
+        return view('order_confirmation', compact('order'));
     }
 }
