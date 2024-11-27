@@ -69,7 +69,7 @@
     </p>
 
     <p class="text-center mt-5">
-        <strong>Caso tenha dúvidas ou preocupações, entre em contato conosco pelo e-mail <a href="alpha@gmail.com">alpha@gmail.com</a>. Estamos aqui para ajudar!</strong>
+        <strong>Caso tenha dúvidas ou preocupações, entre em contato conosco pelo e-mail <a href="#">alpha@gmail.com</a>. Estamos aqui para ajudar!</strong>
     </p>
 </div>
 @endsection

@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Address;
 use Illuminate\Validation\ValidationException;
 
+
 class CartController extends Controller
 {
     // Exibir a página do carrinho
@@ -91,43 +92,56 @@ class CartController extends Controller
     }
 
     public function process(Request $request)
-    {
-        try {
-            // Validação dos dados do endereço
-            $validated = $request->validate([
-                'ENDERECO_NOME' => 'required|string|max:255',
-                'ENDERECO_CEP' => 'required|string|max:10',
-                'ENDERECO_ESTADO' => 'required|string|max:50',
-                'ENDERECO_CIDADE' => 'required|string|max:50',
-                'ENDERECO_LOGRADOURO' => 'required|string|max:255',
-                'ENDERECO_NUMERO' => 'required|integer',
-                'ENDERECO_COMPLEMENTO' => 'nullable|string|max:255',
-            ]);
+{
+    // Validação dos campos do formulário
+    $validatedData = $request->validate([
+        'checkout_payment_method' => 'required|string|in:pix,boleto,entrega,paypal',
+        'ENDERECO_NOME' => 'required|string|max:255',
+        'ENDERECO_TELEFONE' => 'required|string|max:15',
+        'ENDERECO_CEP' => 'required|string|max:10',
+        'ENDERECO_ESTADO' => 'required|string|max:100',
+        'ENDERECO_CIDADE' => 'required|string|max:100',
+        'ENDERECO_LOGRADOURO' => 'required|string|max:255',
+        'ENDERECO_NUMERO' => 'required|integer',
+    ], [
+        'checkout_payment_method.required' => 'Escolha um método de pagamento.',
+        'checkout_payment_method.in' => 'O método de pagamento selecionado é inválido.',
+        'ENDERECO_NOME.required' => 'O nome do endereço é obrigatório.',
+        'ENDERECO_TELEFONE.required' => 'O telefone é obrigatório.',
+        'ENDERECO_CEP.required' => 'O CEP é obrigatório.',
+        // Adicione mensagens para os demais campos conforme necessário
+    ]);
 
-            // Adicionar ID do usuário ao endereço
-            $validated['USUARIO_ID'] = Auth::user()->USUARIO_ID;
+    $paymentMethod = $validatedData['checkout_payment_method'];
+    $addressData = $request->only([
+        'ENDERECO_NOME', 'ENDERECO_TELEFONE', 'ENDERECO_CEP', 
+        'ENDERECO_ESTADO', 'ENDERECO_CIDADE', 'ENDERECO_LOGRADOURO', 
+        'ENDERECO_NUMERO'
+    ]);
 
-            // Atualizar ou criar o endereço
-            $address = Address::updateOrCreate(
-                [
-                    'USUARIO_ID' => Auth::user()->USUARIO_ID,
-                    'ENDERECO_NOME' => $validated['ENDERECO_NOME']
-                ],
-                $validated
-            );
-
-            if ($address) {
-                return redirect()->route('cart.order.confirmation')
-                    ->with('success', 'Endereço salvo com sucesso!');
-            } else {
-                return redirect()->back()->with('error', 'Falha ao salvar o endereço.');
-            }
-        } catch (\Exception $e) {
+    // Processar o método de pagamento selecionado
+    switch ($paymentMethod) {
+        case 'pix':
+            // Lógica para pagamento via Pix
+            return redirect()->route('cart.order.confirmation')
+                             ->with('success', 'Pix gerado com sucesso. Confira seu QR Code!');
+        case 'boleto':
+            // Lógica para gerar boleto
+            return redirect()->route('cart.order.confirmation')
+                             ->with('success', 'Boleto gerado com sucesso. Verifique seu e-mail.');
+        case 'entrega':
+            // Lógica para pagamento na entrega
+            return redirect()->route('cart.order.confirmation')
+                             ->with('success', 'Pedido confirmado. Pagamento na entrega.');
+        case 'paypal':
+            // Lógica para integrar com o PayPal
+            return redirect()->route('cart.order.confirmation')
+                             ->with('success', 'Pagamento processado via PayPal.');
+        default:
             return redirect()->back()
-                ->with('error', 'Erro ao salvar o endereço: ' . $e->getMessage())
-                ->withInput();
-        }
+                             ->with('error', 'Método de pagamento inválido.');
     }
+}
 
     public function order_confirmation()
     {

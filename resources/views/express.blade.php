@@ -46,7 +46,7 @@
     <h2 class="mt-4">Entre em Contato</h2>
     <p class="lead text-justify" style="font-size: 18px;">
         Caso tenha dúvidas ou precise de mais informações sobre o serviço <strong>Express</strong>, nossa equipe está à disposição pelo e-mail 
-        <a href="alpha@gmail.com">alpha@gmail.com</a>. 
+        <a href="#">alpha@gmail.com</a>. 
         Também estamos presentes em todas as redes sociais para um contato rápido e prático.
     </p>
 

@@ -43,7 +43,7 @@
     <h2 class="mt-4">Entre em Contato</h2>
     <p class="lead text-justify" style="font-size: 18px;">
         Temos uma equipe dedicada a responder suas dúvidas, ouvir sugestões e solucionar problemas. 
-        Entre em contato conosco pelo e-mail <a href="alpha@gmail.com">alpha@gmail.com</a> ou pelas nossas redes sociais.
+        Entre em contato conosco pelo e-mail <a href="#">alpha@gmail.com</a> ou pelas nossas redes sociais.
     </p>
 
     <p class="text-center mt-5">

@@ -56,7 +56,7 @@
             <strong>Prazo de Garantia:</strong> O prazo varia de acordo com o produto, mas todos os itens contam com no mínimo 1 ano de cobertura contra defeitos de fabricação.
         </li>
         <li>
-            <strong>Ativação da Garantia:</strong> Para acionar a garantia, entre em contato conosco pelo e-mail <a href="alpha@gmail.com">alpha@gmail.com</a> com o número do pedido e uma descrição detalhada do problema.
+            <strong>Ativação da Garantia:</strong> Para acionar a garantia, entre em contato conosco pelo e-mail <a href="#">alpha@gmail.com</a> com o número do pedido e uma descrição detalhada do problema.
         </li>
         <li>
             <strong>O que está coberto:</strong> Defeitos de fabricação e problemas técnicos que impossibilitem o uso normal do produto.
@@ -65,7 +65,7 @@
 
     <h2 class="mt-4">Ainda com dúvidas?</h2>
     <p class="lead text-justify" style="font-size: 18px;">
-        Caso sua dúvida não esteja entre as listadas, sinta-se à vontade para entrar em contato conosco. Envie um e-mail para <a href="alpha@gmail.com">alpha@gmail.com</a>, 
+        Caso sua dúvida não esteja entre as listadas, sinta-se à vontade para entrar em contato conosco. Envie um e-mail para <a href="#">alpha@gmail.com</a>, 
         e nossa equipe responderá o mais breve possível.
     </p>
 

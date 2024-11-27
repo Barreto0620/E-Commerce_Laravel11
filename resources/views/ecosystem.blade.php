@@ -59,7 +59,7 @@
     <h2 class="mt-4">Participe Conosco</h2>
     <p class="lead text-justify" style="font-size: 18px;">
         Convidamos você a se juntar à nossa iniciativa <strong>EcoSystem</strong>. Seja adotando produtos sustentáveis, participando de nossos programas de reciclagem ou simplesmente se informando sobre práticas ecológicas, cada ação conta para um planeta mais saudável.
-        Entre em contato conosco pelo e-mail <a href="alpha@gmail.com">alpha@gmail.com</a> ou siga-nos em nossas redes sociais para ficar por dentro das nossas novidades e iniciativas.
+        Entre em contato conosco pelo e-mail <a href="#">alpha@gmail.com</a> ou siga-nos em nossas redes sociais para ficar por dentro das nossas novidades e iniciativas.
     </p>
 
     <p class="text-center mt-5">
