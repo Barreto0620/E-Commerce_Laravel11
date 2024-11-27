@@ -25,7 +25,7 @@
                         <em>Confira o local de entrega</em>
                     </span>
                 </a>
-                <a href="{{route('cart.order.confirmation')}}" class="checkout-steps__item">
+                <a href="javascript:void(0)" class="checkout-steps__item">
                     <span class="checkout-steps__item-number">03</span>
                     <span class="checkout-steps__item-title">
                         <span>Confirmação</span>

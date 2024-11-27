@@ -101,6 +101,7 @@ Route::get('/cart/remove/{rowId}', [CartController::class, 'remove_from_cart'])-
 
 // Rota para limpar todo o carrinho
 Route::get('/cart/clear', [CartController::class, 'clear_cart'])->name('cart.clear');
+Route::post('/cart/clear', [CartController::class, 'clearCart'])->name('cart.clear');
 
 // Rota para exibir a página de checkout
 Route::get('/checkout', [CartController::class, 'checkout'])->name('cart.checkout');

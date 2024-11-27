@@ -15,7 +15,7 @@
                         </em>
                     </span>
                 </a>
-                <a href="{{route('cart.checkout')}}" class="checkout-steps__item">
+                <a href="javascript:void(0)" class="checkout-steps__item">
                     <span class="checkout-steps__item-number">02</span>
                     <span class="checkout-steps__item-title">
                         <span>Envio e finalização da compra</span>

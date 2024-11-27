@@ -233,7 +233,7 @@
                         <h2 class="fw-bold">60% Off</h2>
 
                         <div class="position-relative d-flex align-items-center text-center pt-xxl-4 js-countdown mb-3"
-                            data-date="18-3-2024" data-time="06:50">
+                            data-date="29-11-2024" data-time="20:00">
                             <div class="day countdown-unit">
                                 <span class="countdown-num d-block"></span>
                                 <span class="countdown-word text-uppercase text-secondary">Dias</span>

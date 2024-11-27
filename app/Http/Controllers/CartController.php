@@ -133,4 +133,15 @@ class CartController extends Controller
     {
         return view('order_confirmation');
     }
+
+    public function clearCart()
+    {
+        // Limpar o carrinho da sessão
+        session()->forget('cart');  // Se o carrinho estiver na sessão
+        // ou
+        // Cart::where('user_id', auth()->id())->delete();  // Se o carrinho estiver no banco de dados
+
+        // Redirecionar para a página de pedidos
+        return redirect()->route('user.index');
+    }
 }
