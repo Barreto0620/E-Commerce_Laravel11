@@ -9,10 +9,7 @@ body.dark a {
     color: #ffffff;
 }
 
-body.dark .pc__title {
-    color: #fff; /* Cor do texto no modo escuro */
 
-}
 
 body.dark .h1 {
     color: #fff; 
@@ -27,12 +24,11 @@ body.dark .h2{
 body.dark .container.mw-1620.bg-white.border-radius-10 {
     background-color: #000000 !important; /* Cor de fundo no modo escuro */
     border-radius: 10px !important;    /* Borda arredondada */
-    color: white !important;           /* Cor do texto no modo escuro */
+ 
 }
 
-/* Estilo para o h2 com a classe 'section-title' no modo escuro */
 body.dark h2.section-title {
-    color: white;  /* Cor do texto no modo escuro */
+    color: rgb(255, 255, 255);  /* Cor do texto no modo escuro */
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);  /* Adiciona uma sombra ao texto, para destacar mais */
 }
 
@@ -53,8 +49,9 @@ body.dark h2.section-title {
     border-bottom: 1px solid #495057; /* Adiciona bordas finas entre as colunas, se necessário */
   }
   
-  @media (prefers-color-scheme: dark) {
-    .service-title {
-        color: white; /* Cor para o modo escuro */
-    }
+.dark .mb-0.service-title{
+    color: #000000;
+}
+.dark .btn-link.default-underline.text-uppercase.fw-medium{
+    color: #000000;
 }

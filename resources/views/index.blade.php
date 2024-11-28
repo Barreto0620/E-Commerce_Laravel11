@@ -588,7 +588,7 @@
                                 Frete Gratis
                             </div>
                             <div class="category-banner__item-content">
-                                <h3 class="mb-0">Entrega Expressa</h3>
+                                <h3 class="mb-0 service-title">Entrega Expressa</h3>
                                 <a href="{{route('express')}}" class="btn-link default-underline text-uppercase fw-medium">Conhecer</a>
                             </div>
                         </div>
