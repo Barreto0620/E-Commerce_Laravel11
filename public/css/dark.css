@@ -56,3 +56,6 @@ body.dark h2.section-title {
     color: #000000;
 }
 
+.dark .accordion-button{
+    color: #ffffff;
+}

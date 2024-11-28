@@ -3405,8 +3405,7 @@ progress {
 .bg-beige {
   background-color: #b9a16b !important; }
 
-.bg-body {
-  background-color: #ffffff !important; }
+
 
 .bg-white {
   background-color: #fff !important; }
@@ -8338,7 +8337,7 @@ img {
   padding: 1.75rem 1.875rem 1.125rem;
   border: 1px solid #eeeeee;
   color: #222222;
-  background-color: #ffffff;
+  background-color: transparent;
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.375;
