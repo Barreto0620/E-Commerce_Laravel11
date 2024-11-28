@@ -49,7 +49,8 @@ Route::get('/sobre', [SobreController::class, 'index'])->name('sobre');
 // Rota para dashboard de usuário autenticado
 Route::middleware(['auth'])->group(function () {
     Route::get('/account-dashboard', [UserController::class, 'index'])->name('user.index');
-    Route::get('/account-orders', [UserController::class, 'orders'])->name('user.orders');
+    Route::get('/orders', [CartController::class, 'orders'])->name('user.orders');
+
 });
 
 // Rota para dashboard de administradores com middleware de autenticação
@@ -110,3 +111,6 @@ Route::get('/checkout', [CartController::class, 'checkout'])->name('cart.checkou
 Route::post('/checkout/process', [CartController::class, 'process'])->name('checkout.process');
 
 Route::get('/order-confirmation', [CartController::class, 'order_confirmation'])->name('cart.order.confirmation');
+
+// Rota para exibir os detalhes de um pedido
+Route::get('/orders/{order}', [CartController::class, 'show'])->name('orders.show');

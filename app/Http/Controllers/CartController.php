@@ -183,6 +183,23 @@ class CartController extends Controller
         // Cart::where('user_id', auth()->id())->delete();  // Se o carrinho estiver no banco de dados
 
         // Redirecionar para a página de pedidos
-        return redirect()->route('user.index');
+        return redirect()->route('user.orders');
     }
+
+    public function orders()
+{
+    // Verificar se o usuário está autenticado
+    if (!Auth::check()) {
+        return redirect()->route('login');
+    }
+
+    // Aqui você pode pegar os dados dos pedidos, no caso vamos apenas pegar da sessão
+    // Caso você queira buscar de um banco de dados, crie um modelo Order que armazene os pedidos
+    $order = session('order'); // Pedido atual na sessão
+    
+    return view('user.orders', compact('order'));
+}
+
+
+
 }
