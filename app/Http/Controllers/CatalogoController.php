@@ -15,9 +15,20 @@ class CatalogoController extends Controller
         // Carregar todos os produtos com as relações necessárias
         $produtos = Produto::with(['imagens', 'categoria'])->get();
 
-        // Dividir os produtos entre carrossel e vitrine (exemplo: 12 no carrossel, o restante na vitrine)
-        $produtosCarrossel = $produtos->take(12); // Pegue os primeiros 12 produtos
-        $produtosVitrine = $produtos->skip(12);  // O restante será usado na vitrine
+        // Buscar todos os produtos, exceto o de ID 194
+
+        // Buscar todos os produtos, exceto os de ID 194 e 199
+        $produtos = Produto::whereNotIn('PRODUTO_ID', [194, 199])->get();
+
+        // IDs dos produtos que irão para o carrossel
+        $produtosCarrossel = $produtos->take(250); // Pegue os primeiros 500 produtos
+
+        // IDs do carrossel
+        $idsCarrossel = $produtosCarrossel->pluck('PRODUTO_ID')->toArray();
+
+        // Filtrar os produtos para a vitrine excluindo os IDs do carrossel
+        $produtosVitrine = $produtos->whereNotIn('PRODUTO_ID', $idsCarrossel);
+
 
         // Passar os dados para a view
         return view('catalogo', compact('produtosCarrossel', 'produtosVitrine'));
@@ -29,13 +40,12 @@ class CatalogoController extends Controller
     public function product_details($id)
     {
         $produto = Produto::with(['imagens', 'categoria'])->findOrFail($id);
-    
+
         $produtosRelacionados = Produto::with(['imagens', 'categoria'])
             ->where('PRODUTO_ID', '!=', $produto->PRODUTO_ID)
-            ->take(12)
+            ->take(500)
             ->get();
-    
+
         return view('details', compact('produto', 'produtosRelacionados'));
     }
-    
 }

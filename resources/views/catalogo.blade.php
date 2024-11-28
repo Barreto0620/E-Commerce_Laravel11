@@ -383,7 +383,7 @@
                     </div>
                 </div>
             </div>
-
+            
             <div class="products-grid row row-cols-2 row-cols-md-3" id="products-grid">
                 <!-- Carrossel -->
                 @foreach ($produtosCarrossel as $produto)
@@ -481,27 +481,112 @@
 
 
             <nav class="shop-pages d-flex justify-content-between mt-3" aria-label="Page navigation">
-                <a href="#" class="btn-link d-inline-flex align-items-center">
-                    <svg class="me-1" width="7" height="11" viewBox="0 0 7 11"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <use href="#icon_prev_sm" />
+                <a href="#" id="prev" class="btn-link d-inline-flex align-items-center">
+                    <svg class="me-1" width="7" height="11" viewBox="0 0 7 11" xmlns="http://www.w3.org/2000/svg">
+                        <use href="#icon_prev_sm"></use>
                     </svg>
                     <span class="fw-medium">ANTERIOR</span>
                 </a>
                 <ul class="pagination mb-0">
-                    <li class="page-item"><a class="btn-link px-1 mx-2 btn-link_active" href="#">1</a></li>
-                    <li class="page-item"><a class="btn-link px-1 mx-2" href="#">2</a></li>
-                    <li class="page-item"><a class="btn-link px-1 mx-2" href="#">3</a></li>
-                    <li class="page-item"><a class="btn-link px-1 mx-2" href="#">4</a></li>
+                    <li class="page-item"><a class="btn-link px-1 mx-2 btn-link_active" data-page="1" href="#">1</a></li>
+                    <li class="page-item"><a class="btn-link px-1 mx-2" data-page="2" href="#">2</a></li>
+                    <li class="page-item"><a class="btn-link px-1 mx-2" data-page="3" href="#">3</a></li>
+                    <li class="page-item"><a class="btn-link px-1 mx-2" data-page="4" href="#">4</a></li>
                 </ul>
-                <a href="#" class="btn-link d-inline-flex align-items-center">
+                <a href="#" id="next" class="btn-link d-inline-flex align-items-center">
                     <span class="fw-medium me-1">PROXIMO</span>
                     <svg width="7" height="11" viewBox="0 0 7 11" xmlns="http://www.w3.org/2000/svg">
-                        <use href="#icon_next_sm" />
+                        <use href="#icon_next_sm"></use>
                     </svg>
                 </a>
             </nav>
+            
         </div>
     </section>
 </main>
+
+<style>
+    .btn-link_active {
+    font-weight: bold;
+    color: #007bff; /* Azul padrão Bootstrap */
+    text-decoration: underline;
+}
+
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Lista de produtos simulada
+    const products = [
+        'Produto 1', 'Produto 2', 'Produto 3', 'Produto 4', 
+        'Produto 5', 'Produto 6', 'Produto 7', 'Produto 8',
+        'Produto 9', 'Produto 10', 'Produto 11', 'Produto 12'
+    ];
+    const productsPerPage = 4; // Defina quantos produtos por página
+    const productsContainer = document.getElementById('products-container');
+    const paginationLinks = document.querySelectorAll('.pagination .btn-link');
+    const prevButton = document.getElementById('prev');
+    const nextButton = document.getElementById('next');
+    let currentPage = 1;
+
+    // Função para renderizar produtos da página atual
+    const renderProducts = (page) => {
+        productsContainer.innerHTML = ''; // Limpa os produtos antigos
+        const start = (page - 1) * productsPerPage;
+        const end = start + productsPerPage;
+        const productsToRender = products.slice(start, end);
+
+        productsToRender.forEach(product => {
+            const productDiv = document.createElement('div');
+            productDiv.classList.add('col-3', 'mb-3'); // Estilize como preferir
+            productDiv.textContent = product;
+            productsContainer.appendChild(productDiv);
+        });
+    };
+
+    // Atualiza a página ativa
+    const updateActivePage = (newPage) => {
+        paginationLinks.forEach(link => {
+            link.classList.remove('btn-link_active');
+            if (parseInt(link.getAttribute('data-page')) === newPage) {
+                link.classList.add('btn-link_active');
+            }
+        });
+    };
+
+    // Função para trocar página
+    const goToPage = (page) => {
+        const totalPages = Math.ceil(products.length / productsPerPage);
+
+        if (page < 1 || page > totalPages) return; // Evita sair dos limites
+        currentPage = page;
+        updateActivePage(currentPage);
+        renderProducts(currentPage);
+    };
+
+    // Eventos dos botões de navegação
+    prevButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        goToPage(currentPage - 1);
+    });
+
+    nextButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        goToPage(currentPage + 1);
+    });
+
+    // Eventos dos links de paginação
+    paginationLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const page = parseInt(link.getAttribute('data-page'));
+            goToPage(page);
+        });
+    });
+
+    // Renderiza a página inicial
+    renderProducts(currentPage);
+});
+
+</script>
 @endsection
