@@ -1,0 +1,53 @@
+
+/* Estilos para o modo escuro */
+body.dark {
+    background-color: #000000;
+    color: #e0e0e0;
+}
+
+body.dark a {
+    color: #ffffff;
+}
+
+body.dark .pc__title {
+    color: #fff; /* Cor do texto no modo escuro */
+
+}
+
+body.dark .h1 {
+    color: #fff; 
+}
+
+body.dark .h2{
+    color: #fff;
+}   
+
+body.dark .container.mw-1620.bg-white.border-radius-10 {
+    background-color: #000000 !important; /* Cor de fundo no modo escuro */
+    border-radius: 10px !important;    /* Borda arredondada */
+    color: white !important;           /* Cor do texto no modo escuro */
+}
+
+/* Estilo para o h2 com a classe 'section-title' no modo escuro */
+body.dark h2.section-title {
+    color: white;  /* Cor do texto no modo escuro */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);  /* Adiciona uma sombra ao texto, para destacar mais */
+}
+
+.footer-dark {
+    background-color: #131212; /* Cor escura para o fundo */
+    color: white; /* Cor do texto em branco */
+  }
+  
+  .footer-dark a {
+    color: #ffffff; /* Cor dos links */
+  }
+  
+  .footer-dark a:hover {
+    color: #f8f9fa; /* Cor dos links ao passar o mouse */
+  }
+  
+  .footer-dark .footer-column {
+    border-bottom: 1px solid #495057; /* Adiciona bordas finas entre as colunas, se necessário */
+  }
+  

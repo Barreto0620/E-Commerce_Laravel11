@@ -1,6 +1,9 @@
-@extends('layouts.app')
-@section('content')
+    @extends('layouts.app')
+    @section('content')
+
+
     <main>
+        
 
         <section class="swiper-container js-swiper-slider swiper-number-pagination slideshow"
             data-settings='{
@@ -18,7 +21,7 @@
                             <img loading="lazy" src="{{ asset('assets/images/carrossel_01.png') }}" width="542"
                                 height="733" alt="Oferta do Dia"
                                 class="slideshow-character__img animate animate_fade animate_btt animate_delay-9 w-auto h-auto" />
-                            <div class="character_markup type2">
+                            <div id="teste" class="character_markup type2">
                                 <p
                                     class="text-uppercase font-sofia mark-grey-color animate animate_fade animate_btt animate_delay-10 mb-0">
                                     Oferta do Dia</p>
