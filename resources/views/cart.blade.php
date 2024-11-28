@@ -199,10 +199,7 @@
         border-bottom: 1px solid #f0f0f0;
     }
 
-    .cart-table th {
-        background-color: #f5f5f5;
-    }
-
+ 
     .qty-control {
         display: flex;
         align-items: center;
