@@ -15456,6 +15456,10 @@ body.coming-soon-page {
         .image-banner__content h2, .image-banner__content .h2 {
           font-size: 3.75rem; } }
 
+.category-banner__item-content .btn-link.default-underline.text-uppercase.fw-medium{
+  background-color: transparent !important;
+}
+
 .category-banner__item {
   position: relative; }
   .category-banner__item-content {
@@ -15463,7 +15467,7 @@ body.coming-soon-page {
     left: 12.2%;
     right: 12.2%;
     bottom: -2.3125rem;
-    background-color: white;
+    background-color: #fff;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
