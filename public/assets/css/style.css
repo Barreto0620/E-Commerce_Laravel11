@@ -9286,6 +9286,12 @@ img {
   color: #222222;
   font-weight: 400;
   text-decoration: none; }
+
+  .dark .btn-link {
+    color: #fff; 
+    background-color: #000;
+  }
+
   .btn-link:hover {
     color: #1b1b1b; }
   .btn-link:disabled, .btn-link.disabled {
