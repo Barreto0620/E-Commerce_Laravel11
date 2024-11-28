@@ -8948,7 +8948,7 @@ img {
   color: #fff; }
 
 .btn-info {
-  color: #000;
+  color: #000 !important;
   background-color: #cde9f6;
   border-color: #cde9f6;
   box-shadow: none; }
