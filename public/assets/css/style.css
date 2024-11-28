@@ -3310,7 +3310,7 @@ progress {
   text-align: center !important; }
 
 .text-primary {
-  color: #222222 !important; }
+  color: #222222 ; }
 
 .text-secondary {
   color: #a1a1a1 !important; }
