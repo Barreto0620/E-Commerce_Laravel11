@@ -303,7 +303,7 @@
         position: sticky;
         top: 0;
         padding: 20px;
-        background: #f9f9f9;
+        background: #101010;
         border-radius: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         width: 100%;
@@ -320,7 +320,7 @@
         margin-left: auto;
         margin-right: auto;
         padding: 30px;
-        background-color: #fff;
+        
         border-radius: 8px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
