@@ -319,10 +319,10 @@
               <a href="cart.html" class="navigation__link">Cart</a>
             </li> -->
             <li class="navigation__item">
-              <a href="about.html" class="navigation__link">Sobre</a>
+              <a href="{{route('sobre')}}" class="navigation__link">Sobre</a>
             </li>
             <li class="navigation__item">
-              <a href="contact.html" class="navigation__link">Dúvidas</a>
+              <a href="{{route('duvidas')}}" class="navigation__link">Dúvidas</a>
             </li>
           </ul>
         </div>
@@ -411,7 +411,7 @@
               <a href="{{route('sobre')}}" class="navigation__link">Sobre</a>
             </li>
             <li class="navigation__item">
-              <a href="contact.html" class="navigation__link">Dúvidas</a>
+              <a href="{{route('duvidas')}}" class="navigation__link">Dúvidas</a>
             </li>
           </ul>
         </nav>
