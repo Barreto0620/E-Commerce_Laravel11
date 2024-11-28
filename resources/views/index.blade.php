@@ -721,7 +721,7 @@
                             <div class="pc__info position-relative">
                                 <h6 class="pc__title">{{ $produto12->PRODUTO_NOME }}</h6>
                                 <div class="product-card__price d-flex align-items-center">
-                                    <span class="money price-old">R$: 1600.00</span>
+                                    <span class="money price-old">R$: 1400.00</span>
                                     <span class="money price text-secondary">R$:{{ $produto12->PRODUTO_PRECO }}</span>
                                 </div>
 
