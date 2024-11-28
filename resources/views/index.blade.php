@@ -1,6 +1,9 @@
-@extends('layouts.app')
-@section('content')
+    @extends('layouts.app')
+    @section('content')
+
+
     <main>
+        
 
         <section class="swiper-container js-swiper-slider swiper-number-pagination slideshow"
             data-settings='{
@@ -18,7 +21,7 @@
                             <img loading="lazy" src="{{ asset('assets/images/carrossel_01.png') }}" width="542"
                                 height="733" alt="Oferta do Dia"
                                 class="slideshow-character__img animate animate_fade animate_btt animate_delay-9 w-auto h-auto" />
-                            <div class="character_markup type2">
+                            <div id="teste" class="character_markup type2">
                                 <p
                                     class="text-uppercase font-sofia mark-grey-color animate animate_fade animate_btt animate_delay-10 mb-0">
                                     Oferta do Dia</p>
@@ -571,8 +574,8 @@
                                 Frete Gratis
                             </div>
                             <div class="category-banner__item-content">
-                                <h3 class="mb-0">Serviço de Retirada</h3>
-                                <a href="{{route('ecosystem')}}" class="btn-link default-underline text-uppercase fw-medium">Conhecer</a>
+                            <h3 class="mb-0 service-title">Serviço de Retirada</h3>
+                            <a href="{{route('ecosystem')}}" class="btn-link default-underline text-uppercase fw-medium">Conhecer</a>
                             </div>
                         </div>
                     </div>
@@ -585,7 +588,7 @@
                                 Frete Gratis
                             </div>
                             <div class="category-banner__item-content">
-                                <h3 class="mb-0">Entrega Expressa</h3>
+                                <h3 class="mb-0 service-title">Entrega Expressa</h3>
                                 <a href="{{route('express')}}" class="btn-link default-underline text-uppercase fw-medium">Conhecer</a>
                             </div>
                         </div>

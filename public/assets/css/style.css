@@ -3313,7 +3313,7 @@ progress {
   color: #222222 !important; }
 
 .text-secondary {
-  color: #767676 !important; }
+  color: #a1a1a1 !important; }
 
 .text-success {
   color: #def2d7 !important; }
@@ -6802,7 +6802,6 @@ h5,
 .h5,
 h6,
 .h6 {
-  color: #222222;
   font-family: "Rajdhani", "Jost", sans-serif;
   font-weight: 500; }
 
@@ -10486,6 +10485,7 @@ textarea.form-control-lg {
   .product-card_style8 .product-card__price {
     margin-top: 0.625rem;
     color: #0046be; }
+    
   .product-card_style8:hover {
     border-color: #0046be;
     box-shadow: 0 0 20px 0 rgba(0, 70, 190, 0.1); }
@@ -12230,7 +12230,6 @@ textarea.form-control-lg {
 .header {
   display: none;
   position: relative;
-  background-color: #ffffff;
   z-index: 2; }
   .header .form-select {
     border: 0;
@@ -12644,7 +12643,7 @@ textarea.form-control-lg {
   box-shadow: 0 8px 25px 0 rgba(140, 152, 164, 0.15);
   z-index: 1020; }
   .header_sticky-active.header_sticky-bg_dark {
-    background-color: #222222; }
+    background-color: #000000; }
   .header_sticky-active .header-desk_type_3 {
     padding-top: 1.5rem; }
 
@@ -12746,8 +12745,7 @@ textarea.form-control-lg {
     background-color: #ffffff; }
   .footer_type_2 .footer-bottom {
     border-color: #e4e4e4; }
-  .footer_type_2 .sub-menu__title {
-    color: #222222; }
+ 
   .footer_type_2.dark {
     background-color: #222222;
     color: #ffffff; }

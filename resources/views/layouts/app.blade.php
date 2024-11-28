@@ -10,7 +10,6 @@
 
   <title>{{ config('app.name', 'Laravel') }}</title>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <meta name="author" content="surfside media" />
   <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.gstatic.com/">
   <link
@@ -20,6 +19,9 @@
   <link rel="stylesheet" href="{{ asset('assets/css/plugins/swiper.min.css') }}" type="text/css" />
   <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" type="text/css" />
   <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}" type="text/css" />
+  <link href="{{ asset('css/dark.css') }}" rel="stylesheet">
+  <link id="dark-theme" href="{{ asset('css/dark.css') }}" rel="stylesheet" disabled>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
     crossorigin="anonymous" referrerpolicy="no-referrer">
@@ -27,7 +29,7 @@
 
 </head>
 
-<body class="gradient-bg">
+<body class="{{ session('theme', 'light') }}">
   <svg class="d-none">
     <symbol id="icon_nav" viewBox="0 0 25 18">
       <rect width="25" height="2" />
@@ -326,7 +328,9 @@
             </li>
           </ul>
         </div>
+
       </div>
+
 
       <div class="border-top mt-auto pb-2">
         <div class="customer-links container mt-4 mb-2 pb-1">
@@ -415,6 +419,9 @@
             </li>
           </ul>
         </nav>
+        <button id="toggle-theme" class="btn btn-outline-dark">Modo Escuro</button>
+       
+      
 
         <div class="header-tools d-flex align-items-center">
           <div class="header-tools__item hover-container">
@@ -507,7 +514,8 @@
 
 
   <hr class="mt-5 text-secondary" />
-  <footer class="footer footer_type_2">
+  <footer class="footer footer_type_2 footer-dark">
+
     <div class="footer-middle container">
       <div class="row row-cols-lg-5 row-cols-2">
         <div class="footer-column footer-store-info col-12 mb-4 mb-lg-0">
@@ -550,7 +558,7 @@
                 </svg>
               </a>
             </li>
-            
+
           </ul>
         </div>
 
@@ -637,7 +645,7 @@
         </a>
       </div>
 
-      
+
     </div>
   </footer>
 
@@ -651,6 +659,52 @@
   <script src="{{ asset('assets/js/plugins/countdown.js') }}"></script>
   <script src="{{ asset('assets/js/theme.js') }}"></script>
   @stack("scripts")
+
+  <script>
+    const toggleThemeButton = document.getElementById('toggle-theme');
+    const body = document.querySelector('body');
+    const darkThemeLink = document.getElementById('dark-theme');
+
+    // Função para atualizar o texto do botão
+    function updateButtonText() {
+        if (body.classList.contains('dark')) {
+            toggleThemeButton.textContent = 'Modo Claro';
+            darkThemeLink.removeAttribute('disabled');  // Ativa o tema escuro
+        } else {
+            toggleThemeButton.textContent = 'Modo Escuro';
+            darkThemeLink.setAttribute('disabled', 'true');  // Desativa o tema escuro
+        }
+    }
+
+    // Chama a função para definir o texto inicial do botão
+    updateButtonText();
+
+    // Lida com a troca de tema
+    toggleThemeButton.addEventListener('click', () => {
+        if (body.classList.contains('dark')) {
+            body.classList.remove('dark');
+            sessionStorage.setItem('theme', 'light');
+        } else {
+            body.classList.add('dark');
+            sessionStorage.setItem('theme', 'dark');
+        }
+        // Atualiza o texto do botão após a troca de tema
+        updateButtonText();
+    });
+
+    // Recupera o tema armazenado na sessão e aplica ao body
+    const theme = sessionStorage.getItem('theme');
+    if (theme) {
+        if (theme === 'dark') {
+            body.classList.add('dark');
+            darkThemeLink.removeAttribute('disabled');  // Ativa o tema escuro
+        }
+        updateButtonText();
+    }
+</script>
+
+
+
 </body>
 
 </html>
