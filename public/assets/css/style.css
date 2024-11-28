@@ -9280,7 +9280,7 @@ img {
   display: inline-block;
   position: relative;
   padding: 0;
-  padding-right: 20px;
+  padding-right: 90px;
   border: 0;
   background-color: #fff;
   color: #222222;
@@ -15456,9 +15456,12 @@ body.coming-soon-page {
         .image-banner__content h2, .image-banner__content .h2 {
           font-size: 3.75rem; } }
 
+
+
 .category-banner__item-content .btn-link.default-underline.text-uppercase.fw-medium{
   background-color: transparent !important;
 }
+
 
 .category-banner__item {
   position: relative; }
