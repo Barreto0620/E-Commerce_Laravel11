@@ -8,7 +8,7 @@
 
     <p class="lead text-justify">
         Aqui você encontra respostas para as perguntas mais frequentes sobre nossos serviços. Se sua dúvida não for respondida, entre em contato conosco pelo e-mail 
-        <a href="alpha@gmail.com">alpha@gmail.com</a>. Nossa equipe está à disposição para ajudar!
+        <a href="#">alpha@gmail.com</a>. Nossa equipe está à disposição para ajudar!
     </p>
 
     <h2 class="mt-4">Pagamento</h2>
