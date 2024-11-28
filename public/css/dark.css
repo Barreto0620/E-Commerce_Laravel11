@@ -21,6 +21,8 @@ body.dark .h1 {
 body.dark .h2{
     color: #fff;
 }   
+ 
+
 
 body.dark .container.mw-1620.bg-white.border-radius-10 {
     background-color: #000000 !important; /* Cor de fundo no modo escuro */
