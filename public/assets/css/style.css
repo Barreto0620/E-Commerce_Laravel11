@@ -15459,7 +15459,8 @@ body.coming-soon-page {
 
 
 .category-banner__item-content .btn-link.default-underline.text-uppercase.fw-medium{
-  background-color: transparent !important;
+  background-color: transparent;
+  color: #000 !important;
 }
 
 
