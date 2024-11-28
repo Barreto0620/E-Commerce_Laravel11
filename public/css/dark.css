@@ -53,3 +53,8 @@ body.dark h2.section-title {
     border-bottom: 1px solid #495057; /* Adiciona bordas finas entre as colunas, se necessário */
   }
   
+  @media (prefers-color-scheme: dark) {
+    .service-title {
+        color: white; /* Cor para o modo escuro */
+    }
+}

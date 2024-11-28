@@ -574,8 +574,8 @@
                                 Frete Gratis
                             </div>
                             <div class="category-banner__item-content">
-                                <h3 class="mb-0">Serviço de Retirada</h3>
-                                <a href="{{route('ecosystem')}}" class="btn-link default-underline text-uppercase fw-medium">Conhecer</a>
+                            <h3 class="mb-0 service-title">Serviço de Retirada</h3>
+                            <a href="{{route('ecosystem')}}" class="btn-link default-underline text-uppercase fw-medium">Conhecer</a>
                             </div>
                         </div>
                     </div>
