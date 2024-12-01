@@ -67,13 +67,13 @@
                                             <td class="text-center">{{ session('order')['id'] }}</td>
                                             <td class="text-center">{{ Auth::user()->USUARIO_NOME }}</td>
                                             <td class="text-center">
-                                                ${{ session('order')['subtotal'] }}
+                                                R${{ session('order')['subtotal'] }}
                                             </td>
                                             <td class="text-center">
-                                                ${{ session('order')['taxa'] }}
+                                                R${{ session('order')['taxa'] }}
                                             </td>
                                             <td class="text-center">
-                                                ${{ session('order')['total'] }}
+                                                R${{ session('order')['total'] }}
                                             </td>                                            
                                             <td class="text-center">
                                                 @if (isset(session('order')['status']) && session('order')['status'] == 'Delivered')
