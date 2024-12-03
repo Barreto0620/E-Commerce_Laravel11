@@ -1,66 +1,110 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Loja de Hardware - Projeto Integrador
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Descrição  
+Este projeto consiste no desenvolvimento de uma loja de hardware como parte do **Projeto Integrador** do curso de Sistemas para Internet. A aplicação foi construída utilizando o framework **Laravel 11** e oferece funcionalidades essenciais para a gestão de produtos, vendas e integração com front-end moderno.  
 
-## About Laravel
+O sistema foi projetado para fornecer uma experiência amigável ao usuário, com um painel administrativo para gerenciar o catálogo de produtos e acompanhar pedidos, e um front-end responsivo para clientes realizarem compras.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Funcionalidades  
+- Cadastro e gerenciamento de produtos (incluindo descrição, preço e estoque).  
+- Sistema de autenticação para usuários e administradores.  
+- Carrinho de compras e finalização de pedidos.  
+- Relatórios básicos de vendas.  
+- Design responsivo utilizando **Bootstrap**.  
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## Requisitos do Sistema  
+- **PHP**: Versão 8.2 ou superior.  
+- **Laravel**: Versão 11.  
+- **Banco de Dados**: MySQL.  
+- **Node.js e NPM**: Para gerenciamento de dependências front-end.  
+- **Composer**: Para gerenciamento de dependências back-end.  
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+---
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Instalação  
+1. **Clone o repositório**:  
+   ```bash
+   git clone https://github.com/SeuRepositorio/Loja-Hardware.git
+   cd Loja-Hardware
+   ```
+2. **Instale as dependências do Laravel**:  
+   ```bash
+   composer install
+   ```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+3. **Instale as dependências do front-end**:  
+   ```bash
+   npm install
+   ```
 
-## Laravel Sponsors
+4. **Configuração do Banco de Dados**:  
+   Renomeie o arquivo `.env.example` para `.env` e configure os dados do banco:  
+   ```env
+   DB_CONNECTION=mysql
+   DB_HOST=localhost
+   DB_PORT=3306
+   DB_DATABASE=nome_do_banco
+   DB_USERNAME=usuario_do_banco
+   DB_PASSWORD=senha_do_banco
+   ```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+5. **Configuração Inicial**:  
+   - Gere a chave da aplicação:  
+     ```bash
+     php artisan key:generate
+     ```
+   - Realize as migrações e os seeders para popular as tabelas:  
+     ```bash
+     php artisan migrate --seed
+     ```
 
-### Premium Partners
+6. **Executando a Aplicação**:  
+   Inicie o servidor local com:  
+   ```bash
+   php artisan serve
+   ```
+   Acesse a aplicação em [http://localhost:8000](http://localhost:8000).
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+---
 
-## Contributing
+## Configuração do Front-End  
+- Para iniciar o ambiente de desenvolvimento do front-end, use:  
+  ```bash
+  npm run dev
+  ```
+- Para criar um build de produção, utilize:  
+  ```bash
+  npm run build
+  ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+---
 
-## Code of Conduct
+## Estrutura do Projeto  
+### Diretórios Principais:  
+- `app/Models`: Contém os modelos utilizados pela aplicação.  
+- `database/migrations`: Contém as migrações para criar as tabelas no banco de dados.  
+- `resources/views`: Contém as views utilizadas no front-end.  
+- `routes/web.php`: Define as rotas principais da aplicação.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Principais Dependências:  
+- **Laravel UI**: Para autenticação e geração de scaffolding.  
+- **Bootstrap**: Para design responsivo.  
+- **Intervention Image**: Para manipulação de imagens no back-end.  
+- **Shopping Cart**: Biblioteca para gerenciar o carrinho de compras.  
 
-## Security Vulnerabilities
+---
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Sobre os Colaboradores  
+Este projeto foi desenvolvido em colaboração por:  
+- **Lusxka**  
+- **Barreto0620**  
 
-## License
+---
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Observações  
+- O sistema foi configurado para ser executado em um ambiente local. Para produção, recomenda-se configurar servidores adequados e habilitar HTTPS.  
+- Certifique-se de que as dependências e versões requeridas estejam corretamente instaladas para evitar erros de execução.  
